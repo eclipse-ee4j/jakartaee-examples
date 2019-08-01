@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>@Inheritance (Table-per-Concrete-Class) example</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p>
+                This example demonstrates usage of @Inheritance annotation. By pressing save button you will insert three 
+                employees (ContractEmployee, FullTimeEmployee and PartTimeEmployee) in the database with Table-per-Concrete-Class strategy.
+            </p>
+            <h:commandButton value="save" action="#{employeeBean.saveAndLoad}"/>
+            <br/>            
+        </h:form>
+        <div>
+            <h3>Contract Employee</h3>
+            <h:dataTable value="#{employeeBean.contractEmps}" var="contractEmp">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Id" />
+                    </f:facet>
+                    <h:outputText value="#{contractEmp.id}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Name" />
+                    </f:facet>                    
+                    <h:outputText value="#{contractEmp.name}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Start Date" />
+                    </f:facet>                    
+                    <h:outputText value="#{contractEmp.startDate}">
+                        <f:convertDateTime type="both" pattern="MM/dd/yyyy h:mm a" dateStyle="short" timeStyle="medium" />
+                    </h:outputText>
+                </h:column>                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Term" />
+                    </f:facet>                    
+                    <h:outputText value="#{contractEmp.term}" />
+                </h:column>                                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Daily Rate" />
+                    </f:facet>                    
+                    <h:outputText value="#{contractEmp.dailyRate}" />
+                </h:column>                                                
+            </h:dataTable>            
+        </div>
+        <div>
+            <h3>Full Time Employee</h3>
+            <h:dataTable value="#{employeeBean.fullTimeEmps}" var="fullTimeEmp">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Id" />
+                    </f:facet>                    
+                    <h:outputText value="#{fullTimeEmp.id}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Name" />
+                    </f:facet>                    
+                    <h:outputText value="#{fullTimeEmp.name}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Salary" />
+                    </f:facet>                    
+                    <h:outputText value="#{fullTimeEmp.salary}" />
+                </h:column>                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Manager's name" />
+                    </f:facet>                    
+                    <h:outputText value="#{fullTimeEmp.manager.name}" />
+                </h:column>                                
+            </h:dataTable>            
+        </div>
+        <div>
+            <h3>Part Time Employee</h3>
+            <h:dataTable value="#{employeeBean.partTimeEmps}" var="partTimeEmp">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Id" />
+                    </f:facet>                    
+                    <h:outputText value="#{partTimeEmp.id}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Name" />
+                    </f:facet>                    
+                    <h:outputText value="#{partTimeEmp.name}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Manager's name" />
+                    </f:facet>                    
+                    <h:outputText value="#{partTimeEmp.manager.name}" />
+                </h:column>                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Hourly Rate" />
+                    </f:facet>                    
+                    <h:outputText value="#{partTimeEmp.hourlyRate}" />
+                </h:column>                                
+            </h:dataTable>            
+        </div>        
+    </h:body>
+</html>

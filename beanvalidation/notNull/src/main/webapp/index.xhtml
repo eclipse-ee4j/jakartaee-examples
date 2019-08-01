@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>A BeanValidation @NotNull example</title>
+    </h:head>
+    <h:body>
+        <p>
+            This example demonstrates the use of @NotNull. Enter your text (or
+            not), submit it, get it validated and then echoed back to you (if
+            you do not enter anything you will see an error message).
+        </p>
+        <h:form id="form" enctype="multipart/form-data">
+            <h:inputText id="inputText" value="#{notNullBean.notNull.string}"/>
+            <h:messages/>
+            <h:commandButton id="submitButton" value="Submit" action="#{notNullBean.submit}"/>
+        </h:form>
+        <br/>
+        This was your inputted text: <h:outputText value="#{notNullBean.notNull.string}"/>
+    </h:body>
+</html>

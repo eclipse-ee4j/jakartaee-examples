@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>SessionScoped example</title>
+    </h:head>
+    <h:body>
+        <p>
+            As this example uses a SessionScoped bean you will see the time
+            below change once and then only after a new session has been
+            created.
+        </p>
+        <p>
+            The session timeout has been set to 1 minute, so refresh your page
+            1 minute after your last refresh and you will see the time update.
+        </p>
+        '<h:outputText value="#{sessionScopedBean.time}"/>'
+    </h:body>
+</html>

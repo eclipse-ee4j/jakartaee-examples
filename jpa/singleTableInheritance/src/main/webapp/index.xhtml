@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>@Inheritance (Single Table) example</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p>
+                This example demonstrates the use of @Inheritance. You will save two 
+                shape of types circle and rectangle in database with "single table" strategy.
+            </p>
+            <h:commandButton value="save" action="#{shape.saveAndLoad}"/>
+            <br/>            
+        </h:form>
+        <div>
+            <h3>Circles</h3>
+            <h:dataTable value="#{shape.circles}" var="circle">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="ID" />
+                    </f:facet>
+                    <h:outputText value="#{circle.id}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="NAME" />
+                    </f:facet>                    
+                    <h:outputText value="#{circle.name}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="RADIOUS" />
+                    </f:facet>                    
+                    <h:outputText value="#{circle.radious}" />
+                </h:column>                
+            </h:dataTable>            
+        </div>
+        <div>
+            <h3>Rectangles</h3>
+            <h:dataTable value="#{shape.rectangles}" var="rectangle">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="ID" />
+                    </f:facet>                    
+                    <h:outputText value="#{rectangle.id}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="NAME" />
+                    </f:facet>                    
+                    <h:outputText value="#{rectangle.name}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="WIDTH" />
+                    </f:facet>                    
+                    <h:outputText value="#{rectangle.width}" />
+                </h:column>                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="HEIGHT" />
+                    </f:facet>                    
+                    <h:outputText value="#{rectangle.height}" />
+                </h:column>                                
+            </h:dataTable>            
+        </div>
+    </h:body>
+</html>

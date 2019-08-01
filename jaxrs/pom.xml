@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>jakartaee.examples</groupId>
+        <artifactId>project</artifactId>
+        <version>8-SNAPSHOT</version>
+    </parent>
+    <groupId>jakartaee.examples.jaxrs</groupId>
+    <artifactId>project</artifactId>
+    <packaging>pom</packaging>
+    <name>JAX-RS Examples</name>
+    <modules>
+        <module>consumes</module>
+        <module>defaultValue</module>
+        <module>delete</module>
+        <module>formParam</module>
+        <module>get</module>
+        <module>getClient</module>
+        <module>helloWorld</module>
+        <module>httpMethod</module>
+        <module>pathParam</module>
+        <module>post</module>
+        <module>produces</module>
+        <module>put</module>
+        <module>queryParam</module>
+    </modules>
+    <dependencies>
+        <dependency>
+             <groupId>jakartaee.examples</groupId>
+             <artifactId>utils</artifactId>
+             <version>${project.version}</version>
+             <scope>test</scope>
+        </dependency>    
+    </dependencies>   
+</project>

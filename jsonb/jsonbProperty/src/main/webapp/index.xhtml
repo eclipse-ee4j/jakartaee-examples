@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>A @JsonbProperty example</title>
+    </h:head>
+    <h:body>
+        <p>
+            Enter the submit button to convert an Object to JSON using @JsonProperty.
+        </p>
+        <h:form>
+            <h:commandButton value="Submit" action="#{jsonbPropertyBean.submit}"/>
+        </h:form>
+        <br/>
+        And we converted it to: <h:outputText value="#{jsonbPropertyBean.output}"/>
+    </h:body>
+</html>

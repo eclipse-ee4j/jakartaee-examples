@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE glassfish-ejb-jar PUBLIC
+    "-//GlassFish.org//DTD GlassFish Application Server 3.1 EJB 3.1//EN"
+    "http://glassfish.org/dtds/glassfish-ejb-jar_3_1-1.dtd">
+    
+<glassfish-ejb-jar>
+    <security-role-mapping>
+        <role-name>user</role-name>
+        <principal-name>securedRemoteEjbUser</principal-name>
+    </security-role-mapping>
+    <enterprise-beans>
+        <ejb>
+            <ejb-name>securedRemoteEjb</ejb-name>
+            <ior-security-config>
+                <as-context>
+                    <auth-method>username_password</auth-method>
+                    <realm>file</realm>
+                    <required>true</required>
+                </as-context>
+            </ior-security-config>
+        </ejb>
+    </enterprise-beans>
+</glassfish-ejb-jar>

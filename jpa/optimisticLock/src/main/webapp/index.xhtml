@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Optimistic Lock example (read &amp; write)</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p>
+                <pre>
+		This example demonstrates usage of optimistic lock mode (LockModeType.OPTIMISTIC). 
+		
+		Scenario of the example is as follows: 
+		A Department has some Employees. 
+		Each employee has multiple Uniforms.
+		Manager of each department wants to know how many uniforms have been given to employees so far.                 
+                </pre>
+	            <pre>
+		How to test: 
+		Open index page of the example in two tabs of your browser. 
+		In the first tab click on "Find total uniforms of Dep. X" button. 
+		In the second tab click "Give One uniform to employee #9" button to test Optimistic Lock.
+		Clicking on "Find total uniforms of Dep. X" will take a while (15 seconds) to respond.            	
+	            </pre>                 
+            </p>
+            <div style="margin-left: 120px; margin-bottom: 20px;">
+                <div><h:outputLabel value="Total Department count: #{optimisticLockBean.departmentsCount}" /></div>
+                <div><h:outputLabel value="Total Employee count: #{optimisticLockBean.employeesCount}" /></div>
+                <div><h:outputLabel value="Total Uniform count: #{optimisticLockBean.uniformsCount}" /></div>
+                <div><h:commandButton value="refresh" action="#{optimisticLockBean.refreshCounterFields}" /></div>
+            </div>
+            <div style="margin-left: 10%;">
+                <div>
+                    <h:commandButton value="Find total uniforms of Dep. X" action="#{optimisticLockBean.findCountOfUniforms}"/>
+                    <h:outputLabel value=" result: #{optimisticLockBean.uniformscountOfDeptX}" rendered="#{optimisticLockBean.uniformscountOfDeptX ne 0}" />
+                </div>
+                &nbsp;               
+                <div>
+                    <h:commandButton value="Give One uniform to employee #9" action="#{optimisticLockBean.giveUniform}"/>
+                    <h:outputLabel value=" result: #{optimisticLockBean.employeeNumber9UniformsCount}" rendered="#{optimisticLockBean.employeeNumber9UniformsCount ne 0}" />                
+                </div>                
+            </div>                                              
+        </h:form>     
+    </h:body>
+</html>

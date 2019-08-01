@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>A JsonParser example</title>
+    </h:head>
+    <h:body>
+        <p>
+            Enter the submit button to parse some JSON.
+        </p>
+        <h:form id="form">
+            <h:inputText id="inputText" value="#{jsonParserBean.input}"/>
+            <h:commandButton id="submitButton" value="Submit" action="#{jsonParserBean.submit}"/>
+        </h:form>
+        <br/>
+        And parsed it and we saw the following:
+        <pre>
+            <h:outputText value="#{jsonParserBean.output}"/>
+        </pre>
+    </h:body>
+</html>

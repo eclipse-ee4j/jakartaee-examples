@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>An injected RequestCookieMap example</title>
+    </h:head>
+    <h:body>
+        <p>
+            This example illustrates you can use @RequestCookieMap to get access
+            to the request cookies using a map in your beans. You will see the
+            contents of the map below (it might be empty, but most generally
+            you will see the 'JSESSIONID' as an entry).
+        </p>
+        <p style="max-width: 800px; word-wrap: break-word;">
+        __'<h:outputText value="#{requestCookieMapBean.requestCookieMap}"/>'__
+        </p>
+    </h:body>
+</html>

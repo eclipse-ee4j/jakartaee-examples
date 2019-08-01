@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>@Inheritance (Joined) example</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p>
+                This example demonstrates the use of @Inheritance. You will save information of two 
+                animals of types cat and dog in database with "Joined" strategy.
+            </p>
+            <h:commandButton value="save" action="#{animal.saveAndLoad}"/>
+            <br/>            
+        </h:form>
+        <div>
+            <h3>Cats</h3>
+            <h:dataTable value="#{animal.cats}" var="cat">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="ID" />
+                    </f:facet>
+                    <h:outputText value="#{cat.id}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="AGE" />
+                    </f:facet>                    
+                    <h:outputText value="#{cat.age}" />
+                </h:column>
+            </h:dataTable>            
+        </div>
+        <div>
+            <h3>Dogs</h3>
+            <h:dataTable value="#{animal.dogs}" var="dog">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="ID" />
+                    </f:facet>                    
+                    <h:outputText value="#{dog.id}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="WEIGHT" />
+                    </f:facet>                    
+                    <h:outputText value="#{dog.weight}" />
+                </h:column>                                
+            </h:dataTable>            
+        </div>
+    </h:body>
+</html>

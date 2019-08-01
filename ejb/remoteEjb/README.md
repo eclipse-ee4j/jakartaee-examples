@@ -1,0 +1,1 @@
+# A remote EJB example

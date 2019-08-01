@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>An injected SessionMap example</title>
+    </h:head>
+    <h:body>
+        <p>
+            This example illustrates you can use @SessionMap to get access
+            to the view map in your beans. You will see the view
+            map below with all its keys and values.
+        </p>
+        <p style="max-width: 800px; word-wrap: break-word;">
+        __'<h:outputText value="#{sessionMapBean.sessionMap}"/>'__
+        </p>
+    </h:body>
+</html>

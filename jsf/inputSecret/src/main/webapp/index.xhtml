@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>InputSecret example</title>
+    </h:head>
+    <h:body>
+        <p>
+            This example demonstrates the use of h:inputSecret. Enter your text,
+            which should not be visible until you submit it and get it echoed
+            back to you.
+        </p>
+        <h:form id="form">
+            <h:inputSecret id="input" value="#{inputSecretBean.secret}"/>
+            <h:commandButton id="submit" value="Submit" action="#{inputSecretBean.submit}"/>
+        </h:form>
+        <br/>
+        This was your secret text: "<h:outputText value="#{inputSecretBean.secret}"/>"
+    </h:body>
+</html>

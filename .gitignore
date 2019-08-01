@@ -1,0 +1,11 @@
+.classpath
+.project
+.settings
+.vscode
+nb-configuration.xml
+nbactions.xml
+target
+.factorypath
+.tern-project
+/.apt_generated/
+/.apt_generated_tests/

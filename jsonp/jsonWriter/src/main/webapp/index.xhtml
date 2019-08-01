@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>A JsonWriter example</title>
+    </h:head>
+    <h:body>
+        <p>
+            Enter the submit button to write some JSON.
+        </p>
+        <h:form>
+            <h:commandButton value="Submit" action="#{jsonWriterBean.submit}"/>
+        </h:form>
+        <br/>
+        And we wrote it, and it was something like: <h:outputText value="#{jsonWriterBean.output}"/>
+    </h:body>
+</html>

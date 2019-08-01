@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>jakartaee.examples</groupId>
+        <artifactId>project</artifactId>
+        <version>8-SNAPSHOT</version>
+    </parent>
+    <groupId>jakartaee.examples.jpa</groupId>
+    <artifactId>project</artifactId>
+    <packaging>pom</packaging>
+    <name>JPA Examples</name>
+    <modules>
+        <module>column</module>
+        <module>converter</module>
+        <module>createQuery</module>
+        <module>entity</module>
+        <module>id</module>
+        <module>oneToMany</module>
+        <module>oneToOne</module>
+        <module>persistenceContext</module>
+        <module>persistenceUnit</module>
+        <module>resultStream</module>
+        <module>table</module>
+        <module>singleTableInheritance</module>
+        <module>joinedInheritance</module>
+        <module>tablePerConcreteClassInheritance</module>
+    <module>optimisticLock</module>
+    </modules>
+</project>

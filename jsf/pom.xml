@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>jakartaee.examples</groupId>
+        <artifactId>project</artifactId>
+        <version>8-SNAPSHOT</version>
+    </parent>
+    <groupId>jakartaee.examples.jsf</groupId>
+    <artifactId>project</artifactId>
+    <packaging>pom</packaging>
+    <name>JSF Examples</name>
+    <modules>
+        <module>actionListener</module>
+        <module>ajax</module>
+        <module>applicationMap</module>
+        <module>applicationScoped</module>
+        <module>commandScript</module>
+        <module>csrf</module>
+        <module>externalContext</module>
+        <module>facesContext</module>
+        <module>form</module>
+        <module>initParameterMap</module>
+        <module>inputFile</module>
+        <module>inputSecret</module>
+        <module>inputText</module>
+        <module>link</module>
+        <module>managedConverter</module>
+        <module>managedProperty</module>
+        <module>managedValidator</module>
+        <module>outputLabel</module>
+        <module>outputStylesheet</module>
+        <module>outputText</module>
+        <module>param</module>
+        <module>requestCookieMap</module>
+        <module>requestScoped</module>
+        <module>sessionMap</module>
+        <module>sessionScoped</module>
+        <module>viewMap</module>
+        <module>viewScoped</module>
+    </modules>
+    <dependencies>
+        <dependency>
+             <groupId>jakartaee.examples</groupId>
+             <artifactId>utils</artifactId>
+             <version>${project.version}</version>
+             <scope>test</scope>
+        </dependency>    
+    </dependencies>   
+</project>
