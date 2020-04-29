@@ -19,6 +19,7 @@
         <module>pushBuilder</module>
         <module>servletContextListener</module>
         <module>servletRequestListener</module>
+        <module>theLearningServlet</module>
         <module>webServlet</module>
     </modules>
     <dependencies>

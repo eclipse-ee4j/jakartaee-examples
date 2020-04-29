@@ -1,0 +1,86 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- pom.xml April 17, 2020 version 1.2 minimal without parent-->
+    <!-- pom.xml April 27, 2020 version 2.0 will use the JakartaEE Examples parent pom-->
+
+    <!-- This is the Project Object Model known as the pom.xml file. It provides 
+         all the configuration for a single project. In my courses I usually 
+         distribute a parent pom file with the basic configuration that my 
+         students include in their local pom files where they add 
+         additional components based on their work. Later examples in this series
+         will use this technique. The pom file is complete
+    -->
+
+    <!-- Maven version of the xml document currently only 4.0.0 is valid -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- The GAV, groupId, artifactId, and version consists of an arbitrary 
+         descriptor that is usually in the form of a reverse domain name. 
+    -->
+    <groupId>jakartaee.examples.servlet</groupId>
+
+    <!-- This is the name given to the packaged build -->
+    <artifactId>theLearningServlet</artifactId>
+
+    <!-- The version of the build. Any value is valid though a number and a
+         string are common. SNAPSHOT means a project under development. FINAL 
+         is commonly used to refer to stable production version 
+    -->
+    <version>8-SNAPSHOT</version>
+
+    <!-- Default value is jar but may be war or ear -->
+    <packaging>war</packaging>
+
+    <!-- The name given to the project. Unlike groupId and artifactId a name
+         may have spaces 
+    -->
+    <name>A Servlet API @TheLearningServlet</name>
+
+    <!-- A description of the program -->
+    <description>An example servlet for the Jakarta EE Examples project</description>
+
+    <!-- Identifies the programmer or programmers who worked on the project -->
+    <developers>
+        <developer>
+            <id>Enter your school or company id</id>
+            <name>Enter your name</name>
+            <email>Enter your email address</email>
+        </developer>
+    </developers>
+
+    <!-- The company or organization that the programmer(s) work for -->
+    <organization>
+        <name>Enter school or company name</name>
+    </organization>
+
+    <!-- Global settings/variables for the project used in the pom or by plugins.
+         Settings can be accessed in the pom by placing the tag name in ${...}  
+    -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    
+    <!-- The sample projects share the same dependencies and build info -->
+    <parent>
+        <artifactId>project</artifactId>
+        <groupId>jakartaee.examples.servlet</groupId>
+        <version>8-SNAPSHOT</version>
+    </parent>
+    
+
+    <!-- Dependencies are libraries that either must be included in the war file
+         or are expected to be found on the application server or container when
+         the <scope> is provided
+    -->
+    <dependencies>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-web-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+</project>
+
+
+
+
