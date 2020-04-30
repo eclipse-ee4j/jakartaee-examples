@@ -12,7 +12,6 @@
  */
 package jakartaee.examples.servlet.thelearningservlet;
 
-import com.gargoylesoftware.htmlunit.TextPage;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import jakartaee.examples.utils.JakartaEEServer;
@@ -31,9 +30,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 /**
- * The JUnit tests for the Servlet API @WebServlet example.
+ * The JUnit tests for the Servlet API @TheLearningServlet example.
  *
- * @author Manfred Riem (mriem@manorrock.com)
+ * @author Ken Fogel (omniprof@gmail.com)
  */
 @RunWith(ArquillianChameleon.class)
 @JakartaEEServer
@@ -80,17 +79,30 @@ public class TheLearningServletTest {
     }
 
     /**
-     * Test the @WebServlet.
+     * Test the @TheLearningServlet GET call.
      *
      * @throws Exception when a serious error occurs.
      */
     @RunAsClient
     @Test
-    public void testWebServlet() throws Exception {
+    public void testGetPage() throws Exception {
         HtmlPage page = webClient.getPage(baseUrl);
         // The id belongs to the submit button
         page = page.getElementById("form:getsubmit").click();
-        assertTrue(page.asXml().contains("The Learning Servlet"));
+        assertTrue(page.asXml().contains("GET"));
+    }
 
+    /**
+     * Test the @TheLearningServlet POST call.
+     *
+     * @throws Exception when a serious error occurs.
+     */
+    @RunAsClient
+    @Test
+    public void testPostPage() throws Exception {
+        HtmlPage page = webClient.getPage(baseUrl);
+        // The id belongs to the submit button
+        page = page.getElementById("form:postsubmit").click();
+        assertTrue(page.asXml().contains("POST"));
     }
 }

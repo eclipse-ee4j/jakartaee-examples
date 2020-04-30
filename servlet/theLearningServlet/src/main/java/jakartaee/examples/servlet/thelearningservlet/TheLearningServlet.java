@@ -261,7 +261,7 @@ public class TheLearningServlet extends HttpServlet {
                 + "href='styles/main.css' "
                 + "type='text/css'/><title>The Learning Servlet</title></head>"
                 + "<body><h1>" + methodName + " method</h1>"
-                + "<form action = 'index.html'>"
+                + "<form id='form:index' action = 'index.html'>"
                 + "<br/><input type= 'submit' value='Return to Home page' /></form>"
                 + "</body></html>";
         return htmlStr;
