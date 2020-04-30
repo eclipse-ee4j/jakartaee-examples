@@ -33,7 +33,7 @@
     <!-- The name given to the project. Unlike groupId and artifactId a name
          may have spaces 
     -->
-    <name>A Servlet API @TheLearningServlet</name>
+    <name>A Servlet API The Learning Servlet</name>
 
     <!-- A description of the program -->
     <description>An example servlet for the Jakarta EE Examples project</description>
