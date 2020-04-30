@@ -1,0 +1,15 @@
+<web-app version="4.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">    <!-- Name displayed in Server Console -->
+    <!-- TheLearningServlet Web Application
+         Prepared by Ken Fogel omniprof@gmail.com
+         Twitter: @omniprof
+    -->
+    <display-name>TheLearningServlet</display-name>
+    <!-- If no name is specified in the URL look for this file. 
+         This file can be eliminated because index.html is the
+         default page to load. However, there are other reasons 
+         for the web.xml file so I recommend against not having one.
+    -->
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+</web-app>
