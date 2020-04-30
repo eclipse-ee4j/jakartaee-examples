@@ -15,7 +15,7 @@ package jakartaee.examples.servlet.thelearningservlet;
 /**
  * TheLearningServlet Web Application
  *
- * Prepared by Ken Fogel
+ * Prepared by Ken Fogel omniprof@gmail.com
  *
  * Twitter: @omniprof - Blog: www.omnijava.com
  *
