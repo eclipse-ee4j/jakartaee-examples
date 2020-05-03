@@ -49,10 +49,8 @@ public class ExplainingHttpServlet extends HttpServlet {
     private static final Logger LOG = Logger.getLogger(ExplainingHttpServlet.class.getName());
 
     /**
-     * Constructor
-     *
-     * Can only be used to initialize class variables or perform tasks before
-     * the servlet comes into existence. Class variables are not thread safe so
+     * Can only be used to initialize instance variables or perform tasks before
+     * the servlet comes into existence. Instance variables are not thread safe so
      * should rarely be used and then only accessed in a synchronized block.
      * Cannot communicate with the servlet container therefore init is preferred
      * for initialization tasks. Generally not implemented.
@@ -231,7 +229,7 @@ public class ExplainingHttpServlet extends HttpServlet {
      *
      * curl -X DELETE http://localhost:8080/explainingHttpServlet/learning
      *
-     * @param request
+     * @param request 
      * @param response
      * @throws javax.servlet.ServletException
      * @throws java.io.IOException
@@ -254,7 +252,7 @@ public class ExplainingHttpServlet extends HttpServlet {
      * places I make it a method and call it when it is needed.
      *
      * @param methodName
-     * @return
+     * @return The string containing the HTML to display
      */
     private String createHTMLString(String methodName) {
         String htmlStr = "<html><head><link rel='stylesheet' "
