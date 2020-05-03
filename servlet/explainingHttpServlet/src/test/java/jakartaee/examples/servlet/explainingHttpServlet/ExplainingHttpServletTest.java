@@ -10,8 +10,9 @@
  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
-package jakartaee.examples.servlet.thelearningservlet;
+package jakartaee.examples.servlet.explainingHttpServlet;
 
+import jakartaee.examples.servlet.explainingHttpServlet.ExplainingHttpServlet;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import jakartaee.examples.utils.JakartaEEServer;
@@ -30,13 +31,13 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 /**
- * The JUnit tests for the Servlet API @TheLearningServlet example.
+ * The JUnit tests for the Servlet API @ExplainingHttpServlet example.
  *
  * @author Ken Fogel (omniprof@gmail.com)
  */
 @RunWith(ArquillianChameleon.class)
 @JakartaEEServer
-public class TheLearningServletTest {
+public class ExplainingHttpServletTest {
 
     /**
      * Stores the base URL.
@@ -64,7 +65,7 @@ public class TheLearningServletTest {
      */
     @Deployment
     public static WebArchive createDeployment() {
-        return create(WebArchive.class).addClass(TheLearningServlet.class).
+        return create(WebArchive.class).addClass(ExplainingHttpServlet.class).
                 addAsWebResource(new File("src/main/webapp/index.html")).
                 addAsWebResource(new File("src/main/webapp/styles/main.css"), "styles/main.css").
                 addAsWebInfResource(new File("src/main/webapp/WEB-INF/web.xml"));
@@ -79,7 +80,7 @@ public class TheLearningServletTest {
     }
 
     /**
-     * Test the @TheLearningServlet GET call.
+     * Test the @ExplainingHttpServlet GET call.
      *
      * @throws Exception when a serious error occurs.
      */
@@ -93,7 +94,7 @@ public class TheLearningServletTest {
     }
 
     /**
-     * Test the @TheLearningServlet POST call.
+     * Test the @ExplainingHttpServlet POST call.
      *
      * @throws Exception when a serious error occurs.
      */

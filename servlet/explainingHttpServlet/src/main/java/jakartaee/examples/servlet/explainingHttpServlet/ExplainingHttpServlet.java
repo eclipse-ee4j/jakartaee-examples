@@ -10,14 +10,14 @@
  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
-package jakartaee.examples.servlet.thelearningservlet;
+package jakartaee.examples.servlet.explainingHttpServlet;
 
 /**
- * TheLearningServlet Web Application
+ * ExplainingHttpServlet Web Application
  *
- * Prepared by Ken Fogel omniprof@gmail.com
+ * @author Ken Fogel (omniprof@gmail.com)
  *
- * Twitter: @omniprof - Blog: www.omnijava.com
+ * Twitter: omniprof - Blog: www.omnijava.com
  *
  */
 import java.io.IOException;
@@ -30,23 +30,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class TheLearningServlet
+ * Servlet implementation class ExplainingHttpServlet
  *
- * The @WebServlet annotation defines this class as a servlet. The description
+ * The WebServlet annotation defines this class as a servlet. The description
  * attribute is informative and this will only appear in the app server's
  * console. The default name of the servlet is the name of the class but with
  * the first letter made lowercase. In this class it would be
- * 'theLearningServlet'. You can change this, as I have, in the attribute
+ * 'explainingHttpServlet'. You can change this, as I have, in the attribute
  * urlPatterns. You can have more than one name for a servlet. This is used when
  * the name used to access the servlet can act as a selector to determine what
  * is expected of the servlet as it can discover what name was used to call it.
  *
  */
 @WebServlet(urlPatterns = "/learning")
-public class TheLearningServlet extends HttpServlet {
+public class ExplainingHttpServlet extends HttpServlet {
 
     // All methods log their name just to show the order of calling
-    private static final Logger LOG = Logger.getLogger(TheLearningServlet.class.getName());
+    private static final Logger LOG = Logger.getLogger(ExplainingHttpServlet.class.getName());
 
     /**
      * Constructor
@@ -57,7 +57,7 @@ public class TheLearningServlet extends HttpServlet {
      * Cannot communicate with the servlet container therefore init is preferred
      * for initialization tasks. Generally not implemented.
      */
-    public TheLearningServlet() {
+    public ExplainingHttpServlet() {
         LOG.info(">>> Constructor <<<");
     }
 
@@ -131,7 +131,6 @@ public class TheLearningServlet extends HttpServlet {
      * There are three other methods in this family, doHead, doOptions, and
      * doTrace, that you rarely override.
      */
-    
     /**
      * Called by the server (via the service method) to allow a servlet to
      * handle a GET request. In a RESTful web service it is CRUD -> R
@@ -202,7 +201,7 @@ public class TheLearningServlet extends HttpServlet {
      *
      * Cannot be called from an HTML form. Use curl to access it:
      *
-     * curl -X PUT http://localhost:8080/TheLearningServlet/learning
+     * curl -X PUT http://localhost:8080/explainingHttpServlet/learning
      *
      * @param request
      * @param response
@@ -230,7 +229,7 @@ public class TheLearningServlet extends HttpServlet {
      *
      * Cannot be called from an HTML form. Use curl to access it:
      *
-     * curl -X DELETE http://localhost:8080/theLearningServlet/learning
+     * curl -X DELETE http://localhost:8080/explainingHttpServlet/learning
      *
      * @param request
      * @param response
@@ -254,7 +253,7 @@ public class TheLearningServlet extends HttpServlet {
      * and doPut but whenever I see code that is fundamentally identical in two
      * places I make it a method and call it when it is needed.
      *
-     * @param methodName 
+     * @param methodName
      * @return
      */
     private String createHTMLString(String methodName) {

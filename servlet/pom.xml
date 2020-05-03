@@ -15,11 +15,11 @@
     <name>Servlet Examples</name>
     <modules>
         <module>asyncServlet</module>
+        <module>explainingHttpServlet</module>
         <module>httpServletMapping</module>
         <module>pushBuilder</module>
         <module>servletContextListener</module>
         <module>servletRequestListener</module>
-        <module>theLearningServlet</module>
         <module>webServlet</module>
     </modules>
     <dependencies>
