@@ -94,7 +94,7 @@ public class ExplainingHttpServlet extends HttpServlet {
      * copyright that you can add. Usually called by the app server similar to
      * how the attribute 'description' is used in @WebServlet.
      *
-     * @return
+     * @return Custom string of information about the servlet
      */
     @Override
     public String getServletInfo() {
@@ -112,8 +112,8 @@ public class ExplainingHttpServlet extends HttpServlet {
      * need to. Though rarely overriden this method should end with a call to
      * the super service method unless you plan to do it all yourself.
      *
-     * @param request
-     * @param response
+     * @param request The HttpServletRequest object created by the server
+     * @param response The HttpServletResponse object created by the server
      * @throws javax.servlet.ServletException
      * @throws java.io.IOException
      */
@@ -131,7 +131,7 @@ public class ExplainingHttpServlet extends HttpServlet {
      */
     /**
      * Called by the server (via the service method) to allow a servlet to
-     * handle a GET request. In a RESTful web service it is CRUD -> R
+     * handle a GET request. In a RESTful web service it is CRUD R
      *
      * Retrieves a resource from the server. Must be idempotent and safe. For
      * example, most form queries have no side effects. If a client request is
@@ -140,8 +140,8 @@ public class ExplainingHttpServlet extends HttpServlet {
      * bookmarks include the query string Maximum length between 2K and 8K
      * depending on server and browser though 4K is the average.
      *
-     * @param request
-     * @param response
+     * @param request The HttpServletRequest object created by the server
+     * @param response The HttpServletResponse object created by the server
      * @throws javax.servlet.ServletException
      * @throws java.io.IOException
      */
@@ -168,15 +168,15 @@ public class ExplainingHttpServlet extends HttpServlet {
 
     /**
      * Called by the server (via the service method) to allow a servlet to
-     * handle a POST request. In a RESTful web service it is CRUD -> C
+     * handle a POST request. In a RESTful web service it is CRUD C
      *
      * Adds a resource to a server. Is not safe or idempotent. Operations
      * requested through POST can have side effects. The query string containing
      * data is in a different part of the http request so bookmarks do not
      * include the query string. No limit on the length.
      *
-     * @param request
-     * @param response
+     * @param request The HttpServletRequest object created by the server
+     * @param response The HttpServletResponse object created by the server
      * @throws javax.servlet.ServletException
      * @throws java.io.IOException
      */
@@ -192,7 +192,7 @@ public class ExplainingHttpServlet extends HttpServlet {
 
     /**
      * Called by the server (via the service method) to allow a servlet to
-     * handle a PUT request. In a RESTful web service it is CRUD -> U
+     * handle a PUT request. In a RESTful web service it is CRUD U
      *
      * Updates an existing resource on the server. It is idempotent but not
      * safe. Used primarily in RESTful web services.
@@ -201,8 +201,8 @@ public class ExplainingHttpServlet extends HttpServlet {
      *
      * curl -X PUT http://localhost:8080/explainingHttpServlet/learning
      *
-     * @param request
-     * @param response
+     * @param request The HttpServletRequest object created by the server
+     * @param response The HttpServletResponse object created by the server
      * @throws javax.servlet.ServletException
      * @throws java.io.IOException
      */
@@ -220,7 +220,7 @@ public class ExplainingHttpServlet extends HttpServlet {
 
     /**
      * Called by the server (via the service method) to allow a servlet to
-     * handle a DELETE request. In a RESTful web service CRUD -> D
+     * handle a DELETE request. In a RESTful web service CRUD D
      *
      * Deletes a resource on the server. It is idempotent but not safe. Used
      * primarily in RESTful web services.
@@ -229,8 +229,8 @@ public class ExplainingHttpServlet extends HttpServlet {
      *
      * curl -X DELETE http://localhost:8080/explainingHttpServlet/learning
      *
-     * @param request 
-     * @param response
+     * @param request The HttpServletRequest object created by the server
+     * @param response The HttpServletResponse object created by the server
      * @throws javax.servlet.ServletException
      * @throws java.io.IOException
      */
