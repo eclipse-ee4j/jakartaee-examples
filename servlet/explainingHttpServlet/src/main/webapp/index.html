@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='stylesheet' type='text/css' href='styles/main.css'>
+        <title>The Learning Servlet</title>
+    </head>
+    <body>
+        <h1>Call a servlet with GET, POST, PUT, and DELETE</h1>
+        <form action = 'learning' method = 'get'>
+            <label>GET method</label>
+            <br/>
+            <input id='form:getsubmit' type='submit' value='doGet' />
+        </form>
+        <br/>
+        <form action = 'learning' method = 'post'>
+            <label>POST method</label>
+            <br />
+            <input id='form:postsubmit' type= 'submit' value='doPost' />
+        </form>
+        <br/>
+        <br/>
+        <span>The next two, PUT and DELETE, cannot appear in an HTML form tag 'method ='.</span>
+        <br/>
+        <span>You can reach them using cURL. Download it from <a href= 'https://curl.haxx.se/'>curl.haxx.se</a>.</span>
+        <br/>
+        <br/>
+        <label>PUT method</label>
+        <br/>
+        <code>curl -X PUT http://localhost:8080/explainingHttpServlet/learning</code>
+        <br/>
+        <br/>
+        <label>DELETE method</label>
+        <br/>
+        <code>curl -X DELETE http://localhost:8080/explainingHttpServlet/learning</code>
+    </body>
+</html>

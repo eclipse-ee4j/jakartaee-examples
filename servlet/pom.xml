@@ -15,6 +15,7 @@
     <name>Servlet Examples</name>
     <modules>
         <module>asyncServlet</module>
+        <module>explainingHttpServlet</module>
         <module>httpServletMapping</module>
         <module>pushBuilder</module>
         <module>servletContextListener</module>
