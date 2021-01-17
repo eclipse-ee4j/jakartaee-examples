@@ -14,10 +14,10 @@ package jakartaee.examples.websocket.onopen;
 
 import java.io.IOException;
 import java.util.Date;
-import javax.websocket.OnMessage;
-import javax.websocket.OnOpen;
-import javax.websocket.Session;
-import javax.websocket.server.ServerEndpoint;
+import jakarta.websocket.OnMessage;
+import jakarta.websocket.OnOpen;
+import jakarta.websocket.Session;
+import jakarta.websocket.server.ServerEndpoint;
 
 /**
  * A ServerEndpoint for the @OnOpen example.

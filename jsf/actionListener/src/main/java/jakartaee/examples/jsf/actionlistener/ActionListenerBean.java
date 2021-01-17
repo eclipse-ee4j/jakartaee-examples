@@ -12,8 +12,8 @@
  */
 package jakartaee.examples.jsf.actionlistener;
 
-import javax.inject.Named;
-import javax.enterprise.context.RequestScoped;
+import jakarta.inject.Named;
+import jakarta.enterprise.context.RequestScoped;
 
 /**
  * The bean for the f:actionListener example.

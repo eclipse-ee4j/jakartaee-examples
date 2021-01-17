@@ -15,9 +15,9 @@ package jakartaee.examples.jpa.singleTableInheritance;
 
 import java.io.Serializable;
 import java.util.List;
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
-import javax.inject.Named;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 
 /**
  * The bean used to demonstrate usage of @Inheritance

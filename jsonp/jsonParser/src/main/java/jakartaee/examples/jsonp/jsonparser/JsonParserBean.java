@@ -15,12 +15,12 @@ package jakartaee.examples.jsonp.jsonparser;
 import java.io.StringReader;
 import java.io.StringWriter;
 import static java.util.stream.IntStream.builder;
-import javax.inject.Named;
-import javax.enterprise.context.RequestScoped;
-import javax.json.Json;
-import javax.json.JsonWriter;
-import javax.json.stream.JsonParser;
-import javax.json.stream.JsonParser.Event;
+import jakarta.inject.Named;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.json.Json;
+import jakarta.json.JsonWriter;
+import jakarta.json.stream.JsonParser;
+import jakarta.json.stream.JsonParser.Event;
 
 /**
  * A request scoped bean for the JsonParser example.

@@ -13,11 +13,11 @@
 package jakartaee.examples.jsf.externalcontext;
 
 import java.io.Serializable;
-import javax.enterprise.context.RequestScoped;
-import javax.faces.annotation.FacesConfig;
-import javax.faces.context.ExternalContext;
-import javax.inject.Inject;
-import javax.inject.Named;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.faces.annotation.FacesConfig;
+import jakarta.faces.context.ExternalContext;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 
 /**
  * A request scoped bean injecting the ExternalContext.

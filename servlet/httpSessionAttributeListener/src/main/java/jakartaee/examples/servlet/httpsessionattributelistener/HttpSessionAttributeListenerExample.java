@@ -12,11 +12,11 @@
  */
 package jakartaee.examples.servlet.httpsessionattributelistener;
 
-import javax.inject.Inject;
-import javax.servlet.ServletContext;
-import javax.servlet.annotation.WebListener;
-import javax.servlet.http.HttpSessionAttributeListener;
-import javax.servlet.http.HttpSessionBindingEvent;
+import jakarta.inject.Inject;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.annotation.WebListener;
+import jakarta.servlet.http.HttpSessionAttributeListener;
+import jakarta.servlet.http.HttpSessionBindingEvent;
 
 /**
  * An example HttpSessionAttributeListener.

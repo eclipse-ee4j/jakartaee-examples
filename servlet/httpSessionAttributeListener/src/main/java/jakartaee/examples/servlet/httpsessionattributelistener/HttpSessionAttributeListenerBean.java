@@ -12,10 +12,10 @@
  */
 package jakartaee.examples.servlet.httpsessionattributelistener;
 
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
-import javax.inject.Named;
-import javax.servlet.http.HttpSession;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
+import jakarta.servlet.http.HttpSession;
 
 /**
  * The request scoped bean for the HttpSessionAttributeListener example.

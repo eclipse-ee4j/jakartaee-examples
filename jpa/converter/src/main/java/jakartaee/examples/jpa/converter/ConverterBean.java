@@ -13,9 +13,9 @@
 package jakartaee.examples.jpa.converter;
 
 import java.io.Serializable;
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
-import javax.inject.Named;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 
 /**
  * The bean used to demonstrate usage of @Converter.

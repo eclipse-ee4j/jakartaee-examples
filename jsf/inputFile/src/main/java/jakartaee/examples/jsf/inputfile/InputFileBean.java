@@ -12,9 +12,9 @@
  */
 package jakartaee.examples.jsf.inputfile;
 
-import javax.inject.Named;
-import javax.enterprise.context.RequestScoped;
-import javax.servlet.http.Part;
+import jakarta.inject.Named;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.servlet.http.Part;
 
 /**
  * A request scoped bean for the h:inputFile example.

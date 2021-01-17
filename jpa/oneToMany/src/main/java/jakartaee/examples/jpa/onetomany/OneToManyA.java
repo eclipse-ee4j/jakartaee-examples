@@ -14,11 +14,11 @@ package jakartaee.examples.jpa.onetomany;
 
 import java.io.Serializable;
 import java.util.Set;
-import static javax.persistence.CascadeType.ALL;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import static jakarta.persistence.CascadeType.ALL;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
 /**
  * The JPA OneToManyA class for the OneToMany annotation example.

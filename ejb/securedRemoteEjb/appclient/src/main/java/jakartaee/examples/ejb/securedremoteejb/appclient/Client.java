@@ -1,7 +1,7 @@
 package jakartaee.examples.ejb.securedremoteejb.appclient;
 
 import jakartaee.examples.ejb.securedremoteejb.SecuredRemoteEjb;
-import javax.ejb.EJB;
+import jakarta.ejb.EJB;
 
 /**
  * A secured remote EJB application client.

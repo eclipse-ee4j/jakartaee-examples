@@ -12,9 +12,9 @@
  */
 package jakartaee.examples.jsonb.jsonbtransient;
 
-import javax.inject.Named;
-import javax.enterprise.context.RequestScoped;
-import javax.json.bind.JsonbBuilder;
+import jakarta.inject.Named;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.json.bind.JsonbBuilder;
 
 /**
  * The request scoped bean for the @JsonbTransient example.

@@ -13,8 +13,8 @@
 package jakartaee.examples.jsf.requestscoped;
 
 import java.util.Date;
-import javax.inject.Named;
-import javax.enterprise.context.RequestScoped;
+import jakarta.inject.Named;
+import jakarta.enterprise.context.RequestScoped;
 
 /**
  * A request scoped bean.

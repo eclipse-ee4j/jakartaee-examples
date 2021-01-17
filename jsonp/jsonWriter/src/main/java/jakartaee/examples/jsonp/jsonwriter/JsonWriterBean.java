@@ -13,11 +13,11 @@
 package jakartaee.examples.jsonp.jsonwriter;
 
 import java.io.StringWriter;
-import javax.inject.Named;
-import javax.enterprise.context.RequestScoped;
-import javax.json.Json;
-import javax.json.JsonArray;
-import javax.json.JsonWriter;
+import jakarta.inject.Named;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.json.Json;
+import jakarta.json.JsonArray;
+import jakarta.json.JsonWriter;
 
 /**
  * A request scoped bean for the JsonWriter example.

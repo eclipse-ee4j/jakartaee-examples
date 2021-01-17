@@ -14,9 +14,9 @@ package jakartaee.examples.jsf.viewscoped;
 
 import java.io.Serializable;
 import java.util.Date;
-import javax.annotation.PostConstruct;
-import javax.faces.view.ViewScoped;
-import javax.inject.Named;
+import jakarta.annotation.PostConstruct;
+import jakarta.faces.view.ViewScoped;
+import jakarta.inject.Named;
 
 /**
  * A view scoped bean.

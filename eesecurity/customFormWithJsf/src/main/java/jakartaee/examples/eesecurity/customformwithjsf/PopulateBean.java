@@ -15,11 +15,11 @@ package jakartaee.examples.eesecurity.customformwithjsf;
 import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Map;
-import javax.ejb.Stateless;
-import javax.inject.Inject;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.security.enterprise.identitystore.Pbkdf2PasswordHash;
+import jakarta.ejb.Stateless;
+import jakarta.inject.Inject;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.security.enterprise.identitystore.Pbkdf2PasswordHash;
 
 /**
  * The bean to populate the database with a user.

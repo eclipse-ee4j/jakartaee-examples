@@ -12,9 +12,9 @@
  */
 package jakartaee.examples.jsf.managedvalidator;
 
-import javax.inject.Named;
-import javax.enterprise.context.RequestScoped;
-import javax.faces.annotation.FacesConfig;
+import jakarta.inject.Named;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.faces.annotation.FacesConfig;
 
 /**
  * The bean for the CDI managed validator example.

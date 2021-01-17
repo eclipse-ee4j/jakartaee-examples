@@ -15,10 +15,10 @@ package jakartaee.examples.jsonb.jsonbdateformat;
 import java.util.Calendar;
 import java.util.Locale;
 import java.util.TimeZone;
-import javax.inject.Named;
-import javax.enterprise.context.RequestScoped;
-import javax.json.bind.JsonbBuilder;
-import javax.json.bind.JsonbConfig;
+import jakarta.inject.Named;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.json.bind.JsonbBuilder;
+import jakarta.json.bind.JsonbConfig;
 
 /**
  * The request scoped bean for the JSON-B @JsonbDateFormat example.

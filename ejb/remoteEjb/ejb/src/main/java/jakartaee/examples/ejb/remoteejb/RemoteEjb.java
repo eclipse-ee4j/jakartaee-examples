@@ -12,7 +12,7 @@
  */
 package jakartaee.examples.ejb.remoteejb;
 
-import javax.ejb.Remote;
+import jakarta.ejb.Remote;
 
 /**
  * The remote EJB interface.

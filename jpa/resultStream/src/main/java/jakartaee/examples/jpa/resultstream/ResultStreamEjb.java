@@ -14,9 +14,9 @@ package jakartaee.examples.jpa.resultstream;
 
 import java.util.List;
 import java.util.stream.Stream;
-import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import jakarta.ejb.Stateless;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 
 /**
  * The EJB for the createQuery example.

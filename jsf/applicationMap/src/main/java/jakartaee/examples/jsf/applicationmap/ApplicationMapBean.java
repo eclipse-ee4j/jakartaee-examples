@@ -14,11 +14,11 @@ package jakartaee.examples.jsf.applicationmap;
 
 import java.io.Serializable;
 import java.util.Map;
-import javax.enterprise.context.RequestScoped;
-import javax.faces.annotation.ApplicationMap;
-import javax.faces.annotation.FacesConfig;
-import javax.inject.Inject;
-import javax.inject.Named;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.faces.annotation.ApplicationMap;
+import jakarta.faces.annotation.FacesConfig;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 
 /**
  * A request scoped bean for the injected ApplicationMap example.
