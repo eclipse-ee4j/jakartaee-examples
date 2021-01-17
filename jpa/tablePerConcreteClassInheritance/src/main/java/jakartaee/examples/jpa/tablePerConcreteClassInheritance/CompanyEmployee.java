@@ -13,8 +13,8 @@
 
 package jakartaee.examples.jpa.tablePerConcreteClassInheritance;
 
-import javax.persistence.ManyToOne;
-import javax.persistence.MappedSuperclass;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.MappedSuperclass;
 
 /**
  *

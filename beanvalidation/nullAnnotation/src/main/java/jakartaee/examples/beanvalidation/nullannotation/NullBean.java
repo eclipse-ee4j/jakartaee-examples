@@ -12,8 +12,8 @@
  */
 package jakartaee.examples.beanvalidation.nullannotation;
 
-import javax.inject.Named;
-import javax.enterprise.context.RequestScoped;
+import jakarta.inject.Named;
+import jakarta.enterprise.context.RequestScoped;
 
 /**
  * A request scoped bean for the BenValidation @Null example.

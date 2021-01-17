@@ -12,7 +12,7 @@
  */
 package jakartaee.examples.jsonb.jsonbproperty;
 
-import javax.json.bind.annotation.JsonbProperty;
+import jakarta.json.bind.annotation.JsonbProperty;
 
 /**
  * A @JsonbProperty example.

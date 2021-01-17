@@ -14,9 +14,9 @@ package jakartaee.examples.jpa.onetomany;
 
 import java.util.HashSet;
 import java.util.List;
-import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import jakarta.ejb.Stateless;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 
 /**
  * The EJB for the OneToMany annotation example..

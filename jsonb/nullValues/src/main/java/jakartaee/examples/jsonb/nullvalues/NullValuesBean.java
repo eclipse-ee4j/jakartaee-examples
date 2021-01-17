@@ -12,10 +12,10 @@
  */
 package jakartaee.examples.jsonb.nullvalues;
 
-import javax.inject.Named;
-import javax.enterprise.context.RequestScoped;
-import javax.json.bind.JsonbBuilder;
-import javax.json.bind.JsonbConfig;
+import jakarta.inject.Named;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.json.bind.JsonbBuilder;
+import jakarta.json.bind.JsonbConfig;
 
 /**
  * A request scoped bean for using with the null values example.

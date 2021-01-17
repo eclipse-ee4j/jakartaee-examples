@@ -14,9 +14,9 @@ package jakartaee.examples.jsf.sessionscoped;
 
 import java.io.Serializable;
 import java.util.Date;
-import javax.annotation.PostConstruct;
-import javax.inject.Named;
-import javax.enterprise.context.SessionScoped;
+import jakarta.annotation.PostConstruct;
+import jakarta.inject.Named;
+import jakarta.enterprise.context.SessionScoped;
 
 /**
  * A session scoped bean.

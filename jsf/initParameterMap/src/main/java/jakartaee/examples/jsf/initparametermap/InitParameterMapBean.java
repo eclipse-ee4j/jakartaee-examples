@@ -14,11 +14,11 @@ package jakartaee.examples.jsf.initparametermap;
 
 import java.io.Serializable;
 import java.util.Map;
-import javax.enterprise.context.RequestScoped;
-import javax.faces.annotation.FacesConfig;
-import javax.faces.annotation.InitParameterMap;
-import javax.inject.Inject;
-import javax.inject.Named;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.faces.annotation.FacesConfig;
+import jakarta.faces.annotation.InitParameterMap;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 
 /**
  * A request scoped bean injecting the init parameter map.

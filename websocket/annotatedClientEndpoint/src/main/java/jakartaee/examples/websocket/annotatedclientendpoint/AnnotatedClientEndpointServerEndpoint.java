@@ -13,9 +13,9 @@
 package jakartaee.examples.websocket.annotatedclientendpoint;
 
 import java.io.IOException;
-import javax.websocket.OnMessage;
-import javax.websocket.Session;
-import javax.websocket.server.ServerEndpoint;
+import jakarta.websocket.OnMessage;
+import jakarta.websocket.Session;
+import jakarta.websocket.server.ServerEndpoint;
 
 /**
  * An annotated ServerEndpoint for the annotated ClientEndpoint example.

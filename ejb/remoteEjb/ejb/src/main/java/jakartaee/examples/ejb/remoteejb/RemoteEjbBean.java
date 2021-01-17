@@ -12,7 +12,7 @@
  */
 package jakartaee.examples.ejb.remoteejb;
 
-import javax.ejb.Stateless;
+import jakarta.ejb.Stateless;
 
 /**
  * A remote stateless session bean.

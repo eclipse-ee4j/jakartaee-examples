@@ -17,7 +17,7 @@ import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import jakartaee.examples.utils.JakartaEEServer;
 import java.io.File;
 import java.net.URL;
-import javax.faces.webapp.FacesServlet;
+import jakarta.faces.webapp.FacesServlet;
 import org.arquillian.container.chameleon.runner.ArquillianChameleon;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.container.test.api.RunAsClient;

@@ -12,8 +12,8 @@
  */
 package jakartaee.examples.jsonb.jsonbcreator;
 
-import javax.json.bind.annotation.JsonbCreator;
-import javax.json.bind.annotation.JsonbProperty;
+import jakarta.json.bind.annotation.JsonbCreator;
+import jakarta.json.bind.annotation.JsonbProperty;
 
 /**
  * The model object for the JSON-B @JsonbCreator example.

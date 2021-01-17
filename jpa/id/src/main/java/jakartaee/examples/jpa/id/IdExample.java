@@ -14,8 +14,8 @@ package jakartaee.examples.jpa.id;
 
 import java.io.Serializable;
 import java.math.BigInteger;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 /**
  * The JPA class for the @Id example.

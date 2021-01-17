@@ -12,8 +12,8 @@
  */
 package jakartaee.examples.jsf.outputtext;
 
-import javax.inject.Named;
-import javax.enterprise.context.RequestScoped;
+import jakarta.inject.Named;
+import jakarta.enterprise.context.RequestScoped;
 
 /**
  * A request scoped bean for the h:outputText example.

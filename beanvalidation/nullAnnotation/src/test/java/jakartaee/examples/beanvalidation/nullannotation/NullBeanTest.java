@@ -19,7 +19,7 @@ import jakartaee.examples.utils.JakartaEEServer;
 import org.arquillian.container.chameleon.runner.ArquillianChameleon;
 import java.io.File;
 import java.net.URL;
-import javax.faces.webapp.FacesServlet;
+import jakarta.faces.webapp.FacesServlet;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.container.test.api.RunAsClient;
 import org.jboss.arquillian.test.api.ArquillianResource;

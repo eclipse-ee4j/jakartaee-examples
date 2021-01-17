@@ -13,9 +13,9 @@
 package jakartaee.examples.servlet.servletrequestlistener;
 
 import java.util.Date;
-import javax.servlet.ServletRequestEvent;
-import javax.servlet.ServletRequestListener;
-import javax.servlet.annotation.WebListener;
+import jakarta.servlet.ServletRequestEvent;
+import jakarta.servlet.ServletRequestListener;
+import jakarta.servlet.annotation.WebListener;
 
 /**
  * The ServletRequestListener for the Servlet API ServletRequestListener example.

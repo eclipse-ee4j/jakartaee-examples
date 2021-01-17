@@ -13,9 +13,9 @@
 package jakartaee.examples.jpa.onetomany;
 
 import java.io.Serializable;
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
-import javax.inject.Named;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 
 /**
  * The bean for the OneToMany annotation example.

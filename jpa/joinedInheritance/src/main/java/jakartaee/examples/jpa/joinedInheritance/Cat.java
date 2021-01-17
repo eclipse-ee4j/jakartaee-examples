@@ -13,8 +13,8 @@
 
 package jakartaee.examples.jpa.joinedInheritance;
 
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
 
 /**
  *

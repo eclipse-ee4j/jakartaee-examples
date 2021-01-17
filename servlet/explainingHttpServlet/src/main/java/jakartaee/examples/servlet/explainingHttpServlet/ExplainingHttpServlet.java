@@ -23,11 +23,11 @@ package jakartaee.examples.servlet.explainingHttpServlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Logger;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * Servlet implementation class ExplainingHttpServlet
@@ -66,7 +66,7 @@ public class ExplainingHttpServlet extends HttpServlet {
      * container by calling getServletContext(). Preferred method to initialize
      * anything that will be available to every thread.
      *
-     * @throws javax.servlet.ServletException
+     * @throws jakarta.servlet.ServletException
      */
     @Override
     public void init() throws ServletException {
@@ -114,7 +114,7 @@ public class ExplainingHttpServlet extends HttpServlet {
      *
      * @param request The HttpServletRequest object created by the server
      * @param response The HttpServletResponse object created by the server
-     * @throws javax.servlet.ServletException
+     * @throws jakarta.servlet.ServletException
      * @throws java.io.IOException
      */
     @Override
@@ -142,7 +142,7 @@ public class ExplainingHttpServlet extends HttpServlet {
      *
      * @param request The HttpServletRequest object created by the server
      * @param response The HttpServletResponse object created by the server
-     * @throws javax.servlet.ServletException
+     * @throws jakarta.servlet.ServletException
      * @throws java.io.IOException
      */
     @Override
@@ -177,7 +177,7 @@ public class ExplainingHttpServlet extends HttpServlet {
      *
      * @param request The HttpServletRequest object created by the server
      * @param response The HttpServletResponse object created by the server
-     * @throws javax.servlet.ServletException
+     * @throws jakarta.servlet.ServletException
      * @throws java.io.IOException
      */
     @Override
@@ -203,7 +203,7 @@ public class ExplainingHttpServlet extends HttpServlet {
      *
      * @param request The HttpServletRequest object created by the server
      * @param response The HttpServletResponse object created by the server
-     * @throws javax.servlet.ServletException
+     * @throws jakarta.servlet.ServletException
      * @throws java.io.IOException
      */
     @Override
@@ -231,7 +231,7 @@ public class ExplainingHttpServlet extends HttpServlet {
      *
      * @param request The HttpServletRequest object created by the server
      * @param response The HttpServletResponse object created by the server
-     * @throws javax.servlet.ServletException
+     * @throws jakarta.servlet.ServletException
      * @throws java.io.IOException
      */
     @Override

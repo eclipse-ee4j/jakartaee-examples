@@ -13,11 +13,11 @@
 package jakartaee.examples.jsonp.jsonreader;
 
 import java.io.StringReader;
-import javax.inject.Named;
-import javax.enterprise.context.RequestScoped;
-import javax.json.Json;
-import javax.json.JsonArray;
-import javax.json.JsonReader;
+import jakarta.inject.Named;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.json.Json;
+import jakarta.json.JsonArray;
+import jakarta.json.JsonReader;
 
 /**
  * A request scoped bean for the JsonReader example.

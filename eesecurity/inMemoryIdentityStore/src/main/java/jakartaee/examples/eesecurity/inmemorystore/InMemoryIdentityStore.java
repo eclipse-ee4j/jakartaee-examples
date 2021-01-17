@@ -14,11 +14,11 @@ package jakartaee.examples.eesecurity.inmemorystore;
 
 import static java.util.Arrays.asList;
 import java.util.HashSet;
-import javax.enterprise.context.ApplicationScoped;
-import javax.security.enterprise.credential.UsernamePasswordCredential;
-import javax.security.enterprise.identitystore.CredentialValidationResult;
-import static javax.security.enterprise.identitystore.CredentialValidationResult.INVALID_RESULT;
-import javax.security.enterprise.identitystore.IdentityStore;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.security.enterprise.credential.UsernamePasswordCredential;
+import jakarta.security.enterprise.identitystore.CredentialValidationResult;
+import static jakarta.security.enterprise.identitystore.CredentialValidationResult.INVALID_RESULT;
+import jakarta.security.enterprise.identitystore.IdentityStore;
 
 /**
  * The in-memory identity store.

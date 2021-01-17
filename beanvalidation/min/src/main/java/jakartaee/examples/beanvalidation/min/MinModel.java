@@ -12,7 +12,7 @@
  */
 package jakartaee.examples.beanvalidation.min;
 
-import javax.validation.constraints.Min;
+import jakarta.validation.constraints.Min;
 
 /**
  * A model class for the BeanValidation @Min example.

@@ -13,7 +13,7 @@
 package jakartaee.examples.jsonb.jsonbdateformat;
 
 import java.util.Date;
-import javax.json.bind.annotation.JsonbDateFormat;
+import jakarta.json.bind.annotation.JsonbDateFormat;
 
 /**
  * The model object for the JSON-B @JsonbDateFormat example.

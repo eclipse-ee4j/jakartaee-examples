@@ -14,11 +14,11 @@ package jakartaee.examples.jsf.requestcookiemap;
 
 import java.io.Serializable;
 import java.util.Map;
-import javax.enterprise.context.RequestScoped;
-import javax.faces.annotation.FacesConfig;
-import javax.faces.annotation.RequestCookieMap;
-import javax.inject.Inject;
-import javax.inject.Named;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.faces.annotation.FacesConfig;
+import jakarta.faces.annotation.RequestCookieMap;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 
 /**
  * A request scoped bean injecting the request cookie map.

@@ -13,9 +13,9 @@
 package jakartaee.examples.jpa.tablePerConcreteClassInheritance;
 
 import java.util.List;
-import javax.ejb.EJB;
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Named;
+import jakarta.ejb.EJB;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Named;
 
 /**
  * The bean used to demonstrate usage of @Inheritance with Table-per-Concrete-Class strategy

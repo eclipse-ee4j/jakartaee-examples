@@ -14,9 +14,9 @@ package jakartaee.examples.jpa.tablePerConcreteClassInheritance;
 
 import java.util.Date;
 import java.util.List;
-import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import jakarta.ejb.Stateless;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 
 /**
  * A simple EJB that persist employees information in database

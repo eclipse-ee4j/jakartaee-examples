@@ -12,7 +12,7 @@
  */
 package jakartaee.examples.jsonb.jsonbtransient;
 
-import javax.json.bind.annotation.JsonbTransient;
+import jakarta.json.bind.annotation.JsonbTransient;
 
 /**
  * A @JsonbTraisnet example.

@@ -12,8 +12,8 @@
  */
 package jakartaee.examples.ejb.securedremoteejb;
 
-import javax.annotation.security.RolesAllowed;
-import javax.ejb.Stateless;
+import jakarta.annotation.security.RolesAllowed;
+import jakarta.ejb.Stateless;
 
 /**
  * A secured remote stateless session bean.

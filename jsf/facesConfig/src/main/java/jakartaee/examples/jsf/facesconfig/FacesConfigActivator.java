@@ -13,8 +13,8 @@
 package jakartaee.examples.jsf.facesconfig;
 
 import java.io.Serializable;
-import javax.enterprise.context.ApplicationScoped;
-import javax.faces.annotation.FacesConfig;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.faces.annotation.FacesConfig;
 
 /**
  * An application scoped bean activating JSF 2.3 mode.

@@ -12,7 +12,7 @@
  */
 package jakartaee.examples.jaxrs.httpmethod;
 
-import javax.ws.rs.Path;
+import jakarta.ws.rs.Path;
 
 /**
  * The JAX-RS resource for the @HttpMethod example.
