@@ -5,11 +5,11 @@
     <parent>
         <artifactId>project</artifactId>
         <groupId>jakartaee.examples.ejb.securedremoteejb</groupId>
-        <version>8-SNAPSHOT</version>
+        <version>9-SNAPSHOT</version>
     </parent>
     <groupId>jakartaee.examples.ejb.securedremoteejb</groupId>
     <artifactId>appclient</artifactId>
-    <version>8-SNAPSHOT</version>
+    <version>9-SNAPSHOT</version>
     <packaging>app-client</packaging>
     <name>A secured remote EJB Application Client</name>
     <build>

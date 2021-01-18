@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>jakartaee.examples</groupId>
     <artifactId>project</artifactId>
-    <version>8-SNAPSHOT</version>
+    <version>9-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>JakartaEE Examples</name>
     <build>
