@@ -7,7 +7,7 @@
     <parent>
         <artifactId>project</artifactId>
         <groupId>jakartaee.examples.jpa</groupId>
-        <version>8-SNAPSHOT</version>
+        <version>9-SNAPSHOT</version>
     </parent>
     <artifactId>tablePerConcreteClassInheritance</artifactId>
     <packaging>war</packaging>

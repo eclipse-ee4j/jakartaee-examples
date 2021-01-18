@@ -7,7 +7,7 @@
     <parent>
         <artifactId>project</artifactId>
         <groupId>jakartaee.examples.websocket</groupId>
-        <version>8-SNAPSHOT</version>
+        <version>9-SNAPSHOT</version>
     </parent>
     <artifactId>onClose</artifactId>    
     <packaging>war</packaging>
