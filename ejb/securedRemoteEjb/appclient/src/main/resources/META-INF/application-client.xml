@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <application-client 
-    version="6" 
-    xmlns="http://java.sun.com/xml/ns/javaee"
+    version="9" 
+    xmlns="https://jakarta.ee/xml/ns/jakartaee"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="
-        http://java.sun.com/xml/ns/javaee 
-        http://java.sun.com/xml/ns/javaee/application-client_6.xsd">
+        https://jakarta.ee/xml/ns/jakartaee 
+        https://jakarta.ee/xml/ns/jakartaee/application-client_9.xsd">
     <display-name>A secured remote EJB application client</display-name>
 </application-client>
