@@ -145,7 +145,6 @@
     </dependencies>
     <modules>
         <module>beanvalidation</module>
-        <module>eemanagement</module>
         <module>eesecurity</module>
         <module>ejb</module>
         <module>jaxrs</module>
