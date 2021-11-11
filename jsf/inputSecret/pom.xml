@@ -7,7 +7,7 @@
     <parent>
         <artifactId>project</artifactId>
         <groupId>jakartaee.examples.jsf</groupId>
-        <version>8-SNAPSHOT</version>
+        <version>9-SNAPSHOT</version>
     </parent>
     <artifactId>jsfInputSecret</artifactId>
     <packaging>war</packaging>

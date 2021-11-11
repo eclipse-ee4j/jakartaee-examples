@@ -4,11 +4,11 @@
     <parent>
         <artifactId>project</artifactId>
         <groupId>jakartaee.examples.ejb</groupId>
-        <version>8-SNAPSHOT</version>
+        <version>9-SNAPSHOT</version>
     </parent>
     <groupId>jakartaee.examples.ejb.securedremoteejb</groupId>
     <artifactId>project</artifactId>
-    <version>8-SNAPSHOT</version>
+    <version>9-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>A secured remote EJB example project</name>
     <modules>

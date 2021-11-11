@@ -7,7 +7,7 @@
     <parent>
         <artifactId>project</artifactId>
         <groupId>jakartaee.examples.eesecurity</groupId>
-        <version>8-SNAPSHOT</version>
+        <version>9-SNAPSHOT</version>
     </parent>
     <artifactId>eeSecurityCustomFormWithJsf</artifactId>
     <packaging>war</packaging>
