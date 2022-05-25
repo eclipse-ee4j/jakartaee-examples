@@ -12,4 +12,4 @@
 10. [Servlet examples](servlet/README.md)
 11. [WebSocket examples](websocket/README.md)
 12. [JMS examples](jms/README.md)
-13. [Batch examples] (batch/README.md)
+13. [Batch examples](batch/README.md)
