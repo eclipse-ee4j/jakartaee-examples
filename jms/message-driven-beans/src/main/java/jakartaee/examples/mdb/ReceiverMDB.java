@@ -1,33 +1,35 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package jakartaee.examples.mdb;
 
+import jakarta.ejb.ActivationConfigProperty;
+import jakarta.ejb.MessageDriven;
 import jakarta.jms.JMSException;
 import jakarta.jms.Message;
 import jakarta.jms.MessageListener;
 import jakarta.jms.TextMessage;
+import java.util.logging.Logger;
 
 /**
  *
  * @author Francisco Castillo (cefrancastillo@gmail.com)
  */
+@MessageDriven(activationConfig = {
+    @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "jakarta.jms.Queue")
+}, mappedName = "jms/Demo")
 public class ReceiverMDB implements MessageListener {
 
-  @Override
-  public void onMessage(Message msg) {
-    try {
+    private static Logger logger = Logger.getLogger(ReceiverMDB.class.getName());
 
-      // Obtenemos el mensaje
-      TextMessage textMessage = (TextMessage) msg;
+    @Override
+    public void onMessage(Message msg) {
+        try {
+            // Obtenemos el mensaje
+            TextMessage textMessage = (TextMessage) msg;
 
-      System.out.println("Mensaje recibido" + textMessage.getText());
-    } catch (JMSException ex) {
-      throw new RuntimeException("Ocurrio un error al procesar el mensaje. "
-              + ex.getLocalizedMessage());
+            // Mostramos su contenido
+            logger.info("Mensaje recibido: " + textMessage.getText());
+        } catch (JMSException ex) {
+            logger.severe("Ocurrio un error al intentar procesar mensaje: " + ex.getLocalizedMessage());
+        }
     }
-  }
 
 }

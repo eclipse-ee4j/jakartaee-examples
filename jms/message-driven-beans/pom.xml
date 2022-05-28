@@ -8,14 +8,7 @@
     </parent>
     <artifactId>message-driven-beans</artifactId>
     <packaging>war</packaging>
-    <name>Message-Driven Bean</name> 
-    <dependencies>
-        <dependency>
-            <groupId>jakarta.platform</groupId>
-            <artifactId>jakarta.jakartaee-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
+    <name>JMS Receiver</name> 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
