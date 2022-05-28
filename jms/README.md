@@ -5,8 +5,8 @@ comunicación asincrónica entre diferentes sistemas mediantes colas y tópicos.
 En esta aplicación utilizaremos colas, siguiendo la especificación 
 https://github.com/jakartaee/messaging
 
-1. [A message sender example](sender/README.md)
-2. [A message receiver](receiver/README.md)
+1. A message sender
+2. A message receiver
 
 # Connection Factories
 
