@@ -8,6 +8,13 @@ https://github.com/jakartaee/messaging
 1. A message sender
 2. A message receiver
 
+## Construido con:
+* OpenJDK 1.8.0_292
+* Jakarta EE 9.1.0
+* Maven 3.8.5
+* Apache NetBeans IDE 13
+* Eclipse Glassfish 6.2.5
+
 # Connection Factories
 
 Se debe crear una "connection factory" por cada cola destino que utilice nuestra 
