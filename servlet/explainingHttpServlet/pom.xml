@@ -1,10 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>jakartaee.examples.servlet</groupId>
+        <artifactId>project</artifactId>
+        <version>9-SNAPSHOT</version>
+    </parent>
 
     <groupId>jakartaee.examples.servlet</groupId>
     <artifactId>explainingHttpServlet</artifactId>
     <version>9-SNAPSHOT</version>
     <packaging>war</packaging>
+
     <name>A Servlet API Explaining HttpServlet</name>
     <description>An example servlet for the Jakarta EE Examples project</description>
 
@@ -18,19 +26,12 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    
-    <parent>
-        <artifactId>project</artifactId>
-        <groupId>jakartaee.examples.servlet</groupId>
-        <version>9-SNAPSHOT</version>
-    </parent>
 
     <dependencies>
         <dependency>
-            <groupId>jakarta.platform</groupId>
-            <artifactId>jakarta.jakartaee-web-api</artifactId>
+           <groupId>jakarta.platform</groupId>
+           <artifactId>jakarta.jakartaee-web-api</artifactId>
            <scope>provided</scope>
         </dependency>
     </dependencies>
-
 </project>
