@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <groupId>jakartaee.examples</groupId>
         <artifactId>project</artifactId>
         <version>9-SNAPSHOT</version>
     </parent>
+
     <groupId>jakartaee.examples.jsonb</groupId>
     <artifactId>project</artifactId>
     <packaging>pom</packaging>
+
     <name>JSON-B Examples</name>
+
     <modules>
         <module>formatting</module>
         <module>fromJsonToObject</module>
@@ -23,6 +25,7 @@
         <module>jsonbTransient</module>
         <module>nullValues</module>
     </modules>
+
     <dependencies>
         <dependency>
             <groupId>jakartaee.examples</groupId>
@@ -30,5 +33,5 @@
             <version>${project.version}</version>
             <scope>test</scope>
         </dependency>    
-    </dependencies>   
+    </dependencies>
 </project>
