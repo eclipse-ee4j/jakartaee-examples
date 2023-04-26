@@ -19,7 +19,7 @@ import java.io.File;
 import java.net.URL;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.container.test.api.RunAsClient;
-import jakartaee.examples.utils.JakartaEEServer;
+
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.test.api.ArquillianResource;
 import static org.jboss.shrinkwrap.api.ShrinkWrap.create;
@@ -36,7 +36,7 @@ import org.junit.runner.RunWith;
  * @author Manfred Riem (mriem@manorrock.com)
  */
 @RunWith(Arquillian.class)
-@JakartaEEServer
+
 public class FormParamTest {
 
     /**

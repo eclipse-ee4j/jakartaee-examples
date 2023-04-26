@@ -15,7 +15,7 @@ package jakartaee.examples.faces.inputfile;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlFileInput;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
-import jakartaee.examples.utils.JakartaEEServer;
+
 import java.io.File;
 import java.net.URL;
 import org.jboss.arquillian.junit.Arquillian;
@@ -36,7 +36,7 @@ import org.junit.runner.RunWith;
  * @author Manfred Riem (mriem@manorrock.com)
  */
 @RunWith(Arquillian.class)
-@JakartaEEServer
+
 public class InputFileTest {
 
     /**

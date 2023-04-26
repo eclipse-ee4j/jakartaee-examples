@@ -12,7 +12,7 @@
  */
 package jakartaee.examples.websocket.onerror;
 
-import jakartaee.examples.utils.JakartaEEServer;
+
 import java.io.File;
 import java.net.URI;
 import java.net.URL;
@@ -40,7 +40,7 @@ import org.junit.runner.RunWith;
  */
 @ClientEndpoint
 @RunWith(Arquillian.class)
-@JakartaEEServer
+
 public class OnErrorEndpointTest {
 
     /**
