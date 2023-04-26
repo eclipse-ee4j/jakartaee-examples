@@ -58,6 +58,17 @@
                 <version>1.7.0.Alpha14</version>
             </dependency>
             
+            <!--
+                HtmlUnit - A library to do HTTP requests from the client (the test) and if the response is 
+                HTML inspect that HTML using a DOM API.
+            -->
+            <dependency>
+                <groupId>net.sourceforge.htmlunit</groupId>
+                <artifactId>htmlunit</artifactId>
+                <version>2.70.0</version>
+                <scope>test</scope>
+            </dependency>
+            
             <!-- 
                  HttpClient - a library to do HTTP requests from (in this project) the server.
                  The jar file for this is included in the war that is deployed to the server for applications
@@ -114,12 +125,13 @@
         <dependency>
             <groupId>net.sourceforge.htmlunit</groupId>
             <artifactId>htmlunit</artifactId>
-            <version>2.70.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
 
     <build>
+        <finalName>${project.artifactId}</finalName>
+        
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -131,6 +143,12 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.0.0</version>
+                </plugin>
+                
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-failsafe-plugin</artifactId>
                     <version>3.0.0</version>
                 </plugin>
                 
@@ -153,6 +171,24 @@
                 <version>3.3.2</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <systemPropertyVariables>
+                        <finalName>${project.build.finalName}</finalName>
+                    </systemPropertyVariables>
                 </configuration>
             </plugin>
         </plugins>
