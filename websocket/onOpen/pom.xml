@@ -12,11 +12,7 @@
     <artifactId>onOpen</artifactId>
     <packaging>war</packaging>
 
-    <name>An @OnOpen example</name>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <name>A Jakarta WebSocket @OnOpen example</name>
 
     <dependencies>
         <dependency>

@@ -12,11 +12,7 @@
     <artifactId>nullValues</artifactId>
     <packaging>war</packaging>
 
-    <name>A null values example</name>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <name>A Jakarta JSON-B null values example</name>
 
     <dependencies>
         <dependency>

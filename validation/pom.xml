@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>jakartaee.examples</groupId>
+        <artifactId>project</artifactId>
+        <version>10-SNAPSHOT</version>
+    </parent>
+
+    <groupId>jakartaee.examples.beanvalidation</groupId>
+    <artifactId>project</artifactId>
+    <packaging>pom</packaging>
+
+    <name>Jakarta Validation Examples</name>
+
+    <modules>
+        <module>min</module>
+        <module>notNull</module>
+        <module>nullAnnotation</module>
+        <module>size</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+             <groupId>jakartaee.examples</groupId>
+             <artifactId>utils</artifactId>
+             <version>${project.version}</version>
+             <scope>test</scope>
+        </dependency>    
+    </dependencies>
+</project>

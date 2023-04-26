@@ -12,11 +12,7 @@
     <artifactId>servletPushBuilder</artifactId>
     <packaging>war</packaging>
 
-    <name>A Servlet API PushBuilder example</name>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <name>A Jakarta Servlet PushBuilder example</name>
 
     <dependencies>
         <dependency>

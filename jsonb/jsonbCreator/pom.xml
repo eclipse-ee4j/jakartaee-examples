@@ -12,11 +12,7 @@
     <artifactId>jsonbCreator</artifactId>
     <packaging>war</packaging>
 
-    <name>A JSON-B @JsonbCreator example</name>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <name>A Jakarta JSON-B @JsonbCreator example</name>
 
     <dependencies>
         <dependency>

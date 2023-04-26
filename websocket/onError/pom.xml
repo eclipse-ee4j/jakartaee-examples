@@ -12,11 +12,7 @@
     <artifactId>onError</artifactId>
     <packaging>war</packaging>
 
-    <name>An @OnError example</name>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <name>A Jakarta WebSocket @OnError example</name>
 
     <dependencies>
         <dependency>

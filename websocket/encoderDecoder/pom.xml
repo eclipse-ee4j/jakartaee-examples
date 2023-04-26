@@ -12,11 +12,7 @@
     <artifactId>encoderDecoder</artifactId>
     <packaging>war</packaging>
 
-    <name>An Encoder/Decoder example</name>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <name>A Jakarta WebSocket Encoder/Decoder example</name>
 
     <dependencies>
         <dependency>

@@ -12,11 +12,7 @@
     <artifactId>jsonbFormatting</artifactId>
     <packaging>war</packaging>
 
-    <name>A formatting example</name>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <name>A Jakarta JSON-B formatting example</name>
 
     <dependencies>
         <dependency>

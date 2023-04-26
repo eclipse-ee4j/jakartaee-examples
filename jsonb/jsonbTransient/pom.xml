@@ -12,11 +12,7 @@
     <artifactId>jsonbTransient</artifactId>
     <packaging>war</packaging>
 
-    <name>A JsonbTransient annotation example</name>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <name>A Jakarta JSON-B JsonbTransient annotation example</name>
 
     <dependencies>
         <dependency>

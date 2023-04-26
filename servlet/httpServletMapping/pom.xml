@@ -12,11 +12,7 @@
     <artifactId>servletHttpServletMapping</artifactId>
     <packaging>war</packaging>
 
-    <name>A Servlet API HTTP servlet mapping example</name>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <name>A Jakarta Servlet HTTP servlet mapping example</name>
 
     <dependencies>
         <dependency>

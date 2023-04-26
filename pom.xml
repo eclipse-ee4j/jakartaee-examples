@@ -8,16 +8,16 @@
     <version>10-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>JakartaEE Examples</name>
+    <name>Jakarta EE 10 Examples</name>
 
     <modules>
-        <module>beanvalidation</module>
-        <module>eesecurity</module>
-        <module>ejb</module>
-        <module>jaxrs</module>
-        <module>jpa</module>
-        <module>jsf</module>
-        <module>jsp</module>
+        <module>validation</module>
+        <module>security</module>
+        <module>enterprise-beans</module>
+        <module>rest</module>
+        <module>persistence</module>
+        <module>faces</module>
+        <module>pages</module>
         <module>jsonb</module>
         <module>jsonp</module>
         <module>servlet</module>
