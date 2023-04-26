@@ -1,4 +1,4 @@
-# JAX-RS Examples
+# Jakarta REST Examples
 
 1. [A @Consumes example](consumes/README.md)
 2. [A @DefaultValue example](defaultValue/README.md)

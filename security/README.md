@@ -1,4 +1,4 @@
-# EE Security Examples
+# Jakarta Security Examples
 
 1. [Basic Authentication example](basicAuth/)
 2. [A Custom Form with JSF example](customFormWithJsf/)
