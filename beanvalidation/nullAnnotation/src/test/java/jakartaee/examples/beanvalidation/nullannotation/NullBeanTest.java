@@ -16,7 +16,7 @@ import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlInput;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import jakartaee.examples.utils.JakartaEEServer;
-import org.arquillian.container.chameleon.runner.ArquillianChameleon;
+import org.jboss.arquillian.junit.Arquillian;
 import java.io.File;
 import java.net.URL;
 import jakarta.faces.webapp.FacesServlet;
@@ -37,7 +37,7 @@ import org.junit.runner.RunWith;
  *
  * @author Manfred Riem (mriem@manorrock.com)
  */
-@RunWith(ArquillianChameleon.class)
+@RunWith(Arquillian.class)
 @JakartaEEServer
 public class NullBeanTest {
 

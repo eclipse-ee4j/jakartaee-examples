@@ -24,7 +24,7 @@ import jakarta.websocket.EncodeException;
 import jakarta.websocket.OnMessage;
 import jakarta.websocket.OnOpen;
 import jakarta.websocket.Session;
-import org.arquillian.container.chameleon.runner.ArquillianChameleon;
+import org.jboss.arquillian.junit.Arquillian;
 import org.glassfish.tyrus.client.ClientManager;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.container.test.api.RunAsClient;
@@ -44,7 +44,7 @@ import org.junit.runner.RunWith;
         encoders = {EncoderDecoderEncoder.class},
         decoders = {EncoderDecoderDecoder.class}
 )
-@RunWith(ArquillianChameleon.class)
+@RunWith(Arquillian.class)
 @JakartaEEServer
 public class EncoderDecoderEndpointTest {
 
@@ -75,7 +75,9 @@ public class EncoderDecoderEndpointTest {
                 EncoderDecoderEndpoint.class, EncoderDecoder.class,
                 EncoderDecoderDecoder.class, EncoderDecoderEncoder.class).
                 addAsWebResource(new File("src/main/webapp/index.xhtml")).
-                addAsWebInfResource(new File("src/main/webapp/WEB-INF/web.xml"));
+                addAsWebInfResource(new File("src/main/webapp/WEB-INF/web.xml")).
+                addAsWebInfResource(new File("src/main/webapp/WEB-INF/beans.xml"))
+                ;
     }
 
     /**
