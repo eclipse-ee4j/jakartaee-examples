@@ -4,15 +4,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>jakartaee.examples.jsf</groupId>
+        <groupId>jakartaee.examples.faces</groupId>
         <artifactId>project</artifactId>
         <version>10-SNAPSHOT</version>
     </parent>
 
-    <artifactId>jsfSessionMap</artifactId>
+    <artifactId>facesSessionMap</artifactId>
     <packaging>war</packaging>
 
-    <name>An Jakarta Faces injected SessionMap example</name>
+    <name>A Jakarta Faces injected SessionMap example</name>
 
     <dependencies>
         <dependency>

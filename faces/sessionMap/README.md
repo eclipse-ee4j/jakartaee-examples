@@ -1,3 +1,3 @@
-# An injected SessionMap example
+# A injected SessionMap example
 
 This example demonstrates how to use the @SessionMap annotation into a bean.

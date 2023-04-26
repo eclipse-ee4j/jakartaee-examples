@@ -9,7 +9,7 @@
         <version>10-SNAPSHOT</version>
     </parent>
 
-    <groupId>jakartaee.examples.jsf</groupId>
+    <groupId>jakartaee.examples.faces</groupId>
     <artifactId>project</artifactId>
     <packaging>pom</packaging>
 
