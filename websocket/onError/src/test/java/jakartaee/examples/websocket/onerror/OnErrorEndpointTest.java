@@ -22,7 +22,7 @@ import jakarta.websocket.ClientEndpoint;
 import jakarta.websocket.OnError;
 import jakarta.websocket.OnMessage;
 import jakarta.websocket.Session;
-import org.arquillian.container.chameleon.runner.ArquillianChameleon;
+import org.jboss.arquillian.junit.Arquillian;
 import org.glassfish.tyrus.client.ClientManager;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.container.test.api.RunAsClient;
@@ -39,7 +39,7 @@ import org.junit.runner.RunWith;
  * @author Manfred Riem (mriem@manorrock.com)
  */
 @ClientEndpoint
-@RunWith(ArquillianChameleon.class)
+@RunWith(Arquillian.class)
 @JakartaEEServer
 public class OnErrorEndpointTest {
 
@@ -69,7 +69,9 @@ public class OnErrorEndpointTest {
         return create(WebArchive.class).addClasses(
                 OnErrorEndpoint.class).
                 addAsWebResource(new File("src/main/webapp/index.xhtml")).
-                addAsWebInfResource(new File("src/main/webapp/WEB-INF/web.xml"));
+                addAsWebInfResource(new File("src/main/webapp/WEB-INF/web.xml")).
+                addAsWebInfResource(new File("src/main/webapp/WEB-INF/beans.xml"))
+                ;
     }
 
     /**

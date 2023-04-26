@@ -18,7 +18,7 @@ import jakartaee.examples.utils.JakartaEEServer;
 import java.io.File;
 import java.net.URL;
 import jakarta.faces.webapp.FacesServlet;
-import org.arquillian.container.chameleon.runner.ArquillianChameleon;
+import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.container.test.api.RunAsClient;
 import org.jboss.arquillian.test.api.ArquillianResource;
@@ -35,7 +35,7 @@ import org.junit.runner.RunWith;
  *
  * @author Manfred Riem (mriem@manorrock.com)
  */
-@RunWith(ArquillianChameleon.class)
+@RunWith(Arquillian.class)
 @JakartaEEServer
 public class OutputStylesheetTest {
 
@@ -70,7 +70,9 @@ public class OutputStylesheetTest {
                 addAsWebResource(new File("src/main/webapp/index.xhtml")).
                 addAsWebResource(new File("src/main/webapp/resources/mylibrary/mystyle.css"),
                         "resources/mylibrary/mystyle.css").
-                addAsWebInfResource(new File("src/main/webapp/WEB-INF/web.xml"));
+                addAsWebInfResource(new File("src/main/webapp/WEB-INF/web.xml")).
+                addAsWebInfResource(new File("src/main/webapp/WEB-INF/beans.xml"))
+                ;
     }
 
     /**
@@ -91,6 +93,6 @@ public class OutputStylesheetTest {
     public void testOutputText() throws Exception {
         HtmlPage page = webClient.getPage(baseUrl);
         System.out.println(page.asXml());
-        assertTrue(page.asXml().contains("javax.faces.resource/mystyle.css.xhtml"));
+        assertTrue(page.asXml().contains("jakarta.faces.resource/mystyle.css.xhtml"));
     }
 }

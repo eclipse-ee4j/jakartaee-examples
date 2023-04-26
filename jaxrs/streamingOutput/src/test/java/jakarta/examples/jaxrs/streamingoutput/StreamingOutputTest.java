@@ -20,7 +20,7 @@ import jakartaee.examples.jaxrs.streamingoutput.StreamingOutputBean;
 import jakartaee.examples.utils.JakartaEEServer;
 import java.io.File;
 import java.net.URL;
-import org.arquillian.container.chameleon.runner.ArquillianChameleon;
+import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.container.test.api.RunAsClient;
 import org.jboss.arquillian.test.api.ArquillianResource;
@@ -37,7 +37,7 @@ import org.junit.runner.RunWith;
  *
  * @author Manfred Riem (mriem@manorrock.com)
  */
-@RunWith(ArquillianChameleon.class)
+@RunWith(Arquillian.class)
 @JakartaEEServer
 public class StreamingOutputTest {
 
