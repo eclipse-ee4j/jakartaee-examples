@@ -12,11 +12,7 @@
     <artifactId>jsonParser</artifactId>
     <packaging>war</packaging>
 
-    <name>A JsonParser example</name>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <name>A Jakarta JSON-P JsonParser example</name>
 
     <dependencies>
         <dependency>

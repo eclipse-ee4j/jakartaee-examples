@@ -12,11 +12,7 @@
     <artifactId>annotatedClientEndpoint</artifactId>
     <packaging>war</packaging>
 
-    <name>An annotated ClientEndpoint example</name>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <name>A Jakarta WebSocket annotated ClientEndpoint example</name>
 
     <dependencies>
         <dependency>

@@ -1,8 +1,8 @@
-# Servlet Examples
+# Jakarta Servlet Examples
 
-The examples below illustrate the use of the Servlet API as specified at
-https://github.com/eclipse-ee4j/servlet-api. In the larger ecosystem  of 
-JakartaEE the Servlet API is a low-level API that other APIs have built
+The examples below illustrate the use of the Jakarta Servlet API as specified at
+https://github.com/jakartaee/servlet-api. In the larger ecosystem  of 
+Jakarta EE the Servlet API is a low-level API that other APIs have built
 upon.
 
 1. [An asynchronous servlet example](asyncServlet/README.md)

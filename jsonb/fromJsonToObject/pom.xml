@@ -12,11 +12,7 @@
     <artifactId>fromJsonToObject</artifactId>
     <packaging>war</packaging>
 
-    <name>A from JSON to Object example</name>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <name>A Jakarta JSON-B from JSON to Object example</name>
 
     <dependencies>
         <dependency>

@@ -12,11 +12,7 @@
     <artifactId>servletWebServlet</artifactId>
     <packaging>war</packaging>
 
-    <name>A Servlet API @WebServlet example</name>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <name>A Jakarta Servlet @WebServlet example</name>
 
     <dependencies>
         <dependency>

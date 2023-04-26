@@ -12,12 +12,8 @@
     <artifactId>jsonWriter</artifactId>
     <packaging>war</packaging>
 
-    <name>A JsonWriter example</name>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
-
+    <name>A Jakarta JSON-P JsonWriter example</name>
+    
     <dependencies>
         <dependency>
             <groupId>jakarta.platform</groupId>

@@ -12,11 +12,7 @@
     <artifactId>jsonbProperty</artifactId>
     <packaging>war</packaging>
 
-    <name>A JsonbProperty annotation example</name>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <name>A Jakarta JSON-B JsonbProperty annotation example</name>
 
     <dependencies>
         <dependency>

@@ -13,7 +13,7 @@
     <version>10-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>A Servlet API Explaining HttpServlet</name>
+    <name>A Jakarta Servlet Explaining HttpServlet</name>
     <description>An example servlet for the Jakarta EE Examples project</description>
 
     <developers>
@@ -22,10 +22,6 @@
             <email>omniprof@gmail.com</email>
         </developer>
     </developers>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
 
     <dependencies>
         <dependency>

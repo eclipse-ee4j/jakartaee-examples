@@ -1,3 +1,3 @@
-# An asynchronous servlet example
+# A Jakarta Servlet asynchronous servlet example
 
 This example demonstrates how to create an asynchronous Servlet.

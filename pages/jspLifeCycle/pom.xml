@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>jakartaee.examples.jsp</groupId>
+		<artifactId>project</artifactId>
+		<version>10-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>jspLifeCycle</artifactId>
+	<packaging>war</packaging>
+
+	<name>A Jakarta Pages Life Cycle example</name>
+
+	<developers>
+		<developer>
+			<name>Nishant Raut</name>
+			<email>nishant30197@gmail.com</email>
+		</developer>
+	</developers>
+
+	<dependencies>
+		<dependency>
+			<groupId>jakarta.platform</groupId>
+			<artifactId>jakarta.jakartaee-web-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+</project>
