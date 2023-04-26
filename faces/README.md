@@ -1,9 +1,10 @@
-# JSF Examples
+# Faces Examples
 
-The examples below illustrate the use of JSF as specified at
-https://github.com/eclipse-ee4j/mojarra. In the larger ecosystem  of 
-JakartaEE JSF is a model, view and controller API that delivers you with an
-abstraction layer on top of the Servlet API.
+The examples below illustrate the use of Faces as specified at
+https://jakarta.ee/specifications/faces/4.0/. 
+
+In the larger ecosystem  of Jakarta EE Faces is a model, view and controller API that 
+delivers you with an abstraction layer on top of the Servlet API.
 
 1. [A f:actionListener example](actionListener/README.md)
 2. [A f:ajax example](ajax/README.md)
