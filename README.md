@@ -11,3 +11,4 @@
 9. [JSP examples](jsp/README.md)
 10. [Servlet examples](servlet/README.md)
 11. [WebSocket examples](websocket/README.md)
+12. [JMS examples](jms/README.md)
