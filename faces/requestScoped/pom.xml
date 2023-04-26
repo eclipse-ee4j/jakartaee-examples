@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>jakartaee.examples.jsf</groupId>
+        <groupId>jakartaee.examples.faces</groupId>
         <artifactId>project</artifactId>
         <version>10-SNAPSHOT</version>
     </parent>
 
-    <artifactId>jsfRequestScoped</artifactId>
+    <artifactId>facesRequestScoped</artifactId>
     <packaging>war</packaging>
 
     <name>A Jakarta Faces RequestScoped bean example</name>
