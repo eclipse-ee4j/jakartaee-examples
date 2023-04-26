@@ -12,7 +12,7 @@
  */
 package jakartaee.examples.jaxrs.getclient;
 
-import jakartaee.examples.utils.JakartaEEServer;
+
 import java.io.File;
 import java.net.URL;
 import jakarta.ws.rs.client.Client;
@@ -37,7 +37,7 @@ import org.junit.runner.RunWith;
  * @author Manfred Riem (mriem@manorrock.com)
  */
 @RunWith(Arquillian.class)
-@JakartaEEServer
+
 public class GetClientTest {
 
     /**

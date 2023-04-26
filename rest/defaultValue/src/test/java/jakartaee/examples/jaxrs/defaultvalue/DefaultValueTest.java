@@ -18,7 +18,7 @@ import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import java.io.File;
 import java.net.URL;
 import org.jboss.arquillian.junit.Arquillian;
-import jakartaee.examples.utils.JakartaEEServer;
+
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.container.test.api.RunAsClient;
 import org.jboss.arquillian.test.api.ArquillianResource;
@@ -36,7 +36,7 @@ import org.junit.runner.RunWith;
  * @author Manfred Riem (mriem@manorrock.com)
  */
 @RunWith(Arquillian.class)
-@JakartaEEServer
+
 public class DefaultValueTest {
 
     /**

@@ -14,7 +14,7 @@ package jakartaee.examples.servlet.webfilter;
 
 import com.gargoylesoftware.htmlunit.TextPage;
 import com.gargoylesoftware.htmlunit.WebClient;
-import jakartaee.examples.utils.JakartaEEServer;
+
 import java.net.URL;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.container.test.api.Deployment;
@@ -34,7 +34,7 @@ import org.junit.runner.RunWith;
  * @author Manfred Riem (mriem@manorrock.com)
  */
 @RunWith(Arquillian.class)
-@JakartaEEServer
+
 public class WebFilterFilterTest {
 
     /**
