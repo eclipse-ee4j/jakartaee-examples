@@ -11,21 +11,37 @@
 
 -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
   <parent>
     <groupId>org.eclipse.ee4j</groupId>
     <artifactId>project</artifactId>
     <version>1.0.6</version>
   </parent>
-  <modelVersion>4.0.0</modelVersion>
+
   <groupId>jakarta.tutorial</groupId>
   <artifactId>examples</artifactId>
   <version>9.0-SNAPSHOT</version>
   <packaging>pom</packaging>
+
   <name>Jakarta EE Tutorial Examples</name>
+
+  <modules>
+    <module>archetypes</module>
+    <module>batch</module>
+    <module>case-studies</module>
+    <module>cdi</module>
+    <module>concurrency</module>
+    <module>connectors</module>
+    <module>ejb</module>
+    <module>jaxrs</module>
+    <module>jaxws</module>
+    <module>jms</module>
+    <module>persistence</module>
+    <module>security</module>
+    <module>web</module>
+  </modules>
 
   <scm>
     <connection>scm:git:https://github.com/eclipse-ee4j/jakartaee-tutorial-examples.git</connection>
@@ -66,74 +82,14 @@
     <maven.source.attach>false</maven.source.attach>
   </properties>
 
-  <profiles>
-    <profile>
-      <id>windows</id>
-      <activation>
-        <os>
-          <family>windows</family>
-        </os>
-      </activation>
-      <properties>
-        <glassfish.home.prefix>c:/</glassfish.home.prefix>
-        <glassfish.executables.suffix>.bat</glassfish.executables.suffix>
-      </properties>
-    </profile>
-    <profile>
-      <id>unix</id>
-      <activation>
-        <os>
-          <family>unix</family>
-        </os>
-      </activation>
-      <properties>
-        <glassfish.home.prefix>${user.home}</glassfish.home.prefix>
-        <glassfish.executables.suffix />
-      </properties>
-    </profile>
-    <profile>
-      <id>sdk</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
-      <properties>
-        <glassfish.home>${basedir}/../../../</glassfish.home>
-      </properties>
-    </profile>
-    <profile>
-      <id>development</id>
-      <activation>
-        <file>
-          <exists>${basedir}/../bundle</exists>
-        </file>
-      </activation>
-      <properties>
-        <glassfish.home>${glassfish.home.prefix}/glassfish6</glassfish.home>
-      </properties>
-    </profile>
-    <profile>
-      <id>standalone</id>
-      <properties>
-        <glassfish.home>${basedir}/target/cargo/installs/glassfish</glassfish.home>
-      </properties>
-    </profile>
-  </profiles>
-
-  <modules>
-    <module>archetypes</module>
-    <module>batch</module>
-    <module>case-studies</module>
-    <module>cdi</module>
-    <module>concurrency</module>
-    <module>connectors</module>
-    <module>ejb</module>
-    <module>jaxrs</module>
-    <module>jaxws</module>
-    <module>jms</module>
-    <module>persistence</module>
-    <module>security</module>
-    <module>web</module>
-  </modules>
+  <dependencies>
+    <dependency>
+      <groupId>jakarta.platform</groupId>
+      <artifactId>jakarta.jakartaee-api</artifactId>
+      <version>${jakartaee.api.version}</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
 
   <build>
     <finalName>${project.artifactId}</finalName>
@@ -312,14 +268,56 @@
     </plugins>
   </build>
 
-
-  <dependencies>
-    <dependency>
-      <groupId>jakarta.platform</groupId>
-      <artifactId>jakarta.jakartaee-api</artifactId>
-      <version>${jakartaee.api.version}</version>
-      <scope>provided</scope>
-    </dependency>
-  </dependencies>
-
+  <profiles>
+    <profile>
+      <id>windows</id>
+      <activation>
+        <os>
+          <family>windows</family>
+        </os>
+      </activation>
+      <properties>
+        <glassfish.home.prefix>c:/</glassfish.home.prefix>
+        <glassfish.executables.suffix>.bat</glassfish.executables.suffix>
+      </properties>
+    </profile>
+    <profile>
+      <id>unix</id>
+      <activation>
+        <os>
+          <family>unix</family>
+        </os>
+      </activation>
+      <properties>
+        <glassfish.home.prefix>${user.home}</glassfish.home.prefix>
+        <glassfish.executables.suffix />
+      </properties>
+    </profile>
+    <profile>
+      <id>sdk</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <glassfish.home>${basedir}/../../../</glassfish.home>
+      </properties>
+    </profile>
+    <profile>
+      <id>development</id>
+      <activation>
+        <file>
+          <exists>${basedir}/../bundle</exists>
+        </file>
+      </activation>
+      <properties>
+        <glassfish.home>${glassfish.home.prefix}/glassfish6</glassfish.home>
+      </properties>
+    </profile>
+    <profile>
+      <id>standalone</id>
+      <properties>
+        <glassfish.home>${basedir}/target/cargo/installs/glassfish</glassfish.home>
+      </properties>
+    </profile>
+  </profiles>
 </project>
