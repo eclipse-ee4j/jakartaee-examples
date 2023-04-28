@@ -11,10 +11,9 @@
 
 -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+
   <parent>
     <groupId>jakarta.tutorial.persistence.roster</groupId>
     <artifactId>parent</artifactId>
@@ -25,6 +24,21 @@
   <packaging>ear</packaging>
 
   <name>roster-ear</name>
+
+  <dependencies>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>roster-ejb</artifactId>
+      <version>${project.version}</version>
+      <type>ejb</type>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>roster-appclient</artifactId>
+      <version>${project.version}</version>
+      <type>app-client</type>
+    </dependency>
+  </dependencies>
 
   <build>
     <plugins>
@@ -98,18 +112,4 @@
       </plugin>
     </plugins>
   </build>
-  <dependencies>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>roster-ejb</artifactId>
-      <version>${project.version}</version>
-      <type>ejb</type>
-    </dependency>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>roster-appclient</artifactId>
-      <version>${project.version}</version>
-      <type>app-client</type>
-    </dependency>
-  </dependencies>
 </project>

@@ -11,10 +11,9 @@
 
 -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+
   <parent>
     <groupId>jakarta.tutorial.connectors.trading</groupId>
     <artifactId>parent</artifactId>
@@ -23,7 +22,23 @@
 
   <artifactId>trading-ear</artifactId>
   <packaging>ear</packaging>
+
   <name>trading-ear</name>
+
+  <dependencies>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>trading-war</artifactId>
+      <version>${project.version}</version>
+      <type>war</type>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>trading-rar</artifactId>
+      <version>${project.version}</version>
+      <type>rar</type>
+    </dependency>
+  </dependencies>
 
   <build>
     <plugins>
@@ -54,19 +69,4 @@
       </plugin>
     </plugins>
   </build>
-
-  <dependencies>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>trading-war</artifactId>
-      <version>${project.version}</version>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>trading-rar</artifactId>
-      <version>${project.version}</version>
-      <type>rar</type>
-    </dependency>
-  </dependencies>
 </project>

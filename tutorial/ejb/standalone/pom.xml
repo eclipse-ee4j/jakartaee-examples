@@ -11,10 +11,9 @@
 
 -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+
   <parent>
     <groupId>jakarta.tutorial.ejb</groupId>
     <artifactId>parent</artifactId>
@@ -25,6 +24,13 @@
   <packaging>ejb</packaging>
 
   <name>standalone</name>
+
+  <!-- Temporarily skipping test since glassfish-embedded-all is not yet 
+    available in maven central. Remove this when it is available -->
+  <properties>
+    <skipTests>true</skipTests>
+    <maven.surefire.plugin.version>3.0.0-M5</maven.surefire.plugin.version>
+  </properties>
 
   <dependencies>
     <dependency>
@@ -40,12 +46,7 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  <!-- Temporarily skipping test since glassfish-embedded-all is not yet 
-    available in maven central. Remove this when it is available -->
-  <properties>
-    <skipTests>true</skipTests>
-    <maven.surefire.plugin.version>3.0.0-M5</maven.surefire.plugin.version>
-  </properties>
+
   <build>
     <plugins>
       <plugin>
