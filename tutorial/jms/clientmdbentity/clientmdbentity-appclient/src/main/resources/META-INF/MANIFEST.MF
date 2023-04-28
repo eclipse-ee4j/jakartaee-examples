@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Main-Class: jakarta.tutorial.clientmdbentity.appclient.HumanResourceClient
+Class-Path: clientmdbentity-ejb.jar

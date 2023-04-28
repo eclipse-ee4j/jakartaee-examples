@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE resources PUBLIC "-//GlassFish.org//DTD GlassFish Application Server 3.1 Resource Definitions//EN" "http://glassfish.org/dtds/glassfish-resources_1_5.dtd">
+<!--
+
+    Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
+
+    This program and the accompanying materials are made available under the
+    terms of the Eclipse Distribution License v. 1.0, which is available at
+    http://www.eclipse.org/org/documents/edl-v10.php.
+
+    SPDX-License-Identifier: BSD-3-Clause
+
+-->
+<resources>
+  <admin-object-resource enabled="true" jndi-name="jms/AQueue" 
+object-type="user" res-adapter="jmsra" res-type="jakarta.jms.Queue">
+    <description/>
+    <property name="Name" value="AQueueP"/>
+  </admin-object-resource>
+  <admin-object-resource enabled="true" jndi-name="jms/BQueue" 
+object-type="user" res-adapter="jmsra" res-type="jakarta.jms.Queue">
+    <description/>
+    <property name="Name" value="BQueueP"/>
+  </admin-object-resource>
+  <admin-object-resource enabled="true" jndi-name="jms/CQueue" 
+object-type="user" res-adapter="jmsra" res-type="jakarta.jms.Queue">
+    <description/>
+    <property name="Name" value="CQueueP"/>
+  </admin-object-resource>
+  <admin-object-resource enabled="true" jndi-name="jms/OTopic" 
+object-type="user" res-adapter="jmsra" res-type="jakarta.jms.Topic">
+    <description/>
+    <property name="Name" value="OTopicP"/>
+  </admin-object-resource>
+</resources>

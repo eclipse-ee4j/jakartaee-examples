@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+
+    Copyright (c) 2014, 2021 Oracle and/or its affiliates. All rights reserved.
+
+    This program and the accompanying materials are made available under the
+    terms of the Eclipse Distribution License v. 1.0, which is available at
+    http://www.eclipse.org/org/documents/edl-v10.php.
+
+    SPDX-License-Identifier: BSD-3-Clause
+
+-->
+
+<faces-config version="3.0" xmlns="https://jakarta.ee/xml/ns/jakartaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee 
+              https://jakarta.ee/xml/ns/jakartaee/web-facesconfig_3_0.xsd">
+
+    <flow-definition id="joinFlow">
+        <flow-return id="returnFromJoinFlow">
+            <from-outcome>#{joinFlowBean.returnValue}</from-outcome>
+        </flow-return>
+        
+        <flow-call id="callcheckoutFlow">
+            <flow-reference>
+                <flow-id>checkoutFlow</flow-id>
+            </flow-reference>
+            <outbound-parameter>
+                <name>param1FromJoinFlow</name>
+                <value>#{"param1 joinFlow value"}</value>
+            </outbound-parameter>
+            <outbound-parameter>
+                <name>param2FromJoinFlow</name>
+                <value>#{"param2 joinFlow value"}</value>
+            </outbound-parameter>
+        </flow-call>
+        <inbound-parameter>
+            <name>param1FromCheckoutFlow</name>
+            <value>#{flowScope.param1Value}</value>
+        </inbound-parameter>
+        <inbound-parameter>
+            <name>param2FromCheckoutFlow</name>
+            <value>#{flowScope.param2Value}</value>
+        </inbound-parameter>
+    </flow-definition>
+</faces-config>

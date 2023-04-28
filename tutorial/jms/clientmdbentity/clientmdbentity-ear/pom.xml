@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
+
+    This program and the accompanying materials are made available under the
+    terms of the Eclipse Distribution License v. 1.0, which is available at
+    http://www.eclipse.org/org/documents/edl-v10.php.
+
+    SPDX-License-Identifier: BSD-3-Clause
+
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>jakarta.tutorial.jms.clientmdbentity</groupId>
+    <artifactId>parent</artifactId>
+    <version>9.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>clientmdbentity-ear</artifactId>
+  <packaging>ear</packaging>
+
+  <name>clientmdbentity-ear</name>
+
+  <dependencies>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>clientmdbentity-ejb</artifactId>
+      <version>${project.version}</version>
+      <type>ejb</type>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>clientmdbentity-appclient</artifactId>
+      <version>${project.version}</version>
+      <type>app-client</type>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-ear-plugin</artifactId>
+        <configuration>
+          <defaultLibBundleDir>lib</defaultLibBundleDir>
+          <modules>
+            <ejbModule>
+              <groupId>${project.groupId}</groupId>
+              <artifactId>clientmdbentity-ejb</artifactId>
+            </ejbModule>
+            <appClientModule>
+              <groupId>${project.groupId}</groupId>
+              <artifactId>clientmdbentity-appclient</artifactId>
+            </appClientModule>
+          </modules>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-acr-plugin</artifactId>
+        <extensions>true</extensions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>get-client-stubs</id>
+            <phase>integration-test</phase>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <configuration>
+              <executable>${glassfish.home}/bin/asadmin${glassfish.executables.suffix}</executable>
+              <!-- optional -->
+              <arguments>
+                <argument>get-client-stubs</argument>
+                <argument>--appname</argument>
+                <argument>${project.build.finalName}</argument>
+                <argument>./target</argument>
+              </arguments>
+            </configuration>
+          </execution>
+          <execution>
+            <id>run-appclient</id>
+            <phase>integration-test</phase>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <configuration>
+              <executable>${glassfish.home}/glassfish/bin/appclient${glassfish.executables.suffix}</executable>
+              <!-- optional -->
+              <arguments>
+                <argument>-client</argument>
+                <argument>./target/${project.build.finalName}Client.jar</argument>
+              </arguments>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

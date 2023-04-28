@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
+
+    This program and the accompanying materials are made available under the
+    terms of the Eclipse Distribution License v. 1.0, which is available at
+    http://www.eclipse.org/org/documents/edl-v10.php.
+
+    SPDX-License-Identifier: BSD-3-Clause
+
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>jakarta.tutorial.case-studies.dukes-tutoring</groupId>
+    <artifactId>parent</artifactId>
+    <version>9.0-SNAPSHOT</version>
+  </parent>
+  <artifactId>dukes-tutoring-war</artifactId>
+  <packaging>war</packaging>
+
+  <name>dukes-tutoring-war</name>
+  <dependencies>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>dukes-tutoring-common</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>create-tutoring-realm</id>
+            <phase>install</phase>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <configuration>
+              <skip>false</skip>
+              <executable>${glassfish.home}/bin/asadmin${glassfish.executables.suffix}</executable>
+              <successCodes>
+                <successCode>0</successCode>
+                <successCode>1</successCode>
+              </successCodes>
+              <arguments>
+                <argument>create-auth-realm</argument>
+                <argument>--classname</argument>
+                <argument>com.sun.enterprise.security.auth.realm.jdbc.JDBCRealm</argument>
+                <argument>--property</argument>
+                <argument>jaas-context=jdbcRealm:datasource-jndi='java:global/TutoringDataSource':user-table=tutoring.PERSON:user-name-column=email:password-column=password:group-table=tutoring.PERSON:group-name-column=DTYPE:digest-algorithm=none</argument>
+                <argument>tutoringRealm</argument>
+              </arguments>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
