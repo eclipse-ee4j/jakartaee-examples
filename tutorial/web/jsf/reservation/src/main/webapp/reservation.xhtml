@@ -14,10 +14,10 @@
 <!DOCTYPE html>
 <html lang="en"
       xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
-      xmlns:jsf="http://xmlns.jcp.org/jsf">
+      xmlns:f="jakarta.faces.core"
+      xmlns:h="jakarta.faces.html"
+      xmlns:p="jakarta.faces.passthrough"
+      xmlns:faces="jakarta.faces">
 
     <h:head>
     </h:head>
@@ -30,21 +30,21 @@
             <p>
                 <label>Name (First Last):</label>
                 <br/>
-                <input type="text" jsf:id="full_name" name="full_name" 
+                <input type="text" faces:id="full_name" name="full_name" 
                        placeholder="John Doe" value="#{reservationBean.name}" 
                        required="required" title="Enter your name."/>
             </p>
             <p>
                 <label>Email:</label>
                 <br/>
-                <input type="email" jsf:id="email" name="email" 
+                <input type="email" faces:id="email" name="email" 
                        value="#{reservationBean.email}" required="required"
                        title="Enter email."/>
             </p>
             <p>
                 <label>Enter Email Again:</label>
                 <br/>
-                <input type="email" jsf:id="emailAgain" name="emailAgain" 
+                <input type="email" faces:id="emailAgain" name="emailAgain" 
                        value="#{reservationBean.emailAgain}" required="required" 
                        title="Enter email again." oninput="check(this)"/>
             </p>
@@ -52,7 +52,7 @@
             <p>
                 <label>Performance Date:</label>
                 <br/>
-                <input type="date" jsf:id="date" name="date" 
+                <input type="date" faces:id="date" name="date" 
                        value="#{reservationBean.date}" required="required"
                        title="Enter or choose a date."/>
             </p>
@@ -81,7 +81,7 @@
             <p>
                 <label>Estimated Total:</label>
                 <br/>
-                <output jsf:id="total" name="total">
+                <output faces:id="total" name="total">
                     #{reservationBean.totalValue}
                 </output>
             </p>
@@ -89,7 +89,7 @@
             <p>
                 <h:commandButton value="Make Reservation" 
                                  action="confirmation"/>
-                <input jsf:id="clear" name="clear" value="Clear" type="submit">
+                <input faces:id="clear" name="clear" value="Clear" type="submit">
                     <f:ajax render="@all" listener="#{reservationBean.clear}"/>
                 </input>
             </p>
