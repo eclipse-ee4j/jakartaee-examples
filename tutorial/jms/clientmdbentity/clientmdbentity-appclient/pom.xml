@@ -15,7 +15,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>jakarta.tutorial.jms.clientmdbentity</groupId>
+    <groupId>jakarta.examples.tutorial.jms.clientmdbentity</groupId>
     <artifactId>parent</artifactId>
     <version>10-SNAPSHOT</version>
   </parent>
@@ -42,7 +42,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>jakarta.tutorial.clientmdbentity.appclient.HumanResourceClient</mainClass>
+              <mainClass>jakarta.examples.tutorial.clientmdbentity.appclient.HumanResourceClient</mainClass>
             </manifest>
           </archive>
         </configuration>

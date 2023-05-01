@@ -15,7 +15,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>jakarta.tutorial.ejb.async</groupId>
+    <groupId>jakarta.examples.tutorial.ejb.async</groupId>
     <artifactId>parent</artifactId>
     <version>10-SNAPSHOT</version>
   </parent>
@@ -29,7 +29,7 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
         <configuration>
-          <mainClass>jakarta.tutorial.asyncsmtpd.Server</mainClass>
+          <mainClass>jakarta.examples.tutorial.asyncsmtpd.Server</mainClass>
         </configuration>
       </plugin>
     </plugins>

@@ -15,7 +15,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>jakarta.tutorial.connectors.trading</groupId>
+    <groupId>jakarta.examples.tutorial.connectors.trading</groupId>
     <artifactId>parent</artifactId>
     <version>10-SNAPSHOT</version>
   </parent>
@@ -29,7 +29,7 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
         <configuration>
-          <mainClass>jakarta.tutorial.trading.eis.TradeExecServer</mainClass>
+          <mainClass>jakarta.examples.tutorial.trading.eis.TradeExecServer</mainClass>
         </configuration>
       </plugin>
     </plugins>

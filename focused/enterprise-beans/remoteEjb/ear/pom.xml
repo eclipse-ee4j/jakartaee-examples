@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>jakartaee.examples.ejb.remoteejb</groupId>
+        <groupId>jakarta.examples.focused.ejb.remoteejb</groupId>
         <artifactId>project</artifactId>
         <version>10-SNAPSHOT</version>
     </parent>
@@ -20,7 +20,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>jakartaee.examples.ejb.remoteejb</groupId>
+            <groupId>jakarta.examples.focused.ejb.remoteejb</groupId>
             <artifactId>ejb</artifactId>
             <version>${project.version}</version>
             <type>ejb</type>
@@ -51,7 +51,7 @@
                     <defaultLibBundleDir>lib</defaultLibBundleDir>
                     <modules>
                         <ejbModule>
-                            <groupId>jakartaee.examples.ejb.remoteejb</groupId>
+                            <groupId>jakarta.examples.focused.ejb.remoteejb</groupId>
                             <artifactId>ejb</artifactId>
                             <moduleId>remoteEjbJar</moduleId>
                             <bundleFileName>remoteEjbJar.jar</bundleFileName>

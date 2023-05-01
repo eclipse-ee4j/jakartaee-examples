@@ -15,7 +15,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>jakarta.tutorial.jaxws</groupId>
+    <groupId>jakarta.examples.tutorial.jaxws</groupId>
     <artifactId>parent</artifactId>
     <version>10-SNAPSHOT</version>
   </parent>
@@ -42,7 +42,7 @@
                 <wsdlFile>HelloService.wsdl</wsdlFile>
               </wsdlFiles>
               <wsdlLocation>http://localhost:8080/helloservice-war/HelloService?WSDL</wsdlLocation>
-              <packageName>jakarta.tutorial.helloservice.endpoint</packageName>
+              <packageName>jakarta.examples.tutorial.helloservice.endpoint</packageName>
             </configuration>
             <phase>generate-sources</phase>
           </execution>

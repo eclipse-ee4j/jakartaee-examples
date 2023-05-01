@@ -15,7 +15,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>jakarta.tutorial.jaxws</groupId>
+    <groupId>jakarta.examples.tutorial.jaxws</groupId>
     <artifactId>parent</artifactId>
     <version>10-SNAPSHOT</version>
   </parent>
@@ -39,7 +39,7 @@
               <goal>wsgen</goal>
             </goals>
             <configuration>
-              <sei>jakarta.tutorial.helloservice.Hello</sei>
+              <sei>jakarta.examples.tutorial.helloservice.Hello</sei>
               <genWsdl>true</genWsdl>
             </configuration>
           </execution>

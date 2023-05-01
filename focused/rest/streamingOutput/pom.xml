@@ -7,7 +7,7 @@
     
     <parent>
         <artifactId>project</artifactId>
-        <groupId>jakartaee.examples.jaxrs</groupId>
+        <groupId>jakarta.examples.focused.jaxrs</groupId>
         <version>10-SNAPSHOT</version>
     </parent>
 

@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>jakartaee.examples</groupId>
+        <groupId>jakarta.examples.focused</groupId>
         <artifactId>project</artifactId>
         <version>10-SNAPSHOT</version>
     </parent>
 
-    <groupId>jakartaee.examples.faces</groupId>
+    <groupId>jakarta.examples.focused.faces</groupId>
     <artifactId>project</artifactId>
     <packaging>pom</packaging>
 
@@ -47,7 +47,7 @@
 
     <dependencies>
         <dependency>
-             <groupId>jakartaee.examples</groupId>
+             <groupId>jakarta.examples.focused</groupId>
              <artifactId>utils</artifactId>
              <version>${project.version}</version>
              <scope>test</scope>

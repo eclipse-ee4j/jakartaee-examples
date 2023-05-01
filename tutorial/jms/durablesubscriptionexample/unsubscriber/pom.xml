@@ -15,7 +15,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>jakarta.tutorial.jms.durablesubscriptionexample</groupId>
+    <groupId>jakarta.examples.tutorial.jms.durablesubscriptionexample</groupId>
     <artifactId>parent</artifactId>
     <version>10-SNAPSHOT</version>
   </parent>
@@ -34,7 +34,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>jakarta.tutorial.unsubscriber.Unsubscriber</mainClass>
+              <mainClass>jakarta.examples.tutorial.unsubscriber.Unsubscriber</mainClass>
             </manifest>
           </archive>
         </configuration>

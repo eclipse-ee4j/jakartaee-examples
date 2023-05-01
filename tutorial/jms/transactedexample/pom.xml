@@ -15,12 +15,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>jakarta.tutorial.jms</groupId>
+    <groupId>jakarta.examples.tutorial.jms</groupId>
     <artifactId>parent</artifactId>
     <version>10-SNAPSHOT</version>
   </parent>
 
-  <groupId>jakarta.tutorial.jms.transactedexample</groupId>
+  <groupId>jakarta.examples.tutorial.jms.transactedexample</groupId>
   <artifactId>parent</artifactId>
   <packaging>pom</packaging>
 

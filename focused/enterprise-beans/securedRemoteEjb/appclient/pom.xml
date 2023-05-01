@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>jakartaee.examples.ejb.securedremoteejb</groupId>
+        <groupId>jakarta.examples.focused.ejb.securedremoteejb</groupId>
         <artifactId>project</artifactId>
         <version>10-SNAPSHOT</version>
     </parent>
 
-    <groupId>jakartaee.examples.ejb.securedremoteejb</groupId>
+    <groupId>jakarta.examples.focused.ejb.securedremoteejb</groupId>
     <artifactId>appclient</artifactId>
     <version>10-SNAPSHOT</version>
     <packaging>app-client</packaging>
@@ -22,7 +22,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>jakartaee.examples.ejb.securedremoteejb</groupId>
+            <groupId>jakarta.examples.focused.ejb.securedremoteejb</groupId>
             <artifactId>ejb</artifactId>
             <version>${project.version}</version>
             <classifier>client</classifier>
@@ -46,7 +46,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>                 
-                            <mainClass>jakartaee.examples.ejb.securedremoteejb.appclient.Client</mainClass>
+                            <mainClass>jakarta.examples.focused.ejb.securedremoteejb.appclient.Client</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -65,7 +65,7 @@
                         <configuration>
                             <artifactItems>
                                 <artifactItem>
-                                    <groupId>jakartaee.examples.ejb.securedremoteejb</groupId>
+                                    <groupId>jakarta.examples.focused.ejb.securedremoteejb</groupId>
                                     <artifactId>ejb</artifactId>
                                     <version>${project.version}</version>
                                     <classifier>client</classifier>

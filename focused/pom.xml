@@ -3,12 +3,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>jakartaee.examples</groupId>
+    <groupId>jakarta.examples.focused</groupId>
     <artifactId>project</artifactId>
     <version>10-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>Jakarta EE 10 Examples</name>
+    <name>Jakarta EE 10 Examples - Focused</name>
 
     <modules>
         <module>validation</module>
@@ -230,7 +230,7 @@
                 <dependency>
                     <groupId>org.omnifaces.arquillian</groupId>
                     <artifactId>arquillian-glassfish-server-managed</artifactId>
-                    <version>1.3</version>
+                    <version>1.4-SNAPSHOT</version>
                     <scope>test</scope>
                 </dependency>
             </dependencies>

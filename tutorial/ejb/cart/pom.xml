@@ -15,12 +15,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>jakarta.tutorial.ejb</groupId>
+    <groupId>jakarta.examples.tutorial.ejb</groupId>
     <artifactId>parent</artifactId>
     <version>10-SNAPSHOT</version>
   </parent>
 
-  <groupId>jakarta.tutorial.ejb.cart</groupId>
+  <groupId>jakarta.examples.tutorial.ejb.cart</groupId>
   <artifactId>parent</artifactId>
   <packaging>pom</packaging>
 
