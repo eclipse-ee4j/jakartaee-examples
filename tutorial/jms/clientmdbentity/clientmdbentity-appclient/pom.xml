@@ -17,7 +17,7 @@
   <parent>
     <groupId>jakarta.tutorial.jms.clientmdbentity</groupId>
     <artifactId>parent</artifactId>
-    <version>9.0-SNAPSHOT</version>
+    <version>10-SNAPSHOT</version>
   </parent>
 
   <artifactId>clientmdbentity-appclient</artifactId>
