@@ -54,9 +54,7 @@
 		<eclipselink.version>3.0.0</eclipselink.version>
 		<glassfish.embedded.version>6.0.0</glassfish.embedded.version>
 		
-		<glassfish.domain.name>domain1</glassfish.domain.name>
-		<glassfish.home>${glassfish.home.prefix}/glassfish6</glassfish.home>
-		<integration.container.id>glassfish6x</integration.container.id>
+		<glassfish.home>${session.executionRootDirectory}/target/glassfish7</glassfish.home>
 		
 		<maven.deploy.skip>true</maven.deploy.skip>
 		<maven.javadoc.skip>true</maven.javadoc.skip>
@@ -85,7 +83,7 @@
 			    <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-enforcer-plugin</artifactId>
-                    <version>3.0.0-M3</version>
+                    <version>3.0.0</version>
                 </plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -128,10 +126,10 @@
 					<version>2.4</version>
 				</plugin>
 				<plugin>
-					<groupId>org.codehaus.cargo</groupId>
-					<artifactId>cargo-maven2-plugin</artifactId>
-					<version>1.8.3</version>
-				</plugin>
+                    <groupId>org.codehaus.cargo</groupId>
+                    <artifactId>cargo-maven3-plugin</artifactId>
+                    <version>1.10.6</version>
+                </plugin>
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>exec-maven-plugin</artifactId>
@@ -139,6 +137,7 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
+		
 		<plugins>
 		    <plugin>
                 <artifactId>maven-enforcer-plugin</artifactId>
@@ -173,7 +172,7 @@
             
 			<plugin>
 				<groupId>org.codehaus.cargo</groupId>
-				<artifactId>cargo-maven2-plugin</artifactId>
+				<artifactId>cargo-maven3-plugin</artifactId>
 				<executions>
 					<execution>
 						<id>deploy</id>
@@ -185,7 +184,7 @@
 				</executions>
 				<configuration>
 					<container>
-						<containerId>${integration.container.id}</containerId>
+						<containerId>glassfish7x</containerId>
 						<type>installed</type>
 						<home>${glassfish.home}</home>
 					</container>
@@ -193,9 +192,7 @@
 						<type>existing</type>
 						<home>${glassfish.home}/glassfish/domains</home>
 						<properties>
-							<cargo.glassfish.domain.name>${glassfish.domain.name}</cargo.glassfish.domain.name>
-							<!--cargo.remote.username></cargo.remote.username -->
-							<cargo.remote.password />
+							<cargo.glassfish.domain.name>domain1</cargo.glassfish.domain.name>
 						</properties>
 					</configuration>
 				</configuration>
@@ -238,59 +235,114 @@
 	</build>
 
 	<profiles>
-		<profile>
-			<id>windows</id>
-			<activation>
-				<os>
-					<family>windows</family>
-				</os>
-			</activation>
-			<properties>
-				<glassfish.home.prefix>c:/</glassfish.home.prefix>
-				<glassfish.executables.suffix>.bat</glassfish.executables.suffix>
-			</properties>
-		</profile>
-		
-		<profile>
-			<id>unix</id>
-			<activation>
-				<os>
-					<family>unix</family>
-				</os>
-			</activation>
-			<properties>
-				<glassfish.home.prefix>${user.home}</glassfish.home.prefix>
-				<glassfish.executables.suffix />
-			</properties>
-		</profile>
-		
-		<profile>
-			<id>sdk</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<properties>
-				<glassfish.home>${basedir}/../../../</glassfish.home>
-			</properties>
-		</profile>
-		
-		<profile>
-			<id>development</id>
-			<activation>
-				<file>
-					<exists>${basedir}/../bundle</exists>
-				</file>
-			</activation>
-			<properties>
-				<glassfish.home>${glassfish.home.prefix}/glassfish6</glassfish.home>
-			</properties>
-		</profile>
-		
-		<profile>
-			<id>standalone</id>
-			<properties>
-				<glassfish.home>${basedir}/target/cargo/installs/glassfish</glassfish.home>
-			</properties>
-		</profile>
+         <!-- ### GLASSFISH ### -->
+    
+        <profile>
+            <id>glassfish-ci-managed</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            
+            <properties>
+                <glassfish.version>7.0.4</glassfish.version>
+            </properties>
+
+            <dependencies>
+                
+                <!-- 
+                    Client libraries for Jakarta EE.  
+                    
+                    These provide implementations of e.g. the REST client, that lets tests do REST requests.
+                    These tests just depend on the API for these client tools.
+                -->
+                <dependency>
+                    <groupId>org.omnifaces.arquillian</groupId>
+                    <artifactId>glassfish-client-ee10</artifactId>
+                    <version>1.3</version>
+                </dependency>
+
+                <!-- 
+                    The Arquillian connector for GlassFish.
+                    
+                    This lets Arquillian start and stop GlassFish, and deploy and undeploy war files to it.
+                -->
+                <dependency>
+                    <groupId>org.omnifaces.arquillian</groupId>
+                    <artifactId>arquillian-glassfish-server-managed</artifactId>
+                    <version>1.3</version>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+
+            <build>
+                <plugins>
+                    
+                    <!-- Download and unzip GlassFish -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-dependency-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>unpack</id>
+                                <phase>process-test-classes</phase>
+                                <goals>
+                                    <goal>unpack</goal>
+                                </goals>
+                                <configuration>
+                                    <outputDirectory>${session.executionRootDirectory}/target</outputDirectory>
+                                    <markersDirectory>${session.executionRootDirectory}/target/dependency-maven-plugin-markers</markersDirectory>
+                                    <artifactItems>
+                                        <artifactItem>
+                                            <groupId>org.glassfish.main.distributions</groupId>
+                                            <artifactId>glassfish</artifactId>
+                                            <version>${glassfish.version}</version>
+                                            <type>zip</type>
+                                            <overWrite>false</overWrite>
+                                            <outputDirectory>${session.executionRootDirectory}/target</outputDirectory>
+                                        </artifactItem>
+                                    </artifactItems>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <systemPropertyVariables>
+                                <glassfish.home>${session.executionRootDirectory}/target/glassfish7</glassfish.home>
+                                <glassfish.enableDerby>true</glassfish.enableDerby>
+                            </systemPropertyVariables>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        
+        <profile>
+            <id>windows</id>
+            <activation>
+                <os>
+                    <family>windows</family>
+                </os>
+            </activation>
+            <properties>
+                <glassfish.executables.suffix>.bat</glassfish.executables.suffix>
+            </properties>
+        </profile>
+        
+        <profile>
+            <id>unix</id>
+            <activation>
+                <os>
+                    <family>unix</family>
+                </os>
+            </activation>
+            <properties>
+                <glassfish.executables.suffix />
+            </properties>
+        </profile>
+        
 	</profiles>
 </project>
