@@ -15,7 +15,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>jakarta.tutorial.jms.clientsessionmdb</groupId>
+    <groupId>jakarta.examples.tutorial.jms.clientsessionmdb</groupId>
     <artifactId>parent</artifactId>
     <version>10-SNAPSHOT</version>
   </parent>
@@ -45,7 +45,7 @@
               <addClasspath>true</addClasspath>
               <classpathLayoutType>custom</classpathLayoutType>
               <customClasspathLayout>$${artifact.artifactId}.$${artifact.extension}</customClasspathLayout>
-              <mainClass>jakarta.tutorial.clientsessionmdb.appclient.MyAppClient</mainClass>
+              <mainClass>jakarta.examples.tutorial.clientsessionmdb.appclient.MyAppClient</mainClass>
             </manifest>
           </archive>
         </configuration>

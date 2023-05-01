@@ -15,7 +15,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>jakarta.tutorial.persistence.roster</groupId>
+    <groupId>jakarta.examples.tutorial.persistence.roster</groupId>
     <artifactId>parent</artifactId>
     <version>10-SNAPSHOT</version>
   </parent>
@@ -43,7 +43,7 @@
           <archive>
             <manifest>
               <addClasspath>true</addClasspath>
-              <mainClass>jakarta.tutorial.roster.client.RosterClient</mainClass>
+              <mainClass>jakarta.examples.tutorial.roster.client.RosterClient</mainClass>
             </manifest>
           </archive>
         </configuration>

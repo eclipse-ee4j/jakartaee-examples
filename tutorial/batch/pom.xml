@@ -15,12 +15,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>jakarta.tutorial</groupId>
+    <groupId>jakarta.examples.tutorial</groupId>
     <artifactId>examples</artifactId>
     <version>10-SNAPSHOT</version>
   </parent>
 
-  <groupId>jakarta.tutorial.batch</groupId>
+  <groupId>jakarta.examples.tutorial.batch</groupId>
   <artifactId>parent</artifactId>
   <packaging>pom</packaging>
 

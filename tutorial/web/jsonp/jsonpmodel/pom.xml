@@ -15,7 +15,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>jakarta.tutorial.web.jsonp</groupId>
+    <groupId>jakarta.examples.tutorial.web.jsonp</groupId>
     <artifactId>parent</artifactId>
     <version>10-SNAPSHOT</version>
   </parent>

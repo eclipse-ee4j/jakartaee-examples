@@ -3,12 +3,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>jakartaee.examples</groupId>
+        <groupId>jakarta.examples.focused</groupId>
         <artifactId>project</artifactId>
         <version>10-SNAPSHOT</version>
     </parent>
 
-    <groupId>jakartaee.examples.jpa</groupId>
+    <groupId>jakarta.examples.focused.jpa</groupId>
     <artifactId>project</artifactId>
     <packaging>pom</packaging>
 

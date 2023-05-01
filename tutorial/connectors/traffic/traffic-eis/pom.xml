@@ -15,7 +15,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>jakarta.tutorial.connectors.traffic</groupId>
+    <groupId>jakarta.examples.tutorial.connectors.traffic</groupId>
     <artifactId>parent</artifactId>
     <version>10-SNAPSHOT</version>
   </parent>
@@ -42,7 +42,7 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
         <configuration>
-          <mainClass>jakarta.tutorial.traffic.eis.TrafficServer</mainClass>
+          <mainClass>jakarta.examples.tutorial.traffic.eis.TrafficServer</mainClass>
         </configuration>
       </plugin>
     </plugins>

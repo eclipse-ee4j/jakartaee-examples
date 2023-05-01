@@ -13,12 +13,12 @@
 		<version>1.0.6</version>
 	</parent>
 
-	<groupId>jakarta.tutorial</groupId>
+	<groupId>jakarta.examples.tutorial</groupId>
 	<artifactId>examples</artifactId>
 	<version>10-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>Jakarta EE Tutorial Examples</name>
+	<name>Jakarta EE 10 Examples - Tutorial</name>
 
 	<modules>
 		<module>archetypes</module>
@@ -284,7 +284,7 @@
                         <executions>
                             <execution>
                                 <id>unpack</id>
-                                <phase>process-test-classes</phase>
+                                <phase>process-resources</phase>
                                 <goals>
                                     <goal>unpack</goal>
                                 </goals>
