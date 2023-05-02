@@ -1,5 +1,5 @@
 /*
- * Permission to use, copy, modify, and/or distribute this software for any 
+ * Permission to use, copy, modify, and/or distribute this software for any
  * purpose with or without fee is hereby granted.
  *
  * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR(S) DISCLAIMS ALL WARRANTIES
@@ -13,27 +13,27 @@
 package jakartaee.examples.websocket.encoderdecoder;
 
 
-import java.io.File;
+import static org.junit.Assert.assertEquals;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.URL;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
+
+import org.glassfish.tyrus.client.ClientManager;
+import org.jboss.arquillian.container.test.api.RunAsClient;
+import org.jboss.arquillian.junit.Arquillian;
+import org.jboss.arquillian.test.api.ArquillianResource;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
 import jakarta.websocket.ClientEndpoint;
 import jakarta.websocket.EncodeException;
 import jakarta.websocket.OnMessage;
 import jakarta.websocket.OnOpen;
 import jakarta.websocket.Session;
-import org.jboss.arquillian.junit.Arquillian;
-import org.glassfish.tyrus.client.ClientManager;
-import org.jboss.arquillian.container.test.api.Deployment;
-import org.jboss.arquillian.container.test.api.RunAsClient;
-import org.jboss.arquillian.test.api.ArquillianResource;
-import static org.jboss.shrinkwrap.api.ShrinkWrap.create;
-import org.jboss.shrinkwrap.api.spec.WebArchive;
-import static org.junit.Assert.assertEquals;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import jakartaee.examples.utils.ITBase;
 
 /**
  * An annotated ClientEndpoint for the annotated ClientEndpoint example.
@@ -41,12 +41,11 @@ import org.junit.runner.RunWith;
  * @author Manfred Riem (mriem@manorrock.com)
  */
 @ClientEndpoint(
-        encoders = {EncoderDecoderEncoder.class},
-        decoders = {EncoderDecoderDecoder.class}
+    encoders = EncoderDecoderEncoder.class,
+    decoders = EncoderDecoderDecoder.class
 )
 @RunWith(Arquillian.class)
-
-public class EncoderDecoderEndpointTest {
+public class EncoderDecoderEndpointIT extends ITBase {
 
     /**
      * Stores the base URL.
@@ -63,22 +62,6 @@ public class EncoderDecoderEndpointTest {
      * Stores our countdown latch.
      */
     private CountDownLatch countDown = new CountDownLatch(1);
-
-    /**
-     * Create the deployment web archive.
-     *
-     * @return the deployment web archive.
-     */
-    @Deployment
-    public static WebArchive createDeployment() {
-        return create(WebArchive.class).addClasses(
-                EncoderDecoderEndpoint.class, EncoderDecoder.class,
-                EncoderDecoderDecoder.class, EncoderDecoderEncoder.class).
-                addAsWebResource(new File("src/main/webapp/index.xhtml")).
-                addAsWebInfResource(new File("src/main/webapp/WEB-INF/web.xml")).
-                addAsWebInfResource(new File("src/main/webapp/WEB-INF/beans.xml"))
-                ;
-    }
 
     /**
      * Get the buffer.
@@ -99,7 +82,7 @@ public class EncoderDecoderEndpointTest {
         try {
             session.getBasicRemote().sendObject(new EncoderDecoder("ECHO"));
         } catch (IOException | EncodeException e) {
-            buffer.append(e.getMessage()); 
+            buffer.append(e.getMessage());
         }
     }
 
@@ -124,12 +107,20 @@ public class EncoderDecoderEndpointTest {
     @RunAsClient
     public void testClientEndpoint() throws Exception {
         countDown = new CountDownLatch(1);
+
         ClientManager client = ClientManager.createClient();
         StringBuilder wsUrl = new StringBuilder();
-        wsUrl.append("ws://").append(baseUrl.getHost()).append(":").
-                append(baseUrl.getPort()).append(baseUrl.getPath()).append("echo");
+        wsUrl.append("ws://")
+             .append(baseUrl.getHost())
+             .append(":")
+             .append(baseUrl.getPort())
+             .append(baseUrl.getPath())
+             .append("echo");
+
         client.connectToServer(this, new URI(wsUrl.toString()));
+
         countDown.await(100, TimeUnit.SECONDS);
+
         assertEquals("ECHO", buffer.toString());
     }
 }
