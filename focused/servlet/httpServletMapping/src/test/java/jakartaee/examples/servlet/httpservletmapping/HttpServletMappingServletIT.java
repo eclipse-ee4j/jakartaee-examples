@@ -1,5 +1,5 @@
 /*
- * Permission to use, copy, modify, and/or distribute this software for any 
+ * Permission to use, copy, modify, and/or distribute this software for any
  * purpose with or without fee is hereby granted.
  *
  * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR(S) DISCLAIMS ALL WARRANTIES
@@ -12,21 +12,19 @@
  */
 package jakartaee.examples.servlet.httpservletmapping;
 
-import com.gargoylesoftware.htmlunit.TextPage;
-import com.gargoylesoftware.htmlunit.WebClient;
+import static org.junit.Assert.assertTrue;
 
 import java.net.URL;
-import org.jboss.arquillian.junit.Arquillian;
-import org.jboss.arquillian.container.test.api.Deployment;
+
 import org.jboss.arquillian.container.test.api.RunAsClient;
+import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.test.api.ArquillianResource;
-import static org.jboss.shrinkwrap.api.ShrinkWrap.create;
-import org.jboss.shrinkwrap.api.spec.WebArchive;
-import org.junit.After;
-import static org.junit.Assert.assertTrue;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import com.gargoylesoftware.htmlunit.TextPage;
+
+import jakartaee.examples.utils.ITBase;
 
 /**
  * The JUnit tests for the Servlet API HTTP servlet mapping example.
@@ -34,8 +32,8 @@ import org.junit.runner.RunWith;
  * @author Manfred Riem (mriem@manorrock.com)
  */
 @RunWith(Arquillian.class)
-
-public class HttpServletMappingServletTest {
+@RunAsClient
+public class HttpServletMappingServletIT extends ITBase {
 
     /**
      * Stores the base URL.
@@ -44,39 +42,8 @@ public class HttpServletMappingServletTest {
     private URL baseUrl;
 
     /**
-     * Stores the web client.
-     */
-    private WebClient webClient;
-
-    /**
-     * Setup before testing.
-     */
-    @Before
-    public void before() {
-        webClient = new WebClient();
-    }
-    
-    /**
-     * Create the deployment web archive.
-     *
-     * @return the deployment web archive.
-     */
-    @Deployment
-    public static WebArchive createDeployment() {
-        return create(WebArchive.class).addClass(HttpServletMappingServlet.class);
-    }
-
-    /**
-     * Tear down after testing.
-     */
-    @After
-    public void after() {
-        webClient.close();
-    }
-
-    /**
      * Test the HTTP servlet mapping.
-     * 
+     *
      * @throws Exception when a serious error occurs.
      */
     @RunAsClient
