@@ -19,10 +19,12 @@
         <module>asyncServlet</module>
         <module>explainingHttpServlet</module>
         <module>httpServletMapping</module>
+        <module>httpSessionAttributeListener</module>
         <module>pushBuilder</module>
         <module>servletContextListener</module>
         <module>servletRequestListener</module>
         <module>webServlet</module>
+        <module>webFilter</module>
     </modules>
 
     <dependencies>

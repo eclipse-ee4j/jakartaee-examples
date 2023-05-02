@@ -205,7 +205,7 @@
             </activation>
             
             <properties>
-                <glassfish.version>7.0.3</glassfish.version>
+                <glassfish.version>7.0.4</glassfish.version>
             </properties>
 
             <dependencies>
@@ -231,7 +231,7 @@
                 <dependency>
                     <groupId>org.omnifaces.arquillian</groupId>
                     <artifactId>arquillian-glassfish-server-managed</artifactId>
-                    <version>1.4-SNAPSHOT</version>
+                    <version>1.3</version>
                     <scope>test</scope>
                 </dependency>
             </dependencies>
@@ -265,16 +265,6 @@
                                 </configuration>
                             </execution>
                         </executions>
-                    </plugin>
-                    
-                    <plugin>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <configuration>
-                            <systemPropertyVariables>
-                                <glassfish.home>${session.executionRootDirectory}/target/glassfish7</glassfish.home>
-                                <glassfish.enableDerby>true</glassfish.enableDerby>
-                            </systemPropertyVariables>
-                        </configuration>
                     </plugin>
                     
                     <plugin>
