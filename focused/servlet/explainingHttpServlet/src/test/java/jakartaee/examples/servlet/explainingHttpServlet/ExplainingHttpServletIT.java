@@ -1,5 +1,5 @@
 /*
- * Permission to use, copy, modify, and/or distribute this software for any 
+ * Permission to use, copy, modify, and/or distribute this software for any
  * purpose with or without fee is hereby granted.
  *
  * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR(S) DISCLAIMS ALL WARRANTIES
@@ -12,23 +12,19 @@
  */
 package jakartaee.examples.servlet.explainingHttpServlet;
 
-import jakartaee.examples.servlet.explainingHttpServlet.ExplainingHttpServlet;
-import com.gargoylesoftware.htmlunit.WebClient;
-import com.gargoylesoftware.htmlunit.html.HtmlPage;
-
-import java.io.File;
-import java.net.URL;
-import org.jboss.arquillian.junit.Arquillian;
-import org.jboss.arquillian.container.test.api.Deployment;
-import org.jboss.arquillian.container.test.api.RunAsClient;
-import org.jboss.arquillian.test.api.ArquillianResource;
-import static org.jboss.shrinkwrap.api.ShrinkWrap.create;
-import org.jboss.shrinkwrap.api.spec.WebArchive;
-import org.junit.After;
 import static org.junit.Assert.assertTrue;
-import org.junit.Before;
+
+import java.net.URL;
+
+import org.jboss.arquillian.container.test.api.RunAsClient;
+import org.jboss.arquillian.junit.Arquillian;
+import org.jboss.arquillian.test.api.ArquillianResource;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import com.gargoylesoftware.htmlunit.html.HtmlPage;
+
+import jakartaee.examples.utils.ITBase;
 
 /**
  * The JUnit tests for the Servlet API @ExplainingHttpServlet example.
@@ -36,48 +32,14 @@ import org.junit.runner.RunWith;
  * @author Ken Fogel (omniprof@gmail.com)
  */
 @RunWith(Arquillian.class)
-
-public class ExplainingHttpServletTest {
+@RunAsClient
+public class ExplainingHttpServletIT extends ITBase {
 
     /**
      * Stores the base URL.
      */
     @ArquillianResource
     private URL baseUrl;
-
-    /**
-     * Stores the web client.
-     */
-    private WebClient webClient;
-
-    /**
-     * Setup before testing.
-     */
-    @Before
-    public void before() {
-        webClient = new WebClient();
-    }
-
-    /**
-     * Create the deployment web archive.
-     *
-     * @return the deployment web archive.
-     */
-    @Deployment
-    public static WebArchive createDeployment() {
-        return create(WebArchive.class).addClass(ExplainingHttpServlet.class).
-                addAsWebResource(new File("src/main/webapp/index.html")).
-                addAsWebResource(new File("src/main/webapp/styles/main.css"), "styles/main.css").
-                addAsWebInfResource(new File("src/main/webapp/WEB-INF/web.xml"));
-    }
-
-    /**
-     * Tear down after testing.
-     */
-    @After
-    public void after() {
-        webClient.close();
-    }
 
     /**
      * Test the @ExplainingHttpServlet GET call.
