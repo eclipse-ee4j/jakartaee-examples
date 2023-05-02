@@ -1,5 +1,5 @@
 /*
- * Permission to use, copy, modify, and/or distribute this software for any 
+ * Permission to use, copy, modify, and/or distribute this software for any
  * purpose with or without fee is hereby granted.
  *
  * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR(S) DISCLAIMS ALL WARRANTIES
@@ -13,12 +13,10 @@
 package jakartaee.examples.jsonp.jsonparser;
 
 import java.io.StringReader;
-import java.io.StringWriter;
-import static java.util.stream.IntStream.builder;
-import jakarta.inject.Named;
+
 import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Named;
 import jakarta.json.Json;
-import jakarta.json.JsonWriter;
 import jakarta.json.stream.JsonParser;
 import jakarta.json.stream.JsonParser.Event;
 
@@ -43,7 +41,7 @@ public class JsonParserBean {
 
     /**
      * Get the input.
-     * 
+     *
      * @return the input.
      */
     public String getInput() {
@@ -61,7 +59,7 @@ public class JsonParserBean {
 
     /**
      * Set the input.
-     * 
+     *
      * @param input the input.
      */
     public void setInput(String input) {
@@ -77,7 +75,7 @@ public class JsonParserBean {
         JsonParser parser = Json.createParser(new StringReader(input));
         StringBuilder builder = new StringBuilder();
         while(parser.hasNext()) {
-            Event event = parser.next(); 
+            Event event = parser.next();
             builder.append(event.toString()).append("\n");
         }
         output = builder.toString();
