@@ -5,7 +5,7 @@ This repository contains code examples for Jakarta EE 10.
 
 A selection of these examples have an elaborate explanation in the Jakarta EE Tutorial.
 
-The Jakarta EE Tutorial code examples is located in a separate repository
+The Jakarta EE Tutorial is located in a separate repository
 [eclipse-ee4j/jakartaee-tutorial](https://github.com/eclipse-ee4j/jakartaee-tutorial).
 
 Note that this project, as the tutorial, is currently very much a work in progress.
