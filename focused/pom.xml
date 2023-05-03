@@ -219,7 +219,7 @@
                 <dependency>
                     <groupId>org.omnifaces.arquillian</groupId>
                     <artifactId>glassfish-client-ee10</artifactId>
-                    <version>1.3</version>
+                    <version>1.4</version>
                     <scope>test</scope>
                 </dependency>
 
@@ -231,7 +231,7 @@
                 <dependency>
                     <groupId>org.omnifaces.arquillian</groupId>
                     <artifactId>arquillian-glassfish-server-managed</artifactId>
-                    <version>1.3</version>
+                    <version>1.4</version>
                     <scope>test</scope>
                 </dependency>
             </dependencies>
