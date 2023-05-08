@@ -21,6 +21,7 @@
         <module>httpServletMapping</module>
         <module>httpSessionAttributeListener</module>
         <module>pushBuilder</module>
+        <module>relogin</module>
         <module>servletContextListener</module>
         <module>servletRequestListener</module>
         <module>webServlet</module>
