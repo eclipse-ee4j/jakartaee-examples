@@ -23,9 +23,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 /**
- * The Servlet for the Servlet API @WebServlet example.
+ * The Servlet for the Servlet API Relogin example.
  *
- * @author Manfred Riem (mriem@manorrock.com)
+ * @author Arjan Tijms
  */
 @WebServlet(urlPatterns = "/*")
 @DeclareRoles("student")

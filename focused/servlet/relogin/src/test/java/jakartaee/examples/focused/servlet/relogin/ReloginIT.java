@@ -27,9 +27,9 @@ import com.gargoylesoftware.htmlunit.TextPage;
 import jakartaee.examples.utils.ITBase;
 
 /**
- * The JUnit tests for the HttpSessionAttributeListener(Bean|Example) classes.
+ * The JUnit tests for the relogin classes
  *
- * @author Manfred Riem (mriem@manorrock.com)
+ * @author Arjan Tijms
  */
 @RunWith(Arquillian.class)
 @RunAsClient
@@ -42,13 +42,13 @@ public class ReloginIT extends ITBase {
     private URL baseUrl;
 
     /**
-     * Test the HttpSessionAttributeListener.
+     * Test the relogin
      *
      * @throws Exception when a serious error occurs.
      */
     @RunAsClient
     @Test
-    public void testHttpSessionAttributeListener() throws Exception {
+    public void testRelogin() throws Exception {
         TextPage page = webClient.getPage(baseUrl);
 
         System.out.println(page.getContent());
