@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>jakarta.examples.focused.servlet</groupId>
+        <artifactId>project</artifactId>
+        <version>10-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>relogin</artifactId>
+    <packaging>war</packaging>
+
+    <name>A Jakarta Servlet Relogin example</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-web-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+    
+    <profiles>
+        
+        <!-- ### GLASSFISH ### -->
+    
+        <!-- 
+            This test assumes the product proprietary identity store to be set. 
+            
+            By definition this has to be done for each product separately.
+            
+        -->
+        <profile>
+            <id>glassfish-ci-managed</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-failsafe-plugin</artifactId>
+                        <configuration>
+                            <systemPropertyVariables>
+                                <glassfish.enableDerby>false</glassfish.enableDerby>
+                                <!-- Creates a user with name john, password changeit and group student in the default identity store for GF -->
+                                <glassfish.postBootCommands>
+                                    create-file-user --groups student --passwordfile ${project.build.directory}/test-classes/password.txt john
+                                </glassfish.postBootCommands>
+                            </systemPropertyVariables>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        
+        
+    </profiles>
+</project>
