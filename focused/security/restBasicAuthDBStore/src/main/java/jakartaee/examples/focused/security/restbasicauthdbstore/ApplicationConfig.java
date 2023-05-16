@@ -59,7 +59,7 @@ public class ApplicationConfig extends Application {
     private Pbkdf2PasswordHash passwordHash;
 
     @Transactional
-    public void onStart(@Observes @Initialized(ApplicationScoped.class) Object unused) {
+    public void onStart(@Observes @Initialized(ApplicationScoped.class) Object applicationContext) {
         passwordHash.initialize(Map.of(
             "Pbkdf2PasswordHash.Iterations", "3072",
             "Pbkdf2PasswordHash.Algorithm", "PBKDF2WithHmacSHA512",
