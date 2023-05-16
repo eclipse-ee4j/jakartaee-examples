@@ -52,6 +52,16 @@ import jakarta.ws.rs.core.Application;
 @ApplicationPath("/rest")
 public class ApplicationConfig extends Application {
 
+    /**
+     * Id of the one and only user we populate in out DB.
+     */
+    private static final BigInteger USER_ID = ONE;
+
+    /**
+     * Id of the one and only group we populate in out DB.
+     */
+    private static final BigInteger GROUP_ID = ONE;
+
     @PersistenceContext
     private EntityManager entityManager;
 
@@ -65,19 +75,19 @@ public class ApplicationConfig extends Application {
             "Pbkdf2PasswordHash.Algorithm", "PBKDF2WithHmacSHA512",
             "Pbkdf2PasswordHash.SaltSizeBytes", "64"));
 
-        User user = entityManager.find(User.class, ONE);
+        User user = entityManager.find(User.class, USER_ID);
         if (user == null) {
             user = new User();
-            user.id  = ONE;
+            user.id  = USER_ID;
             user.username = "john";
             user.password = passwordHash.generate("secret1".toCharArray());
             entityManager.persist(user);
         }
 
-        Group group = entityManager.find(Group.class, ONE);
+        Group group = entityManager.find(Group.class, GROUP_ID);
         if (group == null) {
             group = new Group();
-            group.id = ONE;
+            group.id = GROUP_ID;
             group.name = "user";
             group.username = "john";
             entityManager.persist(group);
