@@ -29,6 +29,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+        <!-- Set to true to start a server in debug mode, waiting for a debugger attachment -->
+        <suspend>false</suspend>
     </properties>
 
     <dependencyManagement>
@@ -205,7 +207,7 @@
             </activation>
             
             <properties>
-                <glassfish.version>7.0.4</glassfish.version>
+                <glassfish.version>7.0.5-SNAPSHOT</glassfish.version>
             </properties>
 
             <dependencies>
@@ -273,6 +275,7 @@
                             <systemPropertyVariables>
                                 <glassfish.home>${session.executionRootDirectory}/target/glassfish7</glassfish.home>
                                 <glassfish.enableDerby>true</glassfish.enableDerby>
+                                <glassfish.suspend>${suspend}</glassfish.suspend>
                             </systemPropertyVariables>
                         </configuration>
                     </plugin>

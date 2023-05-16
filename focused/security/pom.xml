@@ -16,6 +16,8 @@
     <name>Jakarta Security Examples</name>
 
     <modules>
+        <module>restBasicAuthCustomStore</module>
+        <module>restBasicAuthDBStore</module>
         <module>basicAuth</module>
         <module>customFormWithJsf</module>
         <module>filter</module>
@@ -23,4 +25,13 @@
         <module>inMemoryIdentityStore</module>
         <module>servlet</module>
     </modules>
+    
+    <dependencies>
+        <dependency>
+             <groupId>jakarta.examples.focused</groupId>
+             <artifactId>utils</artifactId>
+             <version>${project.version}</version>
+             <scope>test</scope>
+        </dependency>    
+    </dependencies>
 </project>
