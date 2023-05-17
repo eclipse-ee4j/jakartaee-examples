@@ -12,7 +12,7 @@
     <artifactId>restBasicAuthCustomStore</artifactId>
     <packaging>war</packaging>
 
-    <name>A Jakarta Security REstful BASIC authentication with custom identity store example</name>
+    <name>A Jakarta Security RESTful HTTP basic authentication with custom identity store example</name>
 
     <dependencies>
         <dependency>
