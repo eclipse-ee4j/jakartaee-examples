@@ -34,9 +34,6 @@ import jakartaee.examples.utils.ITBase;
 @RunAsClient
 public class RestBasicAuthCustomStoreIT extends ITBase {
 
-    /**
-     * Stores the base URL.
-     */
     @ArquillianResource
     private URL baseUrl;
 
