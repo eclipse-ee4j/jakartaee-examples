@@ -1,5 +1,5 @@
 /*
- * Permission to use, copy, modify, and/or distribute this software for any 
+ * Permission to use, copy, modify, and/or distribute this software for any
  * purpose with or without fee is hereby granted.
  *
  * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR(S) DISCLAIMS ALL WARRANTIES
@@ -21,8 +21,17 @@ import jakarta.security.enterprise.credential.UsernamePasswordCredential;
 import jakarta.security.enterprise.identitystore.CredentialValidationResult;
 import jakarta.security.enterprise.identitystore.IdentityStore;
 
+/**
+ * A custom identity store that will be picked up automatically by Jakarta Security.
+ *
+ * <p>
+ * Jakarta Security picks up any enabled CDI bean that implements <code>IdentityStore</code>.
+ *
+ * @author Arjan Tijms
+ *
+ */
 @ApplicationScoped
-public class TestIdentityStore implements IdentityStore {
+public class CustomIdentityStore implements IdentityStore {
 
     public CredentialValidationResult validate(UsernamePasswordCredential usernamePasswordCredential) {
         if (usernamePasswordCredential.compareTo("john", "secret1")) {

@@ -75,18 +75,16 @@ public class ApplicationConfig extends Application {
             "Pbkdf2PasswordHash.Algorithm", "PBKDF2WithHmacSHA512",
             "Pbkdf2PasswordHash.SaltSizeBytes", "64"));
 
-        User user = entityManager.find(User.class, USER_ID);
-        if (user == null) {
-            user = new User();
+        if (entityManager.find(User.class, USER_ID) == null) {
+            var user = new User();
             user.id  = USER_ID;
             user.username = "john";
             user.password = passwordHash.generate("secret1".toCharArray());
             entityManager.persist(user);
         }
 
-        Group group = entityManager.find(Group.class, GROUP_ID);
-        if (group == null) {
-            group = new Group();
+        if (entityManager.find(Group.class, GROUP_ID) == null) {
+            var group = new Group();
             group.id = GROUP_ID;
             group.name = "user";
             group.username = "john";
