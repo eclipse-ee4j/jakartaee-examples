@@ -1,13 +1,14 @@
 /*
- * Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c), Eclipse Foundation, Inc. and its licensors.
+ *
+ * All rights reserved.
  *
  * This program and the accompanying materials are made available under the
- * terms of the Eclipse Distribution License v. 1.0, which is available at
- * http://www.eclipse.org/org/documents/edl-v10.php.
+ * terms of the Eclipse Distribution License v1.0, which is available at
+ * https://www.eclipse.org/org/documents/edl-v10.php
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
-
 function open_win(url_add)
 {
     window.open(url_add,'orderDetail','width=300,height=200,menubar=yes,status=no,location=no,toolbar=no,scrollbars=yes,resize=no');
