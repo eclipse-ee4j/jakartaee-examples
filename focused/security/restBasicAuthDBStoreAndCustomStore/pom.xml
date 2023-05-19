@@ -18,35 +18,21 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>jakarta.examples.focused</groupId>
+        <groupId>jakarta.examples.focused.eesecurity</groupId>
         <artifactId>project</artifactId>
         <version>10-SNAPSHOT</version>
     </parent>
 
-    <groupId>jakarta.examples.focused.eesecurity</groupId>
-    <artifactId>project</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>restBasicAuthDBStoreAndCustomStore</artifactId>
+    <packaging>war</packaging>
 
-    <name>Jakarta Security Examples</name>
+    <name>A Jakarta Security RESTful HTTP basic authentication with DB and a custom identity store example</name>
 
-    <modules>
-        <module>restBasicAuthCustomStore</module>
-        <module>restBasicAuthDBStore</module>
-        <module>restBasicAuthDBStoreAndCustomStore</module>
-        <module>basicAuth</module>
-        <module>customFormWithJsf</module>
-        <module>filter</module>
-        <module>formAuth</module>
-        <module>inMemoryIdentityStore</module>
-        <module>servlet</module>
-    </modules>
-    
     <dependencies>
         <dependency>
-             <groupId>jakarta.examples.focused</groupId>
-             <artifactId>utils</artifactId>
-             <version>${project.version}</version>
-             <scope>test</scope>
-        </dependency>    
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-web-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 </project>
