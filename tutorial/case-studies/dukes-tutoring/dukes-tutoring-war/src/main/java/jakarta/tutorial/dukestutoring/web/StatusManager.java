@@ -9,11 +9,6 @@
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package jakarta.tutorial.dukestutoring.web;
 
 import java.util.Locale;
