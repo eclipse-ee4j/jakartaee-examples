@@ -1,3 +1,15 @@
+--
+-- Copyright (c), Eclipse Foundation, Inc. and its licensors.
+--
+-- All rights reserved.
+--
+-- This program and the accompanying materials are made available under the
+-- terms of the Eclipse Distribution License v1.0, which is available at
+-- https://www.eclipse.org/org/documents/edl-v10.php
+--
+-- SPDX-License-Identifier: BSD-3-Clause
+--
+
 ALTER TABLE "FOREST"."PERSON_GROUPS" DROP CONSTRAINT FK_PERSON_GROUPS_PERSON
 ALTER TABLE "FOREST"."PERSON_GROUPS" DROP CONSTRAINT FK_PERSON_GROUPS_GROUPS
 ALTER TABLE "FOREST"."CUSTOMER_ORDER" DROP CONSTRAINT FK_CUSTOMER_ORDER_ORDER_STATUS1

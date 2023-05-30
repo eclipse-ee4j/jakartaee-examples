@@ -1,3 +1,15 @@
+--
+-- Copyright (c), Eclipse Foundation, Inc. and its licensors.
+--
+-- All rights reserved.
+--
+-- This program and the accompanying materials are made available under the
+-- terms of the Eclipse Distribution License v1.0, which is available at
+-- https://www.eclipse.org/org/documents/edl-v10.php
+--
+-- SPDX-License-Identifier: BSD-3-Clause
+--
+
 CREATE TABLE "FOREST"."CATEGORY"(ID int NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), NAME varchar(45) NOT NULL, TAGS varchar(45))
 CREATE UNIQUE INDEX SQL_CATEGORY_ID_INDEX ON "FOREST"."CATEGORY"(ID)
 CREATE TABLE "FOREST"."PERSON"(ID int NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), FIRSTNAME varchar(50) NOT NULL, LASTNAME varchar(100) NOT NULL, EMAIL varchar(45) NOT NULL UNIQUE, ADDRESS varchar(45) NOT NULL, CITY varchar(45) NOT NULL, PASSWORD varchar(100), DTYPE varchar(31))
