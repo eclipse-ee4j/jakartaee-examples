@@ -28,7 +28,7 @@
   <name>web</name>
 
   <modules>
-    <module>jsf</module>
+    <module>faces</module>
     <module>jsonb</module>
     <module>jsonp</module>
     <module>servlet</module>
