@@ -64,14 +64,14 @@
             <dependency>
                 <groupId>org.jboss.arquillian</groupId>
                 <artifactId>arquillian-bom</artifactId>
-                <version>1.7.0.Alpha14</version>
+                <version>1.7.0.Final</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.jboss.arquillian.container</groupId>
                 <artifactId>arquillian-container-test-api</artifactId>
-                <version>1.7.0.Alpha14</version>
+                <version>1.7.0.Final</version>
             </dependency>
             
             <!--
@@ -238,7 +238,7 @@
             </activation>
             
             <properties>
-                <glassfish.version>7.0.5-SNAPSHOT</glassfish.version>
+                <glassfish.version>7.0.5</glassfish.version>
             </properties>
 
             <dependencies>
