@@ -13,43 +13,25 @@
     USE OR PERFORMANCE OF THIS SOFTWARE.
 
 -->
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>jakarta.examples.focused</groupId>
+        <groupId>jakarta.examples.focused.eesecurity</groupId>
         <artifactId>project</artifactId>
         <version>10-SNAPSHOT</version>
     </parent>
 
-    <groupId>jakarta.examples.focused.eesecurity</groupId>
-    <artifactId>project</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>restCustomAuthCustomStore</artifactId>
+    <packaging>war</packaging>
 
-    <name>Jakarta Security Examples</name>
+    <name>A Jakarta Security RESTful custom authentication mechanism with custom identity store example</name>
 
-    <modules>
-        <module>restBasicAuthCustomStore</module>
-        <module>restBasicAuthDBStore</module>
-        <module>restBasicAuthDBStoreAndCustomStore</module>
-        <module>restBasicAuthCustomStoreHandler</module>
-        <module>restFormAuthCustomStore</module>
-        <module>restCustomAuthCustomStore</module>
-        <module>basicAuth</module>
-        <module>customFormWithJsf</module>
-        <module>filter</module>
-        <module>formAuth</module>
-        <module>inMemoryIdentityStore</module>
-        <module>servlet</module>
-    </modules>
-    
     <dependencies>
         <dependency>
-             <groupId>jakarta.examples.focused</groupId>
-             <artifactId>utils</artifactId>
-             <version>${project.version}</version>
-             <scope>test</scope>
-        </dependency>    
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-web-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 </project>
