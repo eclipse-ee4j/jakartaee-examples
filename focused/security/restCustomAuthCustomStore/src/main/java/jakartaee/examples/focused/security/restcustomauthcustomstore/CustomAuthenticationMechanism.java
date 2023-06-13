@@ -14,6 +14,8 @@
 package jakartaee.examples.focused.security.restcustomauthcustomstore;
 
 
+import static jakarta.security.enterprise.identitystore.CredentialValidationResult.Status.VALID;
+
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.security.enterprise.AuthenticationException;
@@ -21,12 +23,9 @@ import jakarta.security.enterprise.AuthenticationStatus;
 import jakarta.security.enterprise.authentication.mechanism.http.HttpAuthenticationMechanism;
 import jakarta.security.enterprise.authentication.mechanism.http.HttpMessageContext;
 import jakarta.security.enterprise.credential.UsernamePasswordCredential;
-import jakarta.security.enterprise.identitystore.CredentialValidationResult;
 import jakarta.security.enterprise.identitystore.IdentityStoreHandler;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
-import static jakarta.security.enterprise.identitystore.CredentialValidationResult.Status.VALID;
 
 @ApplicationScoped
 public class CustomAuthenticationMechanism implements HttpAuthenticationMechanism {
@@ -40,14 +39,14 @@ public class CustomAuthenticationMechanism implements HttpAuthenticationMechanis
         HttpServletResponse response, 
         HttpMessageContext httpMessageContext) throws AuthenticationException {
         
-        String callerName = request.getHeader("callername");
-        String password = request.getHeader("callerpassword");
+        var callerName = request.getHeader("callername");
+        var password = request.getHeader("callerpassword");
         
         if (callerName == null || password == null) {
             return httpMessageContext.doNothing();
         }
 
-        CredentialValidationResult result = identityStoreHandler.validate(
+        var result = identityStoreHandler.validate(
             new UsernamePasswordCredential(callerName, password));
         
         if (result.getStatus() != VALID) {
