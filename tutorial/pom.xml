@@ -12,142 +12,143 @@
     SPDX-License-Identifier: BSD-3-Clause
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>org.eclipse.ee4j</groupId>
-		<artifactId>project</artifactId>
-		<version>1.0.6</version>
-	</parent>
+    <parent>
+        <groupId>org.eclipse.ee4j</groupId>
+        <artifactId>project</artifactId>
+        <version>1.0.6</version>
+    </parent>
 
-	<groupId>jakarta.examples.tutorial</groupId>
-	<artifactId>examples</artifactId>
-	<version>10-SNAPSHOT</version>
-	<packaging>pom</packaging>
+    <groupId>jakarta.examples.tutorial</groupId>
+    <artifactId>examples</artifactId>
+    <version>10-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
-	<name>Jakarta EE 10 Examples - Tutorial</name>
+    <name>Jakarta EE 10 Examples - Tutorial</name>
 
-	<modules>
-		<module>archetypes</module>
-		<module>batch</module>
-		<module>case-studies</module>
-		<module>cdi</module>
-		<module>concurrency</module>
-		<module>connectors</module>
-		<module>ejb</module>
-		<module>jaxrs</module>
-		<module>jaxws</module>
-		<module>jms</module>
-		<module>persistence</module>
-		<module>security</module>
-		<module>web</module>
-	</modules>
+    <modules>
+        <module>archetypes</module>
+        <module>batch</module>
+        <module>case-studies</module>
+        <module>cdi</module>
+        <module>concurrency</module>
+        <module>connectors</module>
+        <module>ejb</module>
+        <module>jaxrs</module>
+        <module>jaxws</module>
+        <module>jms</module>
+        <module>persistence</module>
+        <module>security</module>
+        <module>web</module>
+    </modules>
 
-	<scm>
-		<connection>scm:git:https://github.com/eclipse-ee4j/jakartaee-examples.git</connection>
-		<developerConnection>scm:git:git@github.com:eclipse-ee4j/jakartaee-examples.git</developerConnection>
-		<tag>HEAD</tag>
-	</scm>
-	<issueManagement>
-		<system>GitHub</system>
-		<url>https://github.com/eclipse-ee4j/jakartaee-examples/issues</url>
-	</issueManagement>
+    <scm>
+        <connection>scm:git:https://github.com/eclipse-ee4j/jakartaee-examples.git</connection>
+        <developerConnection>scm:git:git@github.com:eclipse-ee4j/jakartaee-examples.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/eclipse-ee4j/jakartaee-examples/issues</url>
+    </issueManagement>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		
-		<junit.version>4.13.1</junit.version>
-		<jakarta.ejb.version>3.2</jakarta.ejb.version>
-		<eclipselink.version>3.0.0</eclipselink.version>
-		<glassfish.embedded.version>6.0.0</glassfish.embedded.version>
-		
-		<glassfish.home>${session.executionRootDirectory}/target/glassfish7</glassfish.home>
-		
-		<maven.deploy.skip>true</maven.deploy.skip>
-		<maven.javadoc.skip>true</maven.javadoc.skip>
-		<maven.source.skip>true</maven.source.skip>
-		<maven.source.attach>false</maven.source.attach>
-	</properties>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-	<dependencies>
-		<dependency>
-			<groupId>jakarta.platform</groupId>
-			<artifactId>jakarta.jakartaee-api</artifactId>
-			<version>9.0.0</version>
-			<scope>provided</scope>
-		</dependency>
-	</dependencies>
+        <junit.version>4.13.1</junit.version>
+        <jakarta.ejb.version>3.2</jakarta.ejb.version>
+        <eclipselink.version>3.0.0</eclipselink.version>
+        <glassfish.embedded.version>6.0.0</glassfish.embedded.version>
 
-	<build>
-		<finalName>${project.artifactId}</finalName>
-		<pluginManagement>
-			<plugins>
-			    <plugin>
+        <glassfish.home>${session.executionRootDirectory}/target/glassfish7</glassfish.home>
+
+        <maven.deploy.skip>true</maven.deploy.skip>
+        <maven.javadoc.skip>true</maven.javadoc.skip>
+        <maven.source.skip>true</maven.source.skip>
+        <maven.source.attach>false</maven.source.attach>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-api</artifactId>
+            <version>9.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <pluginManagement>
+            <plugins>
+                <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-clean-plugin</artifactId>
                     <version>3.1.0</version>
                 </plugin>
-			    <plugin>
+                <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-enforcer-plugin</artifactId>
                     <version>3.0.0</version>
                 </plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.8.1</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-source-plugin</artifactId>
-					<version>3.2.1</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-war-plugin</artifactId>
-					<version>3.3.1</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-jar-plugin</artifactId>
-					<version>3.2.0</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-ejb-plugin</artifactId>
-					<version>3.1.0</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-ear-plugin</artifactId>
-					<version>3.1.0</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-acr-plugin</artifactId>
-					<version>3.1.0</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-rar-plugin</artifactId>
-					<version>2.4</version>
-				</plugin>
-				<plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.8.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>3.2.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>3.3.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>3.2.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-ejb-plugin</artifactId>
+                    <version>3.1.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-ear-plugin</artifactId>
+                    <version>3.1.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-acr-plugin</artifactId>
+                    <version>3.1.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-rar-plugin</artifactId>
+                    <version>2.4</version>
+                </plugin>
+                <plugin>
                     <groupId>org.codehaus.cargo</groupId>
                     <artifactId>cargo-maven3-plugin</artifactId>
                     <version>1.10.6</version>
                 </plugin>
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>exec-maven-plugin</artifactId>
-					<version>3.0.0</version>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-		
-		<plugins>
-		    <plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>exec-maven-plugin</artifactId>
+                    <version>3.0.0</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
                 <artifactId>maven-enforcer-plugin</artifactId>
                 <executions>
                     <execution>
@@ -194,61 +195,61 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-            
-			<plugin>
-				<groupId>org.codehaus.cargo</groupId>
-				<artifactId>cargo-maven3-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>deploy</id>
-						<phase>integration-test</phase>
-						<goals>
-							<goal>redeploy</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<container>
-						<containerId>glassfish7x</containerId>
-						<type>installed</type>
-						<home>${glassfish.home}</home>
-					</container>
-					<configuration>
-						<type>existing</type>
-						<home>${glassfish.home}/glassfish/domains</home>
-						<properties>
-							<cargo.glassfish.domain.name>domain1</cargo.glassfish.domain.name>
-						</properties>
-					</configuration>
-				</configuration>
-			</plugin>
-			
-			<plugin>
-				<groupId>com.mycila.maven-license-plugin</groupId>
-				<artifactId>maven-license-plugin</artifactId>
-				<version>1.10.b1</version>
-				<configuration>
-					<header>common/license.txt</header>
-					<excludes>
-						<exclude>common/**</exclude>
-						<exclude>**/META-INF/**</exclude>
-						<exclude>**/WEB-INF/**</exclude>
-						<exclude>**/nbactions.xml</exclude>
-						<exclude>**/nb-configuration.xml</exclude>
-						<exclude>**/glassfish-resources.xml</exclude>
-						<exclude>**/simple-flow-flow.xml</exclude>
-					</excludes>
-				</configuration>
-			</plugin>
-			
-			<plugin>
+
+            <plugin>
+                <groupId>org.codehaus.cargo</groupId>
+                <artifactId>cargo-maven3-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>deploy</id>
+                        <phase>integration-test</phase>
+                        <goals>
+                            <goal>redeploy</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <container>
+                        <containerId>glassfish7x</containerId>
+                        <type>installed</type>
+                        <home>${glassfish.home}</home>
+                    </container>
+                    <configuration>
+                        <type>existing</type>
+                        <home>${glassfish.home}/glassfish/domains</home>
+                        <properties>
+                            <cargo.glassfish.domain.name>domain1</cargo.glassfish.domain.name>
+                        </properties>
+                    </configuration>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>com.mycila.maven-license-plugin</groupId>
+                <artifactId>maven-license-plugin</artifactId>
+                <version>1.10.b1</version>
+                <configuration>
+                    <header>common/license.txt</header>
+                    <excludes>
+                        <exclude>common/**</exclude>
+                        <exclude>**/META-INF/**</exclude>
+                        <exclude>**/WEB-INF/**</exclude>
+                        <exclude>**/nbactions.xml</exclude>
+                        <exclude>**/nb-configuration.xml</exclude>
+                        <exclude>**/glassfish-resources.xml</exclude>
+                        <exclude>**/simple-flow-flow.xml</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-ear-plugin</artifactId>
                 <configuration>
                     <outputFileNameMapping>@{artifactId}@.@{extension}@</outputFileNameMapping>
                 </configuration>
             </plugin>
-            
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-ejb-plugin</artifactId>
@@ -256,41 +257,35 @@
                     <ejbVersion>${jakarta.ejb.version}</ejbVersion>
                 </configuration>
             </plugin>
-		</plugins>
-	</build>
+        </plugins>
+    </build>
 
-	<profiles>
-         <!-- ### GLASSFISH ### -->
-    
+    <profiles>
+        <!-- ### GLASSFISH ### -->
+
         <profile>
             <id>glassfish-ci-managed</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
-            
+
             <properties>
                 <glassfish.version>7.0.4</glassfish.version>
             </properties>
 
             <dependencies>
-                
-                <!-- 
-                    Client libraries for Jakarta EE.  
-                    
-                    These provide implementations of e.g. the REST client, that lets tests do REST requests.
-                    These tests just depend on the API for these client tools.
-                -->
+
+                <!-- Client libraries for Jakarta EE. These provide implementations 
+                    of e.g. the REST client, that lets tests do REST requests. These tests just 
+                    depend on the API for these client tools. -->
                 <dependency>
                     <groupId>org.omnifaces.arquillian</groupId>
                     <artifactId>glassfish-client-ee10</artifactId>
                     <version>1.3</version>
                 </dependency>
 
-                <!-- 
-                    The Arquillian connector for GlassFish.
-                    
-                    This lets Arquillian start and stop GlassFish, and deploy and undeploy war files to it.
-                -->
+                <!-- The Arquillian connector for GlassFish. This lets Arquillian 
+                    start and stop GlassFish, and deploy and undeploy war files to it. -->
                 <dependency>
                     <groupId>org.omnifaces.arquillian</groupId>
                     <artifactId>arquillian-glassfish-server-managed</artifactId>
@@ -301,7 +296,7 @@
 
             <build>
                 <plugins>
-                    
+
                     <!-- Download and unzip GlassFish -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -330,7 +325,7 @@
                             </execution>
                         </executions>
                     </plugin>
-                    
+
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
@@ -344,7 +339,7 @@
                 </plugins>
             </build>
         </profile>
-        
+
         <profile>
             <id>windows</id>
             <activation>
@@ -356,7 +351,7 @@
                 <glassfish.executables.suffix>.bat</glassfish.executables.suffix>
             </properties>
         </profile>
-        
+
         <profile>
             <id>unix</id>
             <activation>
@@ -368,6 +363,6 @@
                 <glassfish.executables.suffix />
             </properties>
         </profile>
-        
-	</profiles>
+
+    </profiles>
 </project>
