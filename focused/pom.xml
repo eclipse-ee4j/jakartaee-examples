@@ -238,7 +238,7 @@
             </activation>
             
             <properties>
-                <glassfish.version>7.0.5</glassfish.version>
+                <glassfish.version>7.0.6</glassfish.version>
             </properties>
 
             <dependencies>
