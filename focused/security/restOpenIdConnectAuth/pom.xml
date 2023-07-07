@@ -52,7 +52,8 @@
                 <!-- 
                     Unpack and install Tomcat + Mitre 
                     
-                    Mitre is a Spring based OpenID Connect Server that best runs on a javax based Tomcat.
+                    Mitre is a Spring based OpenID Connect Server that best runs on a Jakarta EE 8 based Tomcat (it uses the javax.* namespace
+                    insetad of the current jakarta.* namespace)
                 -->
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
@@ -85,7 +86,7 @@
                         </configuration>
                     </execution>
                     
-                    <!-- Add JAX-B libraries to Tomcat, since JAX-B been removed from JDK 11 and openid-connect-server-webapp assumes JDK 8 -->
+                    <!-- Add JAX-B libraries to Tomcat, since JAX-B has been removed from JDK 11 and openid-connect-server-webapp assumes JDK 8 -->
                     <execution>
                         <id>copy-tomcat</id>
                         <phase>process-test-classes</phase>
@@ -149,7 +150,10 @@
                                     <include name="server-config.xml" />
                                 </replace>
                                 
-                                <!-- Configure Mitre to let it know where the Open ID callback needs to go to -->
+                                <!-- Configure Mitre to let it know where the Open ID callback needs to go to 
+                                     Note that this modifies the file at the location where Mitre is extracted above, i.e. inside
+                                     the Tomcat webapps folder.
+                                -->
                                 <replace token="http://localhost/" value="http://localhost:8080/openid-client/Callback" dir="${tomcat.dir}/webapps/openid-connect-server-webapp/WEB-INF/classes/db/hsql" summary="yes">
                                     <include name="clients.sql" />
                                 </replace>

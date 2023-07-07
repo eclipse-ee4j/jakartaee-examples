@@ -60,7 +60,9 @@ public class RestOpenIdConnectAuthIT extends ITBase {
 
         System.out.println(confirmationPage.asXml());
 
-        // Confirm
+        // Confirm: the OpenId Provider confirmation page has an "authorize" button which then
+        // redirects us back to our Jakarta EE server, which then redirects us to the originally
+        // requested resource.
         TextPage originalResource = confirmationPage.getElementByName("authorize")
                                                     .click();
 

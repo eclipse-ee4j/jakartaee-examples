@@ -18,6 +18,8 @@ import jakarta.ws.rs.ApplicationPath;
 import jakarta.ws.rs.core.Application;
 
 @OpenIdAuthenticationMechanismDefinition(
+    // The values set here correspond to the Mitre server and its default account
+    // that's installed via pom.xml
     providerURI = "https://localhost:8443/openid-connect-server-webapp",
     clientId = "client",
     clientSecret = "secret",
