@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Permission to use, copy, modify, and/or distribute this software for any
+    purpose with or without fee is hereby granted.
+
+    THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR(S) DISCLAIMS ALL WARRANTIES
+    WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+    MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR(S) BE LIABLE FOR ANY
+    SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER
+    RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
+    NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE
+    USE OR PERFORMANCE OF THIS SOFTWARE.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>jakarta.examples.focused.eesecurity</groupId>
+        <artifactId>project</artifactId>
+        <version>10-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>restOpenIdConnectAuth</artifactId>
+    <packaging>war</packaging>
+
+    <name>A Jakarta Security RESTful OpenID Connect authentication example</name>
+    
+    <properties>
+        <failOnMissingWebXml>false</failOnMissingWebXml>
+        <tomcat.root>${project.build.directory}</tomcat.root>
+        <tomcat.version>9.0.76</tomcat.version>
+        <tomcat.dir>${tomcat.root}/apache-tomcat-${tomcat.version}</tomcat.dir>
+        <tomcat.pidfile>${tomcat.dir}/pidfile</tomcat.pidfile>
+        <finalName>openid-client</finalName>
+    </properties>
+    
+    <dependencies>
+        <dependency>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-web-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>openid-client</finalName>
+        <plugins>
+            <plugin>
+                
+                <!-- 
+                    Unpack and install Tomcat + Mitre 
+                    
+                    Mitre is a Spring based OpenID Connect Server that best runs on a Jakarta EE 8 based Tomcat (it uses the javax.* namespace
+                    insetad of the current jakarta.* namespace)
+                -->
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>unpack-tomcat</id>
+                        <phase>process-test-classes</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <markersDirectory>${tomcat.root}/dependency-maven-plugin-markers</markersDirectory>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.apache.tomcat</groupId>
+                                    <artifactId>tomcat</artifactId>
+                                    <version>${tomcat.version}</version>
+                                    <type>zip</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${tomcat.root}</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.mitre</groupId>
+                                    <artifactId>openid-connect-server-webapp</artifactId>
+                                    <type>war</type>
+                                    <version>1.3.4</version>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${tomcat.dir}/webapps/openid-connect-server-webapp</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                    
+                    <!-- Add JAX-B libraries to Tomcat, since JAX-B has been removed from JDK 11 and openid-connect-server-webapp assumes JDK 8 -->
+                    <execution>
+                        <id>copy-tomcat</id>
+                        <phase>process-test-classes</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${tomcat.dir}/webapps/openid-connect-server-webapp/WEB-INF/lib</outputDirectory>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>jakarta.xml.bind</groupId>
+                                    <artifactId>jakarta.xml.bind-api</artifactId>
+                                    <version>2.3.2</version>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.glassfish.jaxb</groupId>
+                                    <artifactId>jaxb-runtime</artifactId>
+                                    <version>2.3.2</version>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>javax.activation</groupId>
+                                    <artifactId>javax.activation-api</artifactId>
+                                    <version>1.2.0</version>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>com.sun.istack</groupId>
+                                    <artifactId>istack-commons-runtime</artifactId>
+                                    <version>3.0.8</version>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            
+            <!-- 
+                Configure Tomcat to use HTTPS, as Open ID Connect strictly speaking requires this. 
+                Some servers may refuse to use Open ID Connect if not running on a secure connection.
+                
+                Also configure Mitre to use the callback of our client.
+                
+                Then start Tomcat and with it Mitre.
+            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>set-ports</id>
+                        <phase>pre-integration-test</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <echo level="info">Replacing in ${tomcat.dir}</echo>
+                                
+                                <!-- Configure Mitre to let it know its running on HTTPS  -->
+                                <replace token="http://localhost:8080" value="https://localhost:8443" dir="${tomcat.dir}/webapps/openid-connect-server-webapp/WEB-INF" summary="yes">
+                                    <include name="server-config.xml" />
+                                </replace>
+                                
+                                <!-- Configure Mitre to let it know where the Open ID callback needs to go to 
+                                     Note that this modifies the file at the location where Mitre is extracted above, i.e. inside
+                                     the Tomcat webapps folder.
+                                -->
+                                <replace token="http://localhost/" value="http://localhost:8080/openid-client/Callback" dir="${tomcat.dir}/webapps/openid-connect-server-webapp/WEB-INF/classes/db/hsql" summary="yes">
+                                    <include name="clients.sql" />
+                                </replace>
+                                
+                                <!-- Configure Tomcat using our pre-configured server.xml (which sets https) -->
+                                <copy file="src/test/resources/server.xml" todir="${tomcat.dir}/conf"/>
+                                <copy file="src/test/resources/localhost-rsa.jks" todir="${tomcat.dir}/conf"/>
+
+                                <chmod dir="${tomcat.dir}/bin" perm="ugo+rx" includes="*" />
+
+                                <!-- Start Tomcat and Mitre -->
+                                <exec executable="${tomcat.dir}/bin/startup.sh" dir="${tomcat.dir}" >
+                                    <env key="CATALINA_PID" value="${tomcat.pidfile}" />
+                                </exec>
+
+                                <!-- Give the server some time to settle down -->
+                                <sleep seconds="5" />
+
+                                <loadfile property="contents" srcFile="${tomcat.dir}/logs/catalina.out" />
+                                <echo message="${contents}" />
+                            </target>
+                        </configuration>
+                    </execution>
+                    
+                    <!-- After tests have been run, stop Tomcat -->
+                    <execution>
+                        <id>post-integration-test</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target xmlns:if="ant:if" xmlns:unless="ant:unless">
+                                <!-- stop the server -->
+                                <exec executable="${tomcat.dir}/bin/shutdown.sh" dir="${tomcat.dir}" unless:set="tomcat.keeprunning" >
+                                    <env key="CATALINA_PID" value="${tomcat.pidfile}" />
+                                    <arg value="30" />
+                                    <arg value="-force" />
+                                </exec>
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    
+     <profiles>
+
+        <!-- ### GLASSFISH ### -->
+    
+        <profile>
+            <id>glassfish-openid</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+                <property>
+                    <name>glassfish</name>
+                </property>
+            </activation>
+    
+            <build>
+                <plugins>
+                    <!-- Import Tomcat's certificate into GlassFish -->
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>keytool-maven-plugin</artifactId>
+                        <version>1.7</version>
+                        <executions>
+                            <execution>
+                                <phase>pre-integration-test</phase>
+                                <goals>
+                                    <goal>importCertificate</goal>
+                                </goals>
+                                <configuration>
+                                    <file>src/test/resources/tomcat.cert</file>
+                                    <alias>tomcat</alias>
+                                    <keystore>${glassfish.home}/glassfish/domains/domain1/config/cacerts.jks</keystore>
+                                    <storepass>changeit</storepass>
+                                    <keypass>changeit</keypass>
+                                    <noprompt>true</noprompt>
+                                    <trustcacerts>true</trustcacerts>
+                                    <verbose>true</verbose>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+    
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-failsafe-plugin</artifactId>
+                        <configuration>
+                            <systemProperties>
+                                <javax.net.ssl.trustStore>${glassfish.home}/glassfish/domains/domain1/config/cacerts.jks</javax.net.ssl.trustStore>
+                            </systemProperties>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    
+        <!--  Placeholder for future profile -->
+        <profile>
+            <id>yyy</id>
+            <activation>
+                <property>
+                    <name>xxx</name>
+                </property>
+            </activation>
+    
+            <properties>
+                <yyy.version>7.0.4</yyy.version>
+            </properties>
+        </profile>
+    </profiles>
+   
+</project>

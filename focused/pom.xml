@@ -235,10 +235,13 @@
             <id>glassfish-ci-managed</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
+                <property><name>glassfish</name></property>
             </activation>
             
             <properties>
                 <glassfish.version>7.0.6</glassfish.version>
+                <glassfish.root>${session.executionRootDirectory}/target</glassfish.root>
+                <glassfish.home>${glassfish.root}/glassfish7</glassfish.home>
             </properties>
 
             <dependencies>
@@ -283,8 +286,8 @@
                                     <goal>unpack</goal>
                                 </goals>
                                 <configuration>
-                                    <outputDirectory>${session.executionRootDirectory}/target</outputDirectory>
-                                    <markersDirectory>${session.executionRootDirectory}/target/dependency-maven-plugin-markers</markersDirectory>
+                                    <outputDirectory>${glassfish.root}</outputDirectory>
+                                    <markersDirectory>${glassfish.root}/dependency-maven-plugin-markers</markersDirectory>
                                     <artifactItems>
                                         <artifactItem>
                                             <groupId>org.glassfish.main.distributions</groupId>
@@ -292,7 +295,7 @@
                                             <version>${glassfish.version}</version>
                                             <type>zip</type>
                                             <overWrite>false</overWrite>
-                                            <outputDirectory>${session.executionRootDirectory}/target</outputDirectory>
+                                            <outputDirectory>${glassfish.root}</outputDirectory>
                                         </artifactItem>
                                     </artifactItems>
                                 </configuration>
@@ -304,7 +307,7 @@
                         <artifactId>maven-failsafe-plugin</artifactId>
                         <configuration>
                             <systemPropertyVariables>
-                                <glassfish.home>${session.executionRootDirectory}/target/glassfish7</glassfish.home>
+                                <glassfish.home>${glassfish.home}</glassfish.home>
                                 <glassfish.enableDerby>true</glassfish.enableDerby>
                                 <glassfish.suspend>${suspend}</glassfish.suspend>
                             </systemPropertyVariables>
@@ -314,6 +317,17 @@
             </build>
         </profile>
         
+        <!--  Placeholder for future profile -->
+        <profile>
+            <id>xxx</id>
+            <activation>
+                <property><name>xxx</name></property>
+            </activation>
+            
+            <properties>
+                <xxx.version>7.0.4</xxx.version>
+            </properties>
+        </profile>
         
     </profiles>
 </project>
