@@ -40,7 +40,6 @@ import jakarta.ws.rs.core.Application;
     groupSearchBase = "ou=group,dc=jakartaee",
     groupSearchFilter = "(&(member=%s)(objectclass=groupofnames))"
 )
-@DeclareRoles("user")
 @ApplicationPath("/rest")
 public class ApplicationConfig extends Application {
 
