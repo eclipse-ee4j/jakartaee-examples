@@ -30,7 +30,7 @@
   <modules>
     <module>dukeetf</module>
     <module>fileupload</module>
-    <module>hello2</module>
+    <module>hello-servlet</module>
     <module>mood</module>
   </modules>
 </project>
