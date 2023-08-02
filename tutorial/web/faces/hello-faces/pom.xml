@@ -21,7 +21,7 @@
     <version>10-SNAPSHOT</version>
   </parent>
 
-  <artifactId>hello1</artifactId>
+  <artifactId>hello-faces</artifactId>
   <packaging>war</packaging>
 
   <name>${project.artifactId}</name>

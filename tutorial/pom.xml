@@ -64,7 +64,7 @@
         <eclipselink.version>3.0.0</eclipselink.version>
         <glassfish.embedded.version>6.0.0</glassfish.embedded.version>
 
-        <glassfish.home>${session.executionRootDirectory}/target/glassfish7</glassfish.home>
+        <glassfish.home>${user.home}/glassfish7</glassfish.home>
 
         <maven.deploy.skip>true</maven.deploy.skip>
         <maven.javadoc.skip>true</maven.javadoc.skip>
@@ -162,7 +162,7 @@
                                     <version>3.2.3</version>
                                 </requireMavenVersion>
                                 <requireJavaVersion>
-                                    <version>[11)</version>
+                                    <version>[11,)</version>
                                 </requireJavaVersion>
                             </rules>
                         </configuration>
@@ -331,7 +331,7 @@
                         <artifactId>maven-surefire-plugin</artifactId>
                         <configuration>
                             <systemPropertyVariables>
-                                <glassfish.home>${session.executionRootDirectory}/target/glassfish7</glassfish.home>
+                                <glassfish.home>${user.home}/glassfish7</glassfish.home>
                                 <glassfish.enableDerby>true</glassfish.enableDerby>
                             </systemPropertyVariables>
                         </configuration>
