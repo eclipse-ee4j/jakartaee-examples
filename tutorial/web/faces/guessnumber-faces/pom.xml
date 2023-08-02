@@ -16,13 +16,13 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>jakarta.examples.tutorial.web.jsf</groupId>
+    <groupId>jakarta.examples.tutorial.web.faces</groupId>
     <artifactId>parent</artifactId>
     <version>10-SNAPSHOT</version>
   </parent>
 
-  <artifactId>guessnumber-jsf</artifactId>
+  <artifactId>guessnumber-faces</artifactId>
   <packaging>war</packaging>
 
-  <name>guessnumber-jsf</name>
+  <name>guessnumber-faces</name>
 </project>
