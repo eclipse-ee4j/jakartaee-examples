@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<!--
+
+    Permission to use, copy, modify, and/or distribute this software for any
+    purpose with or without fee is hereby granted.
+
+    THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR(S) DISCLAIMS ALL WARRANTIES
+    WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+    MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR(S) BE LIABLE FOR ANY
+    SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER
+    RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
+    NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE
+    USE OR PERFORMANCE OF THIS SOFTWARE.
+
+-->
+
+<html lang="en"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="jakarta.faces.html"
+    xmlns:faces="jakarta.faces"
+>
+    <h:head/>
+    
+    <h:messages />
+    
+    <body>
+        <p>
+            Login to continue
+        </p>
+    
+         <form faces:id="form">
+            <p>
+                <strong>Username </strong> 
+                <input faces:id="username" type="text" faces:value="#{loginBacking.username}" />
+            </p>
+            <p>
+                <strong>Password </strong> 
+                <input faces:id="password" type="password" faces:value="#{loginBacking.password}" />
+            </p>
+            <p>
+                <input type="submit" value="Login" faces:action="#{loginBacking.login}" />
+            </p>
+        </form>
+    
+    </body>
+
+</html>
