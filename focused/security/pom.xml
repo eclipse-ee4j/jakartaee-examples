@@ -39,6 +39,7 @@
         <module>restFormAuthCustomStoreRememberMe</module>
         <module>restOpenIdConnectAuth</module>
         <module>restBasicAuthLdapStore</module>
+        <module>restCustomFormAuthCustomStore</module>
         
         <module>basicAuth</module>
         <module>customFormWithJsf</module>
