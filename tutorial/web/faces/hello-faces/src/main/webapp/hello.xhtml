@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:f="jakarta.faces.core"
+      xmlns:h="jakarta.faces.html">
+    <h:head>
+        <title>Jakarta Faces Hello World</title>
+    </h:head>
+    <h:body>
+        <h1>Hello, what's your name?</h1>
+        <h:form>
+            <h:inputText value="#{hello.name}" required="true" />
+            <h:commandButton value="Submit" action="#{hello.submit}">
+                <f:ajax execute="@form" render=":greeting" />
+            </h:commandButton>
+            <h:messages />
+        </h:form>
+        <h:outputText id="greeting" value="#{hello.greeting}" />
+    </h:body>
+</html>

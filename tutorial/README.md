@@ -1,19 +1,19 @@
 ## Prerequisites
 
 - Maven
-- JDK8
-- GlassFish 6
+- JDK 11
+- GlassFish 7
 
 ## Build the examples
 
-Unzip GlassFish on the predefined directory depending on your OS:
+Unzip GlassFish 7 on the predefined directory depending on your OS:
 
-* Windows: `c:\glassfish6`
-* Unix: `$HOME/glassfish6`
+* Windows: `%HOMEDRIVE%%HOMEPATH%\glassfish7`
+* Unix: `~/glassfish7`
 
 You can also customize this path via the `glassfish.home.prefix` Maven property. Make sure to start with a clean domain.
 
-Start GlassFish:
+Start GlassFish 7:
 ```
 $GF_HOME/bin/asadmin start-domain
 $GF_HOME/bin/asadmin start-database
