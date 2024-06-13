@@ -37,9 +37,9 @@ Focused examples use Maven for building and starting the tests and JUnit for def
 
 [Tutorial](tutorial/README.md) examples are examples that happen to be used in the current version of the tutorial. They are a mix of focused examples, and more elaborate examples. They are currently specifically a work in progress and may be moved to various other locations within this repo.
 
-### Eleborate (future)
+### Elaborate (future)
 
-Eleborate examples are more complex and demonstrate multiple technologies and APIs to work together towards some practical goal.
+Elaborate examples are more complex and demonstrate multiple technologies and APIs to work together towards some practical goal.
 
 ### Applications (future)
 
