@@ -15,34 +15,28 @@
 
 -->
 
-<html lang="en"
-    xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:h="jakarta.faces.html"
-    xmlns:faces="jakarta.faces"
->
+<html lang="en" xmlns:h="jakarta.faces.html" >
     <h:head/>
     
-    <h:messages />
-    
-    <body>
+    <h:body>
+        <h:messages />
+        
         <p>
             Login to continue
         </p>
     
-         <form faces:id="form">
+         <h:form id="form">
             <p>
-                <strong>Username </strong> 
-                <input faces:id="username" type="text" faces:value="#{loginBacking.username}" />
+                <h:outputLabel for="username" value="Username" />
+                <h:inputText id="username" value="#{loginBacking.username}"/>
             </p>
             <p>
-                <strong>Password </strong> 
-                <input faces:id="password" type="password" faces:value="#{loginBacking.password}" />
+                <h:outputLabel for="password" value="Password" />
+                <h:inputSecret id="password" value="#{loginBacking.password}"/>
             </p>
             <p>
-                <input type="submit" value="Login" faces:action="#{loginBacking.login}" />
+                <h:commandButton value="Login" type="submit" action="#{loginBacking.login}" />
             </p>
-        </form>
-    
-    </body>
-
+        </h:form>
+    </h:body>
 </html>
