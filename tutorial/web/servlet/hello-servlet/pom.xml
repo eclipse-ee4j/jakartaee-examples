@@ -16,13 +16,13 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>jakarta.examples.tutorial.web.faces</groupId>
+    <groupId>jakarta.examples.tutorial.web.servlet</groupId>
     <artifactId>parent</artifactId>
     <version>10-SNAPSHOT</version>
   </parent>
 
-  <artifactId>hello1</artifactId>
+  <artifactId>hello-servlet</artifactId>
   <packaging>war</packaging>
 
-  <name>${project.artifactId}</name>
+  <name>hello-servlet</name>
 </project>
