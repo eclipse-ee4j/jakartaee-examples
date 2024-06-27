@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="#{activeLocale.languageTag}"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="jakarta.faces.core"
+	xmlns:h="jakarta.faces.html"
+	xmlns:ui="jakarta.faces.facelets"
+	xmlns:a="jakarta.faces.passthrough"
+	xmlns:c="jakarta.tags.core"
+	xmlns:o="http://omnifaces.org/ui"
+	xmlns:of="http://omnifaces.org/functions"
+	xmlns:p="http://primefaces.org/ui"
+>
+	<c:set var="dev" value="#{faces.development}" scope="application" />
+
+	<f:view contentType="text/html" locale="#{activeLocale.value}">
+		<ui:insert name="metadata" />
+
+		<h:head id="head">
+			<title><ui:insert name="title">#{page.home ? '' : i18n[page.name += '.title']}</ui:insert>#{page.home ? '' : ' | '}#{i18n['this.name']}</title>
+			<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+			<meta name="viewport" content="width=device-width,maximum-scale=2" />
+			<link rel="canonical" href="#{activeLocale.canonicalURL}" />
+			<c:forEach items="#{activeLocale.others}" var="otherLocale">
+				<link rel="alternate" hreflang="#{otherLocale.languageTag}" href="#{activeLocale.canonicalURL(otherLocale)}" />
+			</c:forEach>
+			<ui:include src="/WEB-INF/includes/layout/resources-head.xhtml" />
+		</h:head>
+
+		<h:body id="page_#{page.name}" a:data-unloadmessage="#{i18n['general.unloadmessage']}">
+			<ui:include src="/WEB-INF/includes/layout/resources-body.xhtml" />
+
+			<noscript>
+				<div class="warningPadding" />
+				<div class="warningMessage">#{i18n['this.name']} works best with JavaScript enabled. <strong><a href="https://www.enable-javascript.com" rel="nofollow">How to enable JavaScript in your browser?</a></strong></div>
+			</noscript>
+			<o:conditionalComment if="lte IE 8">
+				<div class="warningPadding" />
+				<div class="warningMessage">#{i18n['this.name']} works best with a modern browser. <strong><a href="https://browsehappy.com" rel="nofollow">Browse Happy. Upgrade your browser today!</a></strong></div>
+			</o:conditionalComment>
+
+			<header class="ui-helper-clearfix">
+				<div id="logo">
+					<h:link outcome="/home">
+						<h:graphicImage name="images/logo.png" alt="#{i18n['this.name']}" width="110" height="42" />
+					</h:link>
+				</div>
+				<input type="checkbox" id="hamburger" class="stateless" autocomplete="off" />
+				<label for="hamburger"><i class="pi pi-bars" /></label>
+				<nav>
+					<ui:insert name="nav-header">
+						<ui:include src="/WEB-INF/includes/layout/nav-header.xhtml" />
+					</ui:insert>
+				</nav>
+			</header>
+
+			<main class="ui-helper-clearfix">
+				<header>
+					<h1><ui:insert name="h1">#{i18n[page.name += '.title']}</ui:insert></h1>
+				</header>
+				<article>
+					<ui:insert name="content">
+						<section>
+							<p>This is a minimal Jakarta EE skeleton application that can be used to kickoff the development of a web application.</p>
+							<p>The source code of this project is hosted on <a href="https://github.com/javaeekickoff/java-ee-kickoff-app" target="_blank">GitHub</a>.</p>
+						</section>
+					</ui:insert>
+					<p:messages id="messages" closable="true" redisplay="false">
+						<p:autoUpdate /> <!-- Note: auto-updates only on PrimeFaces ajax requests, not on JSF/OmniFaces ajax requests! -->
+					</p:messages>
+				</article>
+				<div id="overlay" class="ui-widget-overlay" />
+			</main>
+
+			<footer>
+				<nav>
+					<ui:insert name="nav-footer">
+						<ui:include src="/WEB-INF/includes/layout/nav-footer.xhtml" />
+					</ui:insert>
+				</nav>
+				<p>
+					<small>© #{i18n['this.owner']} #{of:formatDate(now, 'yyyy')}</small>
+				</p>
+			</footer>
+		</h:body>
+	</f:view>
+</html>

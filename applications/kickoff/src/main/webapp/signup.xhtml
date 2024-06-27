@@ -1,0 +1,36 @@
+<ui:composition template="/WEB-INF/templates/layout.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="jakarta.faces.core"
+	xmlns:h="jakarta.faces.html"
+	xmlns:ui="jakarta.faces.facelets"
+	xmlns:a="jakarta.faces.passthrough"
+	xmlns:c="jakarta.tags.core"
+	xmlns:o="http://omnifaces.org/ui"
+	xmlns:of="http://omnifaces.org/functions"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:k="http://kickoff.example.org/ui"
+>
+	<ui:define name="content">
+		<k:form id="signupForm">
+			<k:input id="firstName" value="#{signupBacking.person.firstName}" />
+			<k:input id="lastName" value="#{signupBacking.person.lastName}" />
+			<k:input id="email" type="email" value="#{signupBacking.person.email}" autocomplete="false">
+				<f:validator validatorId="duplicateEmailValidator" />
+			</k:input>
+			<k:input id="password" type="password" value="#{signupBacking.password}" autocomplete="false" />
+			<k:input id="confirmPassword" type="password" value="#{signupBacking.password}" autocomplete="false" />
+
+			<o:validateEqual components="password confirmPassword" message="#{i18n['confirmPasswordValidator']}" showMessageFor="@all" />
+
+			<k:buttons>
+				<k:button id="signup" action="#{signupBacking.signup}" />
+			</k:buttons>
+
+			<p>
+				<o:outputFormat value="#{i18n['signup.paragraph.login']}" escape="false">
+					<o:param><k:link path="login" /></o:param>
+				</o:outputFormat>
+			</p>
+		</k:form>
+	</ui:define>
+</ui:composition>

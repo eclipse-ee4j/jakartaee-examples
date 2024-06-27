@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence
+	xmlns="https://jakarta.ee/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+	version="3.0"
+>
+	<persistence-unit name="kickoff">
+		<jta-data-source>java:app/kickoff/DataSource</jta-data-source>
+
+		<mapping-file>META-INF/LoginToken.xml</mapping-file>
+		<mapping-file>META-INF/Person.xml</mapping-file>
+
+		<properties>
+			<property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create" />
+            
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.cache.use_second_level_cache" value="true" />
+			<property name="hibernate.cache.use_query_cache" value="true" />
+            
+            <!-- 
+                Needed because org.example.kickoff.config.InstantConverter is used, and Hibernate does not seem to fully apply it.
+                Without this it will still think the SQL type is 3003 (org.hibernate.types.SqlTypes.TIMESTAMP_UTC) and therefor complain
+                when it's actually 93 (java.sql.Types.TIMESTAMP).
+            -->
+            <property name="hibernate.type.preferred_instant_jdbc_type" value="TIMESTAMP"/>
+            
+			<property name="wildfly.jpa.twophasebootstrap" value="false" /> <!-- https://issues.jboss.org/browse/WFLY-2727 -->
+            
+            <property name="eclipselink.deploy-on-startup" value="true" />
+		</properties>
+	</persistence-unit>
+</persistence>

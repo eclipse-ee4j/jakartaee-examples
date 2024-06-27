@@ -1,0 +1,29 @@
+<!-- 
+	This tag file renders a button which is to be placed inside k:buttons.
+-->
+<ui:composition
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+	xmlns:ui="jakarta.faces.facelets"
+	xmlns:c="jakarta.tags.core"
+	xmlns:o="http://omnifaces.org/ui"
+	xmlns:p="http://primefaces.org/ui"
+>
+	<o:tagAttribute name="id" />
+	<o:tagAttribute name="path" />
+	<o:tagAttribute name="value" default="#{i18n['general.' += id]}" />
+	<o:methodParam name="actionParam" value="#{action}" />
+	<o:tagAttribute name="ajax" default="#{true}" />
+
+	<c:choose>
+		<c:when test="#{empty path}">
+			<p:commandButton id="#{id}" value="#{value}" tabindex="1"
+				action="#{actionParam}" update="@form" ajax="#{ajax}">
+			</p:commandButton>
+		</c:when>
+		<c:otherwise>
+			<p:button id="#{id}" value="#{value}" tabindex="2"
+				outcome="/#{path}" styleClass="tertiary" />
+		</c:otherwise>
+	</c:choose>	
+</ui:composition>
