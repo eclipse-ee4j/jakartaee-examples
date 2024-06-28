@@ -1,0 +1,27 @@
+<ui:composition template="/optimusfaces/tags/column.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="jakarta.faces.facelets"
+	xmlns:c="jakarta.tags.core"
+	xmlns:o="http://omnifaces.org/ui"
+>
+	<!-- New custom attribute. -->
+	<ui:param name="type" value="#{empty type ? 'text' : type}" /> <!-- Value MAY NOT be an EL expression referencing #{item}! -->
+
+	<!-- Override default attribute values. -->
+	<ui:param name="head" value="#{empty head ? i18n['general.' += field] : head}" />
+	<ui:param name="styleClass" value="#{type} #{styleClass}" />
+
+	<ui:define name="cell">
+		<c:choose>
+			<c:when test="#{type eq 'boolean'}">#{value ? 'Y' : 'N'}</c:when>
+			<c:when test="#{type eq 'number'}">#{of:formatNumberDefault(value)}</c:when>
+			<c:when test="#{type eq 'currency'}">#{of:formatCurrency(value, '$')}</c:when>
+			<c:when test="#{type eq 'list'}"><ui:repeat value="#{value}" var="_item">#{_item}<br /></ui:repeat></c:when>
+			<c:when test="#{type eq 'custom'}"><ui:insert /></c:when>
+
+			<!-- Add more types here! -->
+
+			<c:otherwise>#{value}</c:otherwise>
+		</c:choose>
+	</ui:define>
+</ui:composition>

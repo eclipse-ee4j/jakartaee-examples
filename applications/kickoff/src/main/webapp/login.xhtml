@@ -1,0 +1,45 @@
+<ui:composition template="/WEB-INF/templates/layout.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="jakarta.faces.core"
+	xmlns:h="jakarta.faces.html"
+	xmlns:ui="jakarta.faces.facelets"
+	xmlns:a="jakarta.faces.passthrough"
+	xmlns:c="jakarta.tags.core"
+	xmlns:o="http://omnifaces.org/ui"
+	xmlns:of="http://omnifaces.org/functions"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:k="http://kickoff.example.org/ui"
+>
+	<ui:define name="content">
+		<k:form id="loginForm">
+			<k:dev>
+				<br/>Test users: <code>admin@kickoff.example.org</code>, <code>user@kickoff.example.org</code>
+				<br/>Test password: <code>passw0rd</code>
+			</k:dev>
+
+			<k:input id="email" type="email" value="#{loginBacking.person.email}">
+				<f:validator validatorId="emailVerifiedValidator" />
+			</k:input>
+			<k:input id="password" type="password" value="#{loginBacking.password}">
+				<ui:define name="insideLabel">
+					<k:link path="reset-password" value="#{i18n['general.forgotPassword']}" />
+				</ui:define>
+			</k:input>
+			<k:input id="rememberMe" type="checkbox" value="#{loginBacking.rememberMe}" />
+
+			<k:buttons>
+				<k:button id="login" action="#{loginBacking.login}" ajax="false" /> <!-- Ajax must be false, otherwise browser won't remember autofill for login. -->
+			</k:buttons>
+
+			<p>
+				<o:outputFormat value="#{i18n['login.paragraph.signup']}" escape="false">
+					<o:param>
+						<k:link path="signup">
+							<f:param name="email" value="#{loginBacking.person.email}" disable="#{empty loginBacking.person.email}" />
+						</k:link>
+					</o:param>
+				</o:outputFormat>
+			</p>
+		</k:form>
+	</ui:define>
+</ui:composition>

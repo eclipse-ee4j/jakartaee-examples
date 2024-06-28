@@ -1,0 +1,50 @@
+<ui:composition
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+    xmlns:ui="jakarta.faces.facelets"
+	xmlns:c="jakarta.tags.core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:k="http://kickoff.example.org/ui"
+>
+	<ul>
+		<li id="nav-user">
+			<c:choose>
+				<c:when test="#{not activeUser.present}">
+					<k:link path="login" />
+				</c:when>
+				<c:otherwise>
+					<k:link path="user/profile" value=""><i class="pi pi-user" /></k:link>
+					<ul>
+						<li>
+							<k:link path="user/profile" />
+						</li>
+						<c:if test="#{activeUser.can('VIEW_ADMIN_PAGES')}">
+							<li>
+								<k:link path="admin/users" />
+							</li>
+						</c:if>
+						<li>
+							<k:form id="logoutForm" fieldset="false">
+								<h:commandLink id="logout" value="#{i18n['general.logout']}" action="#{logoutBacking.logout}" />
+							</k:form>
+						</li>
+					</ul>
+				</c:otherwise>
+			</c:choose>
+		</li>
+		<li id="nav-locale">
+			<a href="#{activeLocale.canonicalURL}" title="#{activeLocale.name}" onclick="return false">
+				<h:graphicImage styleClass="flag" name="flags/#{activeLocale.languageTag}.svg" width="24" height="18" />
+			</a>
+			<ul>
+				<c:forEach items="#{activeLocale.others}" var="otherLocale">
+					<li>
+						<a href="#{activeLocale.canonicalURL(otherLocale)}" title="#{otherLocale.name}">
+							<h:graphicImage styleClass="flag" name="flags/#{otherLocale.languageTag}.svg" width="24" height="18" />
+						</a>
+					</li>
+				</c:forEach>
+			</ul>
+		</li>
+	</ul>
+</ui:composition>

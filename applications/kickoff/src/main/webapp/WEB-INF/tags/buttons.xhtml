@@ -1,0 +1,23 @@
+<!-- 
+	This tag file renders a field for buttons.
+	This must be placed in k:form.
+	This also contains global message list and will focus the first form.
+-->
+<ui:composition
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+	xmlns:ui="jakarta.faces.facelets"
+	xmlns:c="jakarta.tags.core"
+	xmlns:p="http://primefaces.org/ui"
+>
+	<h:panelGroup id="buttons_f" layout="block" styleClass="field buttons">
+		<ui:insert />
+		<h:messages id="buttons_m" globalOnly="true" redisplay="false" 
+			styleClass="messages" infoClass="info" warnClass="warn" errorClass="error">
+		</h:messages>
+		<c:if test="#{not _focus_installed_}">
+			<p:focus context="#{component.namingContainer.id}" />
+			<c:set var="_focus_installed_" value="true" scope="request" />
+		</c:if>
+	</h:panelGroup>
+</ui:composition>

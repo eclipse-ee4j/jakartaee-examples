@@ -1,0 +1,20 @@
+<!-- 
+	This tag file renders an internal link.
+-->
+<ui:composition
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+	xmlns:ui="jakarta.faces.facelets"
+	xmlns:o="http://omnifaces.org/ui"
+>
+	<o:tagAttribute name="path" />
+	<o:tagAttribute name="value" />
+
+	<h:link
+		outcome="/#{path}" 
+		value="#{value eq null ? i18n[page.get(path).name += '.title'] : value}"
+		title="#{empty component.value ? i18n[page.get(path).name += '.title'] : null}"
+		styleClass="page #{page.is(path) ? 'current' : ''}">
+		<ui:insert />
+	</h:link>
+</ui:composition>

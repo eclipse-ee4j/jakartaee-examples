@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>
+		Base settings for the main data source that are common for all stages.
+		Note that the initial settings can also be specified in /WEB-INF/web.xml.
+	</comment>
+
+	<entry key="className">org.h2.jdbcx.JdbcDataSource</entry>
+    <!-- 
+            Legacy mode is required, since EclipseLink generates "CREATE TABLE PERSON (ID BIGINT IDENTITY NOT NULL, ...) which
+            H2 2.x now hates:
+            
+            org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE PERSON (ID BIGINT [*]IDENTITY NOT NULL
+        
+    -->
+	<entry key="url">jdbc:h2:mem:kickoff;DB_CLOSE_DELAY=-1;MODE=LEGACY</entry>
+	<entry key="user">sa</entry>
+	<entry key="password">sa</entry>
+</properties>

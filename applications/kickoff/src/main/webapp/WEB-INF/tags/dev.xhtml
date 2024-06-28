@@ -1,0 +1,10 @@
+<!-- 
+	This tag file renders a development-only div.
+-->
+<ui:composition
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="jakarta.faces.facelets"
+	xmlns:c="jakarta.tags.core"
+>
+	<c:if test="#{dev}"><div class="dev ui-corner-all"><small><ui:insert /></small></div></c:if>
+</ui:composition>
