@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core"
+      xmlns:ui="jakarta.faces.facelets">
+
+<h:head>
+    <title>Jakarta EE Chat Application</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <link rel="stylesheet" type="text/css" href="./resources/css/styles.css" />
+    <script type="text/javascript" src="./resources/js/index.js"></script>
+</h:head>
+
+<h:body onload="scrollToBottom();">
+    <div class="navbar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+        </svg>
+        <span class="navbar-title">Jakarta EE Chat</span>
+    </div>
+
+    <h:form style="display: flex; flex-direction: column; height: 90%;">
+        <div class="chat-container" id="chat-area">
+            <!-- Messages will be dynamically added here -->
+        </div>
+
+        <div class="input-container">
+            <input type="text" id="input-message" class="input-field" />
+            <h:commandButton value="Send" onclick="sendMessageviaWs()" styleClass="send-button">
+                <f:ajax execute="@this input-message" render="@none" onevent="scrollToBottom()" />
+            </h:commandButton>
+        </div>
+    </h:form>
+</h:body>
+</html>
